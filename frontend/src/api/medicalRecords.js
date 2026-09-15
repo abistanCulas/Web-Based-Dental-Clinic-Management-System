@@ -1,0 +1,184 @@
+import apiClient from "./client";
+
+/**
+ * Normalizes a backend MedicalRecordDTO to frontend medical record format.
+ *
+ * @param {object} dto - MedicalRecordDTO
+ * @param {object} patientLookup - Optional map of patient id -> patient object
+ * @param {object} dentistLookup - Optional map of dentist id -> dentist object
+ * @returns {object} Normalized medical record
+ */
+export function normalizeMedicalRecord(dto, patientLookup = {}, dentistLookup = {}) {
+  if (!dto) return null;
+
+  const patientObj = patientLookup[dto.patientId];
+  const patientName =
+    patientObj?.name ||
+    (patientObj ? `${patientObj.firstName || ""} ${patientObj.lastName || ""}`.trim() : null) ||
+    `Patient #${dto.patientId}`;
+
+  const dentistObj = dentistLookup[dto.dentistId];
+  const dentistName =
+    dentistObj?.name ||
+    (dentistObj ? `Dr. ${dentistObj.firstName || ""} ${dentistObj.lastName || ""}`.trim() : null) ||
+    (dto.dentistId ? `Dr. Dentist #${dto.dentistId}` : "Attending Dentist");
+
+  // Map backend recordType to user-friendly label
+  let categoryLabel;
+  const typeUpper = (dto.recordType || "").toUpperCase();
+  if (typeUpper.includes("TREATMENT") || typeUpper.includes("PROCEDURE") || typeUpper.includes("OPERATIVE")) {
+    categoryLabel = "Treatment";
+  } else if (typeUpper.includes("DIAGNOSIS") || typeUpper.includes("EXAM")) {
+    categoryLabel = "Diagnosis";
+  } else if (typeUpper.includes("RAY") || typeUpper.includes("RADIOLOGY") || typeUpper.includes("IMAGING")) {
+    categoryLabel = "X-Ray";
+  } else if (typeUpper.includes("CONSULT")) {
+    categoryLabel = "Consultation";
+  } else {
+    categoryLabel = dto.recordType || "Clinical";
+  }
+
+  return {
+    id: dto.id ? `REC-${dto.id}` : `REC-TMP`,
+    rawId: dto.id,
+    title: dto.diagnosis || dto.clinicalNotes?.slice(0, 45) || "Dental Clinical Record",
+    type: categoryLabel,
+    patient: patientName,
+    patientId: dto.patientId,
+    doctor: dentistName,
+    dentistId: dto.dentistId,
+    date: dto.recordDate ? String(dto.recordDate).slice(0, 10) : new Date().toISOString().slice(0, 10),
+    notes: dto.clinicalNotes || dto.symptoms || "No detailed notes recorded.",
+    diagnosis: dto.diagnosis || "",
+    symptoms: dto.symptoms || "",
+    allergies: dto.allergies || "",
+    medicalConditions: dto.medicalConditions || "",
+    status: (dto.status || "ACTIVE").toLowerCase(),
+    rawStatus: dto.status || "ACTIVE",
+    raw: dto,
+  };
+}
+
+export const medicalRecordsApi = {
+  /**
+   * Fetch all medical records (Admin / clinical overview)
+   * GET /api/medical-records
+   */
+  async getAllMedicalRecords() {
+    const response = await apiClient.get("/medical-records");
+    return Array.isArray(response.data) ? response.data : [];
+  },
+
+  /**
+   * Fetch medical record by ID
+   * GET /api/medical-records/{id}
+   */
+  async getMedicalRecordById(id) {
+    const response = await apiClient.get(`/medical-records/${id}`);
+    return response.data;
+  },
+
+  /**
+   * Fetch medical records for a specific patient
+   * GET /api/medical-records/patient/{patientId}
+   */
+  async getPatientMedicalRecords(patientId) {
+    const response = await apiClient.get(`/medical-records/patient/${patientId}`);
+    return Array.isArray(response.data) ? response.data : [];
+  },
+
+  /**
+   * Fetch active medical records for a specific patient
+   * GET /api/medical-records/patient/{patientId}/active
+   */
+  async getActivePatientRecords(patientId) {
+    const response = await apiClient.get(`/medical-records/patient/${patientId}/active`);
+    return Array.isArray(response.data) ? response.data : [];
+  },
+
+  /**
+   * Fetch medical records handled by a specific dentist
+   * GET /api/medical-records/dentist/{dentistId}
+   */
+  async getDentistMedicalRecords(dentistId) {
+    const response = await apiClient.get(`/medical-records/dentist/${dentistId}`);
+    return Array.isArray(response.data) ? response.data : [];
+  },
+
+  /**
+   * Fetch medical records by record type
+   * GET /api/medical-records/type/{recordType}
+   */
+  async getRecordsByType(recordType) {
+    const response = await apiClient.get(`/medical-records/type/${recordType}`);
+    return Array.isArray(response.data) ? response.data : [];
+  },
+
+  /**
+   * Fetch medical records by date
+   * GET /api/medical-records/date/{date}
+   */
+  async getRecordsByDate(date) {
+    const response = await apiClient.get(`/medical-records/date/${date}`);
+    return Array.isArray(response.data) ? response.data : [];
+  },
+
+  /**
+   * Fetch medical records by status
+   * GET /api/medical-records/status/{status}
+   */
+  async getRecordsByStatus(status) {
+    const response = await apiClient.get(`/medical-records/status/${status}`);
+    return Array.isArray(response.data) ? response.data : [];
+  },
+
+  /**
+   * Create a new medical record for a patient by dentist
+   * POST /api/medical-records/patient/{patientId}/dentist/{dentistId}
+   */
+  async createMedicalRecord(patientId, dentistId, data) {
+    const response = await apiClient.post(
+      `/medical-records/patient/${patientId}/dentist/${dentistId}`,
+      data
+    );
+    return response.data;
+  },
+
+  /**
+   * Update an existing medical record
+   * PUT /api/medical-records/{id}
+   */
+  async updateMedicalRecord(id, data) {
+    const response = await apiClient.put(`/medical-records/${id}`, data);
+    return response.data;
+  },
+
+  /**
+   * Activate medical record
+   * PUT /api/medical-records/{id}/activate
+   */
+  async activateRecord(id) {
+    const response = await apiClient.put(`/medical-records/${id}/activate`);
+    return response.data;
+  },
+
+  /**
+   * Archive medical record
+   * PUT /api/medical-records/{id}/archive
+   */
+  async archiveRecord(id) {
+    const response = await apiClient.put(`/medical-records/${id}/archive`);
+    return response.data;
+  },
+
+  /**
+   * Delete a medical record
+   * DELETE /api/medical-records/{id}
+   */
+  async deleteMedicalRecord(id) {
+    const response = await apiClient.delete(`/medical-records/${id}`);
+    return response.data;
+  },
+};
+
+export default medicalRecordsApi;

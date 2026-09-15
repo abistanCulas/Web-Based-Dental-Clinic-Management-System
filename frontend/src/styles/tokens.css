@@ -1,0 +1,112 @@
+:root,
+[data-theme="light"] {
+  --df-primary-50: #eef4fd;
+  --df-primary-100: #d6e8fc;
+  --df-primary-200: #b3d4f9;
+  --df-primary-300: #7eb5f4;
+  --df-primary-400: #4893ed;
+  --df-primary-500: #1b6ef3;
+  --df-primary-600: #1558c9;
+  --df-primary-700: #0f4cba;
+  --df-primary-800: #0d3f9a;
+  --df-primary-900: #0a3278;
+
+  --df-navy-900: #0a1628;
+  --df-navy-800: #111d33;
+  --df-navy-700: #1e293b;
+
+  --df-gray-50: #f8fafc;
+  --df-gray-100: #f1f5f9;
+  --df-gray-200: #e2e8f0;
+  --df-gray-300: #cbd5e1;
+  --df-gray-400: #94a3b8;
+  --df-gray-500: #64748b;
+  --df-gray-600: #475569;
+  --df-gray-700: #334155;
+  --df-gray-800: #1e293b;
+  --df-gray-900: #0f172a;
+
+  --df-success: #10b981;
+  --df-success-bg: rgba(16, 185, 129, 0.12);
+  --df-warning: #f59e0b;
+  --df-warning-bg: rgba(245, 158, 11, 0.12);
+  --df-error: #ef4444;
+  --df-error-bg: rgba(239, 68, 68, 0.12);
+  --df-info: #3b82f6;
+  --df-info-bg: rgba(59, 130, 246, 0.12);
+
+  --df-bg: #f4f8fd;
+  --df-bg-elevated: #ffffff;
+  --df-bg-subtle: #eef4fd;
+  --df-bg-gradient: linear-gradient(135deg, #eef4fd 0%, #f8fafc 50%, #e8f2fc 100%);
+  --df-hero-gradient: linear-gradient(135deg, #0f4cba 0%, #1b6ef3 45%, #4893ed 100%);
+
+  --df-text: #334155;
+  --df-text-secondary: #64748b;
+  --df-text-muted: #94a3b8;
+  --df-text-heading: #0a1628;
+  --df-text-inverse: #ffffff;
+
+  --df-border: #e2e8f0;
+  --df-border-strong: #cbd5e1;
+
+  --df-shadow-sm: 0 1px 2px rgba(10, 22, 40, 0.05);
+  --df-shadow: 0 4px 16px rgba(10, 22, 40, 0.08);
+  --df-shadow-lg: 0 12px 40px rgba(10, 22, 40, 0.12);
+  --df-shadow-card: 0 2px 12px rgba(27, 110, 243, 0.06);
+
+  --df-radius-sm: 8px;
+  --df-radius: 12px;
+  --df-radius-lg: 16px;
+  --df-radius-xl: 24px;
+  --df-radius-full: 9999px;
+
+  --df-space-xs: 4px;
+  --df-space-sm: 8px;
+  --df-space-md: 16px;
+  --df-space-lg: 24px;
+  --df-space-xl: 32px;
+  --df-space-2xl: 48px;
+  --df-space-3xl: 64px;
+
+  --df-sidebar-width: 260px;
+  --df-navbar-height: 72px;
+  --df-font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --df-font-display: "Inter", system-ui, sans-serif;
+
+  --df-transition: 0.2s ease;
+}
+
+[data-theme="dark"] {
+  --df-bg: #0a1628;
+  --df-bg-elevated: #111d33;
+  --df-bg-subtle: #16243d;
+  --df-bg-gradient: linear-gradient(135deg, #0a1628 0%, #111d33 50%, #0d2240 100%);
+  --df-hero-gradient: linear-gradient(135deg, #0a3278 0%, #0f4cba 45%, #1b6ef3 100%);
+
+  --df-text: #e2e8f0;
+  --df-text-secondary: #94a3b8;
+  --df-text-muted: #7e8fa6;
+  --df-text-heading: #f8fafc;
+  --df-text-inverse: #ffffff;
+
+  --df-border: #22334f;
+  --df-border-strong: #384d72;
+
+  --df-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --df-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+  --df-shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.55);
+  --df-shadow-card: 0 2px 12px rgba(0, 0, 0, 0.35);
+
+  --df-primary-50: #0f2b54;
+  --df-gray-50: #14223b;
+  --df-gray-100: #1b2d4c;
+  --df-gray-200: #253d66;
+  --df-gray-300: #3b537d;
+  --df-gray-400: #64748b;
+  --df-gray-500: #94a3b8;
+  --df-gray-600: #cbd5e1;
+  --df-gray-700: #e2e8f0;
+  --df-gray-800: #f1f5f9;
+  --df-gray-900: #f8fafc;
+}
