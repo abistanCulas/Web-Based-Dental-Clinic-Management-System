@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Book Appointment</title>
+<link rel="stylesheet" href="css/appointment.css"></head><body>
+<header><h1>Book Appointment</h1><nav><a href="index.html">Dashboard</a><a href="appointments.html">Appointments</a><a href="queue.html">Queue</a></nav></header>
+<div class="container"><div class="card"><form id="appointmentForm">
+<div class="form-group"><label>Patient ID</label><!-- MERGE NOTE: replace with Patient search/dropdown after Patient module integration. --><input type="number" id="patientId" required></div>
+<div class="form-group"><label>Dentist ID</label><!-- MERGE NOTE: replace with Dentist dropdown after Dentist module integration. --><input type="number" id="dentistId" required></div>
+<div class="form-group"><label>Date</label><input type="date" id="appointmentDate" required></div>
+<div class="form-group"><label>Time</label><input type="time" id="appointmentTime" required></div>
+<div class="form-group"><label>Reason</label><textarea id="reason" placeholder="Reason for appointment"></textarea></div>
+<button type="submit">Book Appointment</button></form><div id="message"></div></div></div>
+<script src="js/config.js"></script><script src="js/book-appointment.js"></script></body></html>
