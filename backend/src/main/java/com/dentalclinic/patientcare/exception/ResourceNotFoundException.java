@@ -1,0 +1,1 @@
+package com.dentalclinic.patientcare.exception;public class ResourceNotFoundException extends RuntimeException{public ResourceNotFoundException(String m){super(m);}}

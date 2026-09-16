@@ -1,0 +1,1 @@
+package com.dentalclinic.patientcare.repository;import com.dentalclinic.patientcare.entity.PatientSubmission;import org.springframework.data.jpa.repository.JpaRepository;import java.util.List;public interface PatientSubmissionRepository extends JpaRepository<PatientSubmission,Long>{List<PatientSubmission> findByPatientIdOrderBySubmittedAtDesc(Long patientId);}

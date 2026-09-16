@@ -1,0 +1,1 @@
+package com.dentalclinic.patientcare.repository;import com.dentalclinic.patientcare.entity.CareHistoryEntry;import org.springframework.data.jpa.repository.JpaRepository;import java.util.List;public interface CareHistoryRepository extends JpaRepository<CareHistoryEntry,Long>{List<CareHistoryEntry> findByPatientIdOrderByVisitDateDesc(Long patientId);}
