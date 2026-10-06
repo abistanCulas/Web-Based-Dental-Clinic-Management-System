@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 1150" width="100%" height="100%" style="background-color: #ffffff; font-family: Arial, sans-serif;">
+  <defs>
+    <!-- Arrow marker -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#000000" />
+    </marker>
+    <style>
+      .swimlane-title { font-size: 16px; font-weight: bold; fill: #1e293b; text-anchor: middle; }
+      .action-rect { fill: #fef08a; stroke: #000000; stroke-width: 2px; rx: 20px; ry: 20px; }
+      .action-text { font-size: 13px; font-weight: bold; fill: #000000; text-anchor: middle; dominant-baseline: middle; }
+      .guard-text { font-size: 12px; font-style: italic; font-weight: bold; fill: #b91c1c; text-anchor: middle; }
+      .guard-ok { font-size: 12px; font-style: italic; font-weight: bold; fill: #15803d; text-anchor: middle; }
+      .flow-line { stroke: #000000; stroke-width: 2px; fill: none; marker-end: url(#arrow); }
+      .flow-line-noarrow { stroke: #000000; stroke-width: 2px; fill: none; }
+      .decision-diamond { fill: #fef08a; stroke: #000000; stroke-width: 2px; }
+      .sync-bar { fill: #000000; stroke: #000000; stroke-width: 5px; }
+    </style>
+  </defs>
+
+  <!-- Title Header -->
+  <text x="475" y="30" font-size="20" font-weight="bold" fill="#0f172a" text-anchor="middle">Activity Diagram – Manage Dental Inventory &amp; Restock</text>
+  <text x="475" y="52" font-size="13" fill="#64748b" text-anchor="middle">IT2030 Software Engineering | SLIIT Lecture 5 Compliant (Partitions / Decision Nodes / Forks / Joins)</text>
+
+  <!-- Swimlane 1: Supplier / Inventory Manager -->
+  <rect x="30" y="70" width="280" height="1040" fill="#f8fafc" stroke="#334155" stroke-width="2" />
+  <rect x="30" y="70" width="280" height="40" fill="#e2e8f0" stroke="#334155" stroke-width="2" />
+  <text x="170" y="95" class="swimlane-title">Supplier / Inventory Manager</text>
+
+  <!-- Swimlane 2: Dental System UI &amp; Controller -->
+  <rect x="310" y="70" width="360" height="1040" fill="#ffffff" stroke="#334155" stroke-width="2" />
+  <rect x="310" y="70" width="360" height="40" fill="#e2e8f0" stroke="#334155" stroke-width="2" />
+  <text x="490" y="95" class="swimlane-title">Dental Clinic System (UI &amp; API)</text>
+
+  <!-- Swimlane 3: Database -->
+  <rect x="670" y="70" width="250" height="1040" fill="#f8fafc" stroke="#334155" stroke-width="2" />
+  <rect x="670" y="70" width="250" height="40" fill="#e2e8f0" stroke="#334155" stroke-width="2" />
+  <text x="795" y="95" class="swimlane-title">MySQL Database</text>
+
+  <!-- ==================== FLOW NODES ==================== -->
+
+  <!-- Initial Node -->
+  <circle cx="170" cy="140" r="12" fill="#000000" />
+  <path d="M 170 152 L 170 180" class="flow-line" />
+
+  <!-- Action: Log in & Select Inventory -->
+  <rect x="75" y="180" width="190" height="44" class="action-rect" />
+  <text x="170" y="202" class="action-text">Log in to System</text>
+  <path d="M 170 224 L 170 250" class="flow-line" />
+
+  <!-- Action: Open Inventory Management -->
+  <rect x="65" y="250" width="210" height="44" class="action-rect" />
+  <text x="170" y="272" class="action-text">Select Inventory Management</text>
+  <path d="M 275 272 L 390 272" class="flow-line" />
+
+  <!-- Action: System Fetches Stock -->
+  <rect x="390" y="250" width="200" height="44" class="action-rect" />
+  <text x="490" y="272" class="action-text">Query Active Stock &amp; Dates</text>
+  <path d="M 590 272 L 710 272" class="flow-line" />
+
+  <!-- Action in DB: Query -->
+  <rect x="710" y="250" width="170" height="44" class="action-rect" />
+  <text x="795" y="272" class="action-text">SELECT * FROM Inventory</text>
+  <path d="M 795 294 L 795 340 L 590 340" class="flow-line" />
+
+  <!-- Action: Display Stock with Mfg & Exp Dates -->
+  <rect x="370" y="318" width="220" height="44" class="action-rect" />
+  <text x="480" y="340" class="action-text">Display Stock, Mfg &amp; Exp Dates</text>
+  <path d="M 370 340 L 275 340" class="flow-line" />
+
+  <!-- Merge Node (Loop back point for input) -->
+  <polygon points="170,380 185,395 170,410 155,395" class="decision-diamond" />
+  <path d="M 170 340 L 170 380" class="flow-line" />
+  <path d="M 170 410 L 170 440" class="flow-line" />
+
+  <!-- Action: Input Item Details & Key -->
+  <rect x="60" y="440" width="220" height="48" class="action-rect" />
+  <text x="170" y="456" class="action-text">Input Item Details, Dates</text>
+  <text x="170" y="472" class="action-text">&amp; Security Key</text>
+  <path d="M 280 464 L 385 464" class="flow-line" />
+
+  <!-- Action: System Validates Security Key -->
+  <rect x="385" y="442" width="210" height="44" class="action-rect" />
+  <text x="490" y="464" class="action-text">Validate Security Passcode Key</text>
+  <path d="M 490 486 L 490 520" class="flow-line" />
+
+  <!-- Decision Node: Key Valid? -->
+  <polygon points="490,520 515,540 490,560 465,540" class="decision-diamond" />
+
+  <!-- Branch 1: Invalid Key [invalid key] -> Loop back -->
+  <path d="M 465 540 L 330 540 L 330 395 L 185 395" class="flow-line" />
+  <text x="390" y="530" class="guard-text">[invalid key]</text>
+  <text x="330" y="565" font-size="11" fill="#b91c1c" text-anchor="middle">"Security key was wrong!</text>
+  <text x="330" y="580" font-size="11" fill="#b91c1c" text-anchor="middle">Please try again."</text>
+
+  <!-- Branch 2: Valid Key [valid key] -->
+  <path d="M 490 560 L 490 610" class="flow-line" />
+  <text x="525" y="585" class="guard-ok">[valid key]</text>
+
+  <!-- Action: Validate Qty and Dates -->
+  <rect x="375" y="610" width="230" height="48" class="action-rect" />
+  <text x="490" y="626" class="action-text">Validate Quantity &gt; 0,</text>
+  <text x="490" y="642" class="action-text">Mfg Date &lt;= Today &amp; Exp &gt; Mfg</text>
+  <path d="M 490 658 L 490 690" class="flow-line" />
+
+  <!-- Decision Node: Qty & Dates Valid? -->
+  <polygon points="490,690 515,710 490,730 465,710" class="decision-diamond" />
+
+  <!-- Branch 1: Invalid Qty or Dates [invalid data] -> Loop back -->
+  <path d="M 465 710 L 315 710 L 315 395" class="flow-line-noarrow" />
+  <text x="380" y="700" class="guard-text">[quantity &lt;= 0 or invalid dates]</text>
+
+  <!-- Branch 2: Valid [valid details] -->
+  <path d="M 490 730 L 490 775" class="flow-line" />
+  <text x="535" y="750" class="guard-ok">[valid details]</text>
+
+  <!-- Action: Save in DB -->
+  <path d="M 490 775 L 705 775" class="flow-line" />
+  <rect x="705" y="753" width="180" height="44" class="action-rect" />
+  <text x="795" y="775" class="action-text">INSERT / UPDATE Inventory</text>
+  <path d="M 795 797 L 795 830 L 590 830" class="flow-line" />
+
+  <!-- Synchronization Bar (FORK) -->
+  <line x1="390" y1="830" x2="590" y2="830" class="sync-bar" />
+  <path d="M 440 830 L 440 865" class="flow-line" />
+  <path d="M 540 830 L 540 865" class="flow-line" />
+
+  <!-- Parallel Branch A: Display Toast -->
+  <rect x="350" y="865" width="160" height="44" class="action-rect" />
+  <text x="430" y="887" class="action-text">Show Success Toast</text>
+
+  <!-- Parallel Branch B: Re-check Low Stock Threshold -->
+  <rect x="520" y="865" width="140" height="44" class="action-rect" />
+  <text x="590" y="880" class="action-text">Check Low-Stock</text>
+  <text x="590" y="895" class="action-text">Threshold</text>
+
+  <!-- Synchronization Bar (JOIN) -->
+  <path d="M 430 909 L 430 940" class="flow-line-noarrow" />
+  <path d="M 590 909 L 590 940" class="flow-line-noarrow" />
+  <line x1="390" y1="940" x2="610" y2="940" class="sync-bar" />
+  <path d="M 500 940 L 500 970" class="flow-line" />
+
+  <!-- Action: Refresh Real-Time UI -->
+  <rect x="390" y="970" width="220" height="44" class="action-rect" />
+  <text x="500" y="992" class="action-text">Update Stock Table &amp; Alerts</text>
+  <path d="M 390 992 L 270 992" class="flow-line" />
+
+  <!-- User Views Updated List -->
+  <rect x="70" y="970" width="200" height="44" class="action-rect" />
+  <text x="170" y="992" class="action-text">View Updated Inventory</text>
+  <path d="M 170 1014 L 170 1055" class="flow-line" />
+
+  <!-- Final Node (Bullseye) -->
+  <circle cx="170" cy="1070" r="14" fill="none" stroke="#000000" stroke-width="2" />
+  <circle cx="170" cy="1070" r="8" fill="#000000" />
+</svg>

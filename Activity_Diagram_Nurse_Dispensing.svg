@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 1150" width="100%" height="100%" style="background-color: #ffffff; font-family: Arial, sans-serif;">
+  <defs>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#000000" />
+    </marker>
+    <style>
+      .swimlane-title { font-size: 16px; font-weight: bold; fill: #1e293b; text-anchor: middle; }
+      .action-rect { fill: #fef08a; stroke: #000000; stroke-width: 2px; rx: 20px; ry: 20px; }
+      .action-rect-danger { fill: #fee2e2; stroke: #dc2626; stroke-width: 2px; rx: 20px; ry: 20px; }
+      .action-text { font-size: 13px; font-weight: bold; fill: #000000; text-anchor: middle; dominant-baseline: middle; }
+      .action-text-danger { font-size: 12px; font-weight: bold; fill: #991b1b; text-anchor: middle; dominant-baseline: middle; }
+      .guard-text { font-size: 12px; font-style: italic; font-weight: bold; fill: #b91c1c; text-anchor: middle; }
+      .guard-ok { font-size: 12px; font-style: italic; font-weight: bold; fill: #15803d; text-anchor: middle; }
+      .flow-line { stroke: #000000; stroke-width: 2px; fill: none; marker-end: url(#arrow2); }
+      .flow-line-noarrow { stroke: #000000; stroke-width: 2px; fill: none; }
+      .decision-diamond { fill: #fef08a; stroke: #000000; stroke-width: 2px; }
+      .sync-bar { fill: #000000; stroke: #000000; stroke-width: 5px; }
+    </style>
+  </defs>
+
+  <!-- Title Header -->
+  <text x="475" y="30" font-size="20" font-weight="bold" fill="#0f172a" text-anchor="middle">Activity Diagram – Nurse Stock Dispensing &amp; Safety Blocker</text>
+  <text x="475" y="52" font-size="13" fill="#64748b" text-anchor="middle">IT2030 Software Engineering | SLIIT Lecture 5 Compliant (Expired Check &amp; Disposal Workflow)</text>
+
+  <!-- Swimlane 1: Nurse -->
+  <rect x="30" y="70" width="270" height="1040" fill="#f8fafc" stroke="#334155" stroke-width="2" />
+  <rect x="30" y="70" width="270" height="40" fill="#e2e8f0" stroke="#334155" stroke-width="2" />
+  <text x="165" y="95" class="swimlane-title">Nurse (Clinical Staff)</text>
+
+  <!-- Swimlane 2: System UI &amp; Controller -->
+  <rect x="300" y="70" width="370" height="1040" fill="#ffffff" stroke="#334155" stroke-width="2" />
+  <rect x="300" y="70" width="370" height="40" fill="#e2e8f0" stroke="#334155" stroke-width="2" />
+  <text x="485" y="95" class="swimlane-title">Dental Clinic System (UI &amp; API)</text>
+
+  <!-- Swimlane 3: Database -->
+  <rect x="670" y="70" width="250" height="1040" fill="#f8fafc" stroke="#334155" stroke-width="2" />
+  <rect x="670" y="70" width="250" height="40" fill="#e2e8f0" stroke="#334155" stroke-width="2" />
+  <text x="795" y="95" class="swimlane-title">MySQL Database</text>
+
+  <!-- Initial Node -->
+  <circle cx="165" cy="140" r="12" fill="#000000" />
+  <path d="M 165 152 L 165 185" class="flow-line" />
+
+  <!-- Action: Nurse Views Stock -->
+  <rect x="65" y="185" width="200" height="44" class="action-rect" />
+  <text x="165" y="207" class="action-text">View Stock &amp; Expiry Dates</text>
+  <path d="M 165 229 L 165 265" class="flow-line" />
+
+  <!-- Action: Nurse Clicks 'Take' -->
+  <rect x="65" y="265" width="200" height="44" class="action-rect" />
+  <text x="165" y="287" class="action-text">Select Material to Dispense</text>
+  <path d="M 265 287 L 380 287" class="flow-line" />
+
+  <!-- System Checks Expiration -->
+  <rect x="380" y="265" width="210" height="44" class="action-rect" />
+  <text x="485" y="287" class="action-text">Check Material Expiration Date</text>
+  <path d="M 485 309 L 485 345" class="flow-line" />
+
+  <!-- Decision Node: Expired? -->
+  <polygon points="485,345 510,365 485,385 460,365" class="decision-diamond" />
+
+  <!-- ==================== EXPIRED BRANCH (SAFETY BLOCKER) ==================== -->
+  <path d="M 460 365 L 340 365 L 340 415" class="flow-line" />
+  <text x="380" y="355" class="guard-text">[item expired]</text>
+
+  <!-- Action: Display Expired Warning Banner -->
+  <rect x="305" y="415" width="190" height="50" class="action-rect-danger" />
+  <text x="400" y="432" class="action-text-danger">Display Expired Blocker Alert</text>
+  <text x="400" y="448" class="action-text-danger">&amp; Disable Dispense Button</text>
+  <path d="M 400 465 L 400 495" class="flow-line" />
+
+  <!-- Decision: Dispose Now? -->
+  <polygon points="400,495 425,515 400,535 375,515" class="decision-diamond" />
+
+  <!-- [Cancel / Leave on Shelf] -->
+  <path d="M 375 515 L 230 515 L 230 565" class="flow-line" />
+  <text x="290" y="505" class="guard-text">[cancel]</text>
+  <rect x="150" y="565" width="160" height="44" class="action-rect" />
+  <text x="230" y="587" class="action-text">Cancel Dispensing</text>
+  <path d="M 230 609 L 230 650" class="flow-line" />
+  <circle cx="230" cy="665" r="14" fill="none" stroke="#000000" stroke-width="2" />
+  <circle cx="230" cy="665" r="8" fill="#000000" />
+
+  <!-- [Dispose Expired Item] -->
+  <path d="M 425 515 L 560 515 L 560 565" class="flow-line" />
+  <text x="495" y="505" class="guard-ok">[dispose expired]</text>
+
+  <rect x="475" y="565" width="170" height="44" class="action-rect" />
+  <text x="560" y="587" class="action-text">Confirm Safe Disposal</text>
+  <path d="M 645 587 L 710 587" class="flow-line" />
+
+  <!-- DB: Set Inactive -->
+  <rect x="710" y="565" width="170" height="44" class="action-rect" />
+  <text x="795" y="580" class="action-text">UPDATE Inventory SET</text>
+  <text x="795" y="596" class="action-text">status='INACTIVE', qty=0</text>
+  <path d="M 795 609 L 795 665 L 560 665" class="flow-line" />
+
+  <circle cx="540" cy="665" r="14" fill="none" stroke="#000000" stroke-width="2" />
+  <circle cx="540" cy="665" r="8" fill="#000000" />
+
+  <!-- ==================== NOT EXPIRED BRANCH (DISPENSE) ==================== -->
+  <path d="M 510 365 L 610 365 L 610 415" class="flow-line" />
+  <text x="565" y="355" class="guard-ok">[item not expired]</text>
+
+  <!-- Open Dispense Form -->
+  <rect x="525" y="415" width="170" height="44" class="action-rect" />
+  <text x="610" y="437" class="action-text">Open Dispense Form Modal</text>
+  <path d="M 525 437 L 270 437" class="flow-line" />
+
+  <!-- Nurse Enters Qty & Purpose -->
+  <rect x="55" y="415" width="215" height="44" class="action-rect" />
+  <text x="162" y="430" class="action-text">Enter Quantity to Take</text>
+  <text x="162" y="446" class="action-text">&amp; Procedure Purpose</text>
+  <path d="M 162 459 L 162 490 L 330 490" class="flow-line" />
+
+  <!-- Validate Qty <= Stock -->
+  <rect x="330" y="470" width="170" height="44" class="action-rect" />
+  <text x="415" y="492" class="action-text">Validate Quantity &lt;= Stock</text>
+  <path d="M 415 514 L 415 540 L 485 540" class="flow-line-noarrow" />
+
+  <!-- Decision: Stock Available? -->
+  <polygon points="500,710 525,730 500,750 475,730" class="decision-diamond" />
+  <path d="M 500 540 L 500 710" class="flow-line" />
+
+  <!-- [qty > stock] -> Error -->
+  <path d="M 475 730 L 350 730 L 350 437" class="flow-line" />
+  <text x="400" y="720" class="guard-text">[qty &gt; stock]</text>
+
+  <!-- [qty <= stock] -> Deduct -->
+  <path d="M 525 730 L 710 730" class="flow-line" />
+  <text x="610" y="720" class="guard-ok">[qty &lt;= stock]</text>
+
+  <!-- DB: Deduct -->
+  <rect x="710" y="708" width="180" height="44" class="action-rect" />
+  <text x="800" y="723" class="action-text">UPDATE Inventory SET</text>
+  <text x="800" y="739" class="action-text">qty = qty - requested</text>
+  <path d="M 800 752 L 800 800 L 610 800" class="flow-line" />
+
+  <!-- Synchronization Bar (FORK) -->
+  <line x1="430" y1="800" x2="610" y2="800" class="sync-bar" />
+  <path d="M 470 800 L 470 840" class="flow-line" />
+  <path d="M 570 800 L 570 840" class="flow-line" />
+
+  <!-- Branch A: Check Threshold -->
+  <rect x="390" y="840" width="150" height="44" class="action-rect" />
+  <text x="465" y="855" class="action-text">Check Low-Stock</text>
+  <text x="465" y="871" class="action-text">Status</text>
+
+  <!-- Branch B: Show Toast -->
+  <rect x="560" y="840" width="150" height="44" class="action-rect" />
+  <text x="635" y="862" class="action-text">Show Success Toast</text>
+
+  <!-- Synchronization Bar (JOIN) -->
+  <path d="M 465 884 L 465 920" class="flow-line-noarrow" />
+  <path d="M 635 884 L 635 920" class="flow-line-noarrow" />
+  <line x1="430" y1="920" x2="650" y2="920" class="sync-bar" />
+  <path d="M 540 920 L 540 960" class="flow-line" />
+
+  <!-- System updates UI -->
+  <rect x="430" y="960" width="220" height="44" class="action-rect" />
+  <text x="540" y="982" class="action-text">Refresh Real-Time Stock Table</text>
+  <path d="M 430 982 L 270 982" class="flow-line" />
+
+  <!-- Nurse Receives Material -->
+  <rect x="65" y="960" width="205" height="44" class="action-rect" />
+  <text x="167" y="982" class="action-text">Take Material for Clinic Use</text>
+  <path d="M 167 1004 L 167 1055" class="flow-line" />
+
+  <!-- Final Node -->
+  <circle cx="167" cy="1070" r="14" fill="none" stroke="#000000" stroke-width="2" />
+  <circle cx="167" cy="1070" r="8" fill="#000000" />
+</svg>
