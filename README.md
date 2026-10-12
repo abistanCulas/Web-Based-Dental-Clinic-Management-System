@@ -32,4 +32,5 @@ This project is developed as a group project.
 
 ## Status
 
-🚧 Under Development
+Complete
+
