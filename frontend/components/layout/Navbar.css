@@ -1,0 +1,51 @@
+/* DentaFlow Public Navbar — unified reference UI for every public page */
+.df-navbar-wrapper{position:sticky;top:0;z-index:1000;width:100%;padding:12px 24px;display:flex;justify-content:center;pointer-events:none}
+.df-navbar-glass{pointer-events:auto;width:min(100%,1360px);min-height:64px;background:rgba(255,255,255,.84);backdrop-filter:blur(22px) saturate(175%);-webkit-backdrop-filter:blur(22px) saturate(175%);border:1px solid rgba(255,255,255,.96);border-radius:22px;box-shadow:0 14px 38px rgba(37,99,235,.10),0 3px 10px rgba(15,23,42,.04),inset 0 1px rgba(255,255,255,.98);position:relative;transition:box-shadow .25s ease,background .25s ease}
+.df-navbar-inner{height:64px;display:flex;align-items:center;padding:0 18px;gap:18px}
+.df-navbar-logo{flex:0 0 auto;display:flex;align-items:center;text-decoration:none;outline:none!important}
+.df-navbar-logo:focus,.df-navbar-logo:focus-visible{outline:none!important;box-shadow:none}
+.df-navbar-nav{display:flex;align-items:center;justify-content:center;gap:22px;flex:1;min-width:0}
+.df-nav-link{display:inline-flex;align-items:center;justify-content:center;text-decoration:none!important;font-size:13.5px;font-weight:650;color:#17315d;padding:9px 3px 7px;position:relative;white-space:nowrap;line-height:1.2;outline:none!important;border:0;background:transparent;box-shadow:none!important;transition:color .2s ease}
+.df-nav-link:focus,.df-nav-link:focus-visible{outline:none!important;box-shadow:none!important}
+.df-nav-link-text{line-height:1.2}
+.df-nav-link-indicator{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:0;height:2.5px;background:linear-gradient(90deg,#0ea5e9,#2563eb);border-radius:999px;transition:width .22s ease}
+.df-nav-link:hover{color:#2563eb}
+.df-nav-link.active{color:#2563eb;font-weight:750}
+.df-nav-link.active .df-nav-link-indicator{width:30px}
+.df-navbar-actions{display:flex;align-items:center;gap:9px;flex:0 0 auto}
+.df-nav-icon-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;border:1px solid rgba(191,219,254,.65);background:rgba(255,255,255,.72);color:#173f86;cursor:pointer;outline:none;box-shadow:0 3px 10px rgba(37,99,235,.05);transition:.2s ease}
+.df-nav-icon-btn:hover{background:rgba(255,255,255,.96);border-color:#93c5fd;color:#2563eb;transform:translateY(-1px)}
+.df-nav-icon-btn:focus,.df-nav-icon-btn:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+.df-nav-btn{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 18px;border-radius:12px;font-size:13.5px;font-weight:700;text-decoration:none!important;cursor:pointer;outline:none;transition:.2s ease;white-space:nowrap}
+.df-nav-btn:focus,.df-nav-btn:focus-visible{outline:none}
+.df-nav-login-btn{background:rgba(255,255,255,.78);border:1px solid rgba(191,219,254,.7);color:#173f86;box-shadow:0 3px 10px rgba(37,99,235,.04)}
+.df-nav-login-btn:hover{background:#fff;border-color:#93c5fd;color:#2563eb;transform:translateY(-1px)}
+.df-nav-register-btn,.df-nav-primary-btn{background:linear-gradient(135deg,#0ea5e9,#2563eb);border:1px solid rgba(255,255,255,.35);color:#fff;box-shadow:0 7px 18px rgba(37,99,235,.28)}
+.df-nav-register-btn:hover,.df-nav-primary-btn:hover{background:linear-gradient(135deg,#0284c7,#1d4ed8);transform:translateY(-1px);box-shadow:0 10px 24px rgba(37,99,235,.34);color:#fff}
+.df-hamburger{display:none;flex-direction:column;justify-content:center;gap:4px;width:40px;height:40px;background:transparent;border:1px solid rgba(191,219,254,.65);border-radius:12px;cursor:pointer;padding:8px;outline:none}
+.df-hamburger span{display:block;width:20px;height:2px;background:#17315d;border-radius:2px}
+.df-navbar-search-bar{position:absolute;top:calc(100% + 9px);left:0;right:0;padding:10px 14px;background:rgba(255,255,255,.94);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border:1px solid rgba(191,219,254,.65);border-radius:16px;box-shadow:0 16px 38px rgba(37,99,235,.13);animation:dfSlideDown .2s ease-out}
+.df-search-form{display:flex;align-items:center;gap:10px}
+.df-search-input-icon{color:#64748b;flex-shrink:0}
+.df-search-input{flex:1;min-width:0;border:0!important;outline:0!important;background:transparent!important;color:#0f2042;font-size:14px;box-shadow:none!important}
+.df-search-close-btn{background:transparent;border:0;color:#64748b;cursor:pointer;padding:6px;border-radius:8px;display:flex;align-items:center;justify-content:center;outline:none}
+.df-search-close-btn:hover{background:rgba(37,99,235,.07);color:#2563eb}
+.df-navbar-backdrop{display:none}
+@keyframes dfSlideDown{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:translateY(0)}}
+[data-theme="dark"] .df-navbar-glass{background:rgba(9,20,40,.86);border-color:rgba(125,211,252,.2);box-shadow:0 14px 38px rgba(0,0,0,.34),0 0 22px rgba(37,99,235,.12)}
+[data-theme="dark"] .df-nav-link{color:#dbeafe}.df-nav-link.active,[data-theme="dark"] .df-nav-link:hover{color:#60a5fa}
+[data-theme="dark"] .df-nav-icon-btn,[data-theme="dark"] .df-nav-login-btn{background:rgba(15,32,58,.82);border-color:rgba(125,211,252,.22);color:#dbeafe}
+[data-theme="dark"] .df-navbar-search-bar{background:rgba(8,20,38,.96);border-color:rgba(125,211,252,.2)}
+[data-theme="dark"] .df-search-input{color:#eaf2ff!important}
+[data-theme="dark"] .df-search-input::placeholder{color:#8197b8}
+[data-theme="dark"] .df-search-input-icon{color:#8197b8}
+[data-theme="dark"] .df-search-close-btn{color:#8197b8}
+[data-theme="dark"] .df-search-close-btn:hover{background:rgba(56,189,248,.12);color:#38bdf8}
+[data-theme="dark"] .df-hamburger{border-color:rgba(125,211,252,.25)}
+[data-theme="dark"] .df-hamburger span{background:#e2e8f0}
+[data-theme="dark"] .df-logo-title{color:#ffffff!important}
+[data-theme="dark"] .df-logo-tagline{color:#94a3b8!important}
+@media(max-width:1100px){.df-navbar-wrapper{padding:10px 14px}.df-navbar-glass{border-radius:18px}.df-navbar-inner{padding:0 14px}.df-navbar-nav{gap:14px}.df-nav-link{font-size:13px}.df-nav-btn{padding:0 15px}}
+@media(max-width:900px){.df-navbar-nav{position:fixed;top:86px;left:14px;right:14px;display:flex;flex-direction:column;align-items:stretch;gap:4px;padding:14px;background:rgba(255,255,255,.95);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(191,219,254,.7);border-radius:18px;box-shadow:0 20px 45px rgba(15,23,42,.14);transform:translateY(-18px);opacity:0;pointer-events:none;transition:.25s ease;z-index:1001}[data-theme="dark"] .df-navbar-nav{background:rgba(9,20,40,.96);border-color:rgba(125,211,252,.22);box-shadow:0 20px 45px rgba(0,0,0,.55)}.df-navbar-nav.open{transform:translateY(0);opacity:1;pointer-events:auto}.df-nav-link{justify-content:flex-start;padding:12px 14px}.df-nav-link-indicator{display:none}.df-hamburger{display:flex}.df-navbar-backdrop{display:block;position:fixed;inset:0;background:rgba(15,23,42,.28);backdrop-filter:blur(3px);z-index:1000}}
+@media(max-width:640px){.df-navbar-wrapper{padding:8px}.df-navbar-glass,.df-navbar-inner{min-height:58px;height:58px}.df-navbar-inner{padding:0 10px}.df-navbar-logo .df-logo-tagline{display:none}.df-navbar-actions{gap:6px}.df-nav-login-btn{display:none}.df-nav-btn{min-height:38px;padding:0 13px}.df-nav-icon-btn,.df-hamburger{width:38px;height:38px}}
+

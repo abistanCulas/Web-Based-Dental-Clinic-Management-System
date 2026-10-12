@@ -1,0 +1,621 @@
+/* ==========================================================================
+   DentaFlow Footer - Strict Reference Liquid Glass Specification
+   ========================================================================== */
+
+.df-footer-section {
+  width: 100%;
+  padding: 10px 24px 20px;
+  margin-top: 40px;
+  background: transparent;
+  color: #94a3b8;
+  position: relative;
+  z-index: 10;
+}
+
+.df-footer-outer-container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* Main 5-Column Liquid Glass Card */
+.df-footer-glass-card {
+  background: linear-gradient(180deg, #031c44 0%, #02122d 100%);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 24px;
+  padding: 38px 42px;
+  box-shadow:
+    0 12px 40px -10px rgba(2, 132, 199, 0.35),
+    0 4px 16px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle ambient cyan glow inside footer card */
+.df-footer-glass-card::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: 30%;
+  width: 300px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.df-footer-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr 1.15fr 1.25fr 1.15fr;
+  gap: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Brand Column */
+.df-footer-col-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.df-footer-brand-header {
+  margin-bottom: 14px;
+}
+
+.df-footer-about {
+  font-size: 12.5px;
+  color: #94a3b8;
+  line-height: 1.65;
+  margin-bottom: 16px;
+  max-width: 270px;
+}
+
+.df-footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 18px;
+}
+
+.df-footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.df-footer-contact-item:hover {
+  color: #38bdf8;
+}
+
+.df-footer-contact-icon {
+  color: #38bdf8;
+  flex-shrink: 0;
+}
+
+/* Social Buttons */
+.df-footer-social-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.df-footer-social-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(30, 58, 138, 0.4);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #93c5fd;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.df-footer-social-circle:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #38bdf8;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Column Titles */
+.df-footer-col-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+/* Links Lists */
+.df-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.df-footer-links li a {
+  font-size: 12.5px;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.df-footer-links li a:hover {
+  color: #38bdf8;
+  transform: translateX(2px);
+}
+
+/* Clinic Hours Table */
+.df-footer-hours-table {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 18px;
+}
+
+.df-footer-hour-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  gap: 8px;
+}
+
+.df-hour-day {
+  color: #94a3b8;
+}
+
+.df-hour-time {
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+.df-hour-highlight {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+/* 24/7 Helpline Pill Button */
+.df-footer-helpline-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.df-footer-helpline-btn:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.4);
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+/* HIPAA Compliant Badge */
+.df-footer-hipaa-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #34d399;
+  font-size: 11.5px;
+  font-weight: 600;
+  margin-top: 18px;
+  letter-spacing: 0.01em;
+}
+
+.df-hipaa-icon {
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+/* Bottom Bar */
+.df-footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 8px 0;
+  font-size: 12px;
+  color: #64748b;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.df-footer-copy {
+  color: #64748b;
+}
+
+.df-footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.df-footer-legal a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.df-footer-legal a:hover {
+  color: #94a3b8;
+}
+
+.df-footer-sep {
+  opacity: 0.4;
+}
+
+.df-footer-motto {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.df-footer-heart {
+  color: #38bdf8;
+}
+
+/* Responsive Footer */
+@media (max-width: 1100px) {
+  .df-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .df-footer-col-brand {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .df-footer-glass-card {
+    padding: 24px 20px;
+  }
+  .df-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .df-footer-col-brand {
+    grid-column: span 1;
+  }
+  .df-footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+}
+
+/* FINAL LIGHT LIQUID-GLASS FOOTER — MATCHES PUBLIC REFERENCE */
+.df-footer-section {
+  padding: 8px 24px 24px;
+  margin-top: 28px;
+  color: #52627f;
+}
+
+.df-footer-glass-card {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(147, 197, 253, 0.22), transparent 30%),
+    radial-gradient(circle at 88% 30%, rgba(186, 230, 253, 0.24), transparent 28%),
+    rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(28px) saturate(175%);
+  -webkit-backdrop-filter: blur(28px) saturate(175%);
+  border: 1px solid rgba(255, 255, 255, 0.94);
+  border-radius: 26px;
+  padding: 36px 42px 30px;
+  box-shadow:
+    0 18px 48px rgba(59, 130, 246, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.98);
+  overflow: hidden;
+}
+
+.df-footer-grid {
+  grid-template-columns: 1.45fr 1fr 1.15fr 1.2fr 1.1fr;
+  gap: 34px;
+}
+
+.df-footer-about,
+.df-footer-contact-item,
+.df-footer-links li a,
+.df-hour-day,
+.df-footer-copy,
+.df-footer-legal a {
+  color: #5d6f8e;
+}
+
+.df-footer-col-title {
+  color: #10295c;
+  font-size: 14px;
+}
+
+.df-footer-links li a:hover,
+.df-footer-contact-item:hover,
+.df-footer-legal a:hover {
+  color: #2563eb;
+}
+
+.df-footer-social-circle {
+  background: rgba(239, 246, 255, 0.82);
+  border: 1px solid rgba(147, 197, 253, 0.65);
+  color: #2563eb;
+}
+
+.df-footer-social-circle:hover {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.df-footer-hour-time {
+  color: #18305e;
+}
+
+.df-footer-helpline-btn {
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(147, 197, 253, 0.65);
+  color: #2563eb;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.10);
+}
+
+.df-footer-helpline-btn:hover {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.df-footer-hipaa-badge {
+  background: rgba(220, 252, 231, 0.55);
+  border-color: rgba(34, 197, 94, 0.30);
+  color: #16803b;
+}
+
+.df-footer-bottom-bar {
+  border-top: 1px solid rgba(148, 163, 184, 0.20);
+  margin-top: 26px;
+  padding-top: 18px;
+}
+
+.df-footer-motto,
+.df-footer-heart {
+  color: #2563eb;
+}
+
+[data-theme="dark"] .df-footer-glass-card {
+  background: rgba(9, 24, 49, 0.80);
+  border-color: rgba(56, 189, 248, 0.20);
+}
+
+[data-theme="dark"] .df-footer-col-title {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .df-footer-about,
+[data-theme="dark"] .df-footer-contact-item,
+[data-theme="dark"] .df-footer-links li a,
+[data-theme="dark"] .df-hour-day,
+[data-theme="dark"] .df-footer-copy,
+[data-theme="dark"] .df-footer-legal a {
+  color: #a9bad4;
+}
+.df-footer-service-empty {
+  max-width: 170px;
+
+  color: #8190a7;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   FOOTER WIDTH — MATCH HOME CONTENT / CTA WIDTH
+   ========================================================= */
+
+.df-footer-section {
+  width: 100%;
+  padding: 8px 0 24px;
+  margin-top: 28px;
+}
+
+.df-footer-outer-container {
+  width: calc(100% - 84px);
+  max-width: 1676px;
+
+  margin: 0 auto;
+}
+/* =========================================================
+   CLINIC HOURS — TIME VISIBILITY FIX
+   ========================================================= */
+
+.df-footer-hours-table {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.df-footer-hour-row {
+  display: grid;
+  grid-template-columns: 110px minmax(150px, 1fr);
+  align-items: center;
+  gap: 12px;
+
+  min-height: 24px;
+}
+
+.df-hour-day {
+  color: #526b8e !important;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.df-hour-time {
+  color: #526b8e !important;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.df-hour-highlight {
+  color: #159eea !important;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   HELPLINE
+   ========================================================= */
+
+.df-footer-helpline-btn {
+  margin-top: 16px;
+
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border: 1px solid #b8d7ff;
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  color: #2165df !important;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  box-shadow:
+          0 8px 22px rgba(37, 105, 215, 0.08);
+
+  transition: all 0.2s ease;
+}
+
+.df-footer-helpline-btn:hover {
+  background: #ffffff;
+
+  border-color: #8fc1ff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+          0 12px 28px rgba(37, 105, 215, 0.12);
+}
+
+/* =========================================================
+   DARK MODE OVERRIDES & LIQUID GLASS FOR FOOTER
+   ========================================================= */
+
+[data-theme="dark"] .df-footer-section {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .df-footer-glass-card {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(30, 58, 138, 0.35), transparent 35%),
+    radial-gradient(circle at 88% 30%, rgba(14, 165, 233, 0.2), transparent 30%),
+    rgba(9, 20, 42, 0.85);
+  backdrop-filter: blur(28px) saturate(160%);
+  -webkit-backdrop-filter: blur(28px) saturate(160%);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(37, 99, 235, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .df-hour-day {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .df-hour-time {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .df-hour-highlight {
+  color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .df-footer-helpline-btn {
+  background: rgba(15, 32, 60, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #38bdf8 !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .df-footer-helpline-btn:hover {
+  background: #2563eb;
+  color: #ffffff !important;
+  border-color: #60a5fa;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.4);
+}
+
+[data-theme="dark"] .df-footer-social-circle {
+  background: rgba(15, 32, 60, 0.8);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: #60a5fa;
+}
+
+[data-theme="dark"] .df-footer-social-circle:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #93c5fd;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.45);
+}
+
+[data-theme="dark"] .df-footer-service-empty {
+  color: #8197b8;
+}
+
+[data-theme="dark"] .df-footer-bottom-bar {
+  border-top-color: rgba(56, 189, 248, 0.15);
+  color: #64748b;
+}
+
+[data-theme="dark"] .df-footer-motto,
+[data-theme="dark"] .df-footer-heart {
+  color: #38bdf8;
+}
+
+[data-theme="dark"] .df-footer-hipaa-badge {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(52, 211, 153, 0.3);
+  color: #34d399;
+}

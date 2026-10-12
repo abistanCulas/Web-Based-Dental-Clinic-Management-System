@@ -1,0 +1,1658 @@
+/* =========================================================
+   DENTAFLOW AI CHATBOT
+   LIGHT + DARK MODE
+   COLLAPSIBLE QUICK QUESTIONS
+   ========================================================= */
+
+.df-chat-fab,
+.df-chat-window,
+.df-chat-window * {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FLOATING BUTTON
+   ========================================================= */
+
+.df-chat-fab {
+  position: fixed;
+
+  right: 26px;
+  bottom: 26px;
+
+  width: 66px;
+  height: 66px;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+
+  background:
+          linear-gradient(
+                  145deg,
+                  #4aa8ff 0%,
+                  #2877ed 50%,
+                  #1956d1 100%
+          );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  z-index: 500;
+
+  box-shadow:
+          0 16px 36px rgba(30, 95, 220, 0.32),
+          0 5px 14px rgba(15, 23, 42, 0.12),
+          inset 0 1px 0 rgba(255, 255, 255, 0.55);
+
+  transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+}
+
+.df-chat-fab:hover {
+  transform: translateY(-3px) scale(1.04);
+
+  box-shadow:
+          0 20px 44px rgba(30, 95, 220, 0.4),
+          0 7px 18px rgba(15, 23, 42, 0.14);
+}
+
+.df-chat-fab:active {
+  transform: scale(0.97);
+}
+
+.df-fab-glow {
+  position: absolute;
+
+  inset: -8px;
+
+  border-radius: 50%;
+
+  background:
+          radial-gradient(
+                  circle,
+                  rgba(52, 137, 255, 0.2),
+                  transparent 68%
+          );
+
+  z-index: -1;
+}
+
+.df-fab-icon-wrapper {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.13);
+}
+
+.df-fab-chat-icon {
+  width: 47px;
+  height: 47px;
+
+  object-fit: contain;
+
+  display: block;
+
+  filter:
+          drop-shadow(
+                  0 3px 7px rgba(15, 23, 42, 0.16)
+          );
+}
+
+.df-fab-online-dot {
+  position: absolute;
+
+  right: 3px;
+  bottom: 4px;
+
+  width: 13px;
+  height: 13px;
+
+  border: 3px solid #2877e9;
+  border-radius: 50%;
+
+  background: #20d58a;
+}
+
+.df-fab-sparkle {
+  position: absolute;
+
+  color: #dff4ff;
+
+  pointer-events: none;
+}
+
+.sparkle-one {
+  top: 7px;
+  right: 9px;
+}
+
+.sparkle-two {
+  left: 8px;
+  bottom: 10px;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   CHAT WINDOW
+   ========================================================= */
+
+.df-chat-window {
+  position: fixed;
+
+  right: 26px;
+  bottom: 104px;
+
+  width: min(
+          430px,
+          calc(100vw - 40px)
+  );
+
+  height: min(
+          650px,
+          calc(100vh - 130px)
+  );
+
+  min-height: 500px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border: 1px solid #d8e7f6;
+  border-radius: 28px;
+
+  background: #f6faff;
+
+  color: #203858;
+
+  box-shadow:
+          0 30px 75px rgba(31, 74, 125, 0.2),
+          0 8px 28px rgba(31, 74, 125, 0.1);
+
+  z-index: 500;
+
+  animation:
+          df-chat-window-in
+          0.25s
+          ease;
+}
+
+@keyframes df-chat-window-in {
+  from {
+    opacity: 0;
+
+    transform:
+            translateY(15px)
+            scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+            translateY(0)
+            scale(1);
+  }
+}
+
+
+/* =========================================================
+   HEADER — LIGHT
+   ========================================================= */
+
+.df-chat-window .df-chat-header {
+  position: relative;
+
+  min-height: 92px;
+
+  padding: 15px 17px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background:
+          linear-gradient(
+                  135deg,
+                  #eaf5ff 0%,
+                  #f5faff 52%,
+                  #e8f5ff 100%
+          );
+
+  color: #17345a !important;
+
+  border-bottom:
+          1px solid #d6e7f6;
+
+  box-shadow:
+          0 6px 18px rgba(40, 105, 175, 0.1);
+
+  overflow: hidden;
+}
+
+.df-chat-header::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  right: -70px;
+  top: -120px;
+
+  border-radius: 50%;
+
+  border:
+          1px solid
+          rgba(58, 139, 220, 0.12);
+
+  background:
+          rgba(74, 160, 230, 0.07);
+}
+
+.df-chat-header::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 1px;
+
+  background:
+          linear-gradient(
+                  90deg,
+                  transparent,
+                  rgba(51, 133, 211, 0.18),
+                  transparent
+          );
+}
+
+
+/* =========================================================
+   HEADER CONTENT
+   ========================================================= */
+
+.df-chat-header-main {
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.df-chat-avatar {
+  position: relative;
+
+  width: 48px;
+  height: 48px;
+
+  flex: 0 0 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+          1px solid #d3e6f7;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+          0 7px 18px
+          rgba(35, 92, 150, 0.12);
+}
+
+.df-chat-header-icon {
+  width: 39px;
+  height: 39px;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+.df-chat-avatar-status {
+  position: absolute;
+
+  right: -1px;
+  bottom: 0;
+
+  width: 11px;
+  height: 11px;
+
+  border:
+          2px solid #eaf5ff;
+
+  border-radius: 50%;
+
+  background: #20c982;
+}
+
+.df-chat-title {
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  min-width: 0;
+}
+
+.df-chat-title strong {
+  display: block;
+
+  color: #102f55 !important;
+
+  opacity: 1 !important;
+
+  font-size: 16px;
+
+  line-height: 1.2;
+
+  font-weight: 850;
+
+  text-shadow: none !important;
+}
+
+.df-chat-title > span {
+  display: block;
+
+  color: #587797 !important;
+
+  opacity: 1 !important;
+
+  font-size: 11px;
+
+  line-height: 1.35;
+
+  font-weight: 600;
+}
+
+.df-chat-title small {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 2px;
+
+  color: #258a67 !important;
+
+  opacity: 1 !important;
+
+  font-size: 10px;
+
+  font-weight: 750;
+}
+
+.df-chat-title small i {
+  width: 6px;
+  height: 6px;
+
+  flex: 0 0 6px;
+
+  border-radius: 50%;
+
+  background: #20c982;
+
+  box-shadow:
+          0 0 0 3px
+          rgba(32, 201, 130, 0.13);
+}
+
+
+/* =========================================================
+   HEADER BUTTONS
+   ========================================================= */
+
+.df-chat-header-actions {
+  position: relative;
+
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+.df-chat-header-actions button {
+  width: 35px;
+  height: 35px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+          1px solid #cfe2f3;
+
+  border-radius: 50%;
+
+  background:
+          rgba(255, 255, 255, 0.82);
+
+  color: #416486;
+
+  opacity: 1;
+
+  cursor: pointer;
+
+  box-shadow:
+          0 3px 9px
+          rgba(30, 80, 130, 0.07);
+
+  transition:
+          background 0.2s ease,
+          color 0.2s ease,
+          transform 0.2s ease;
+}
+
+.df-chat-header-actions button:hover {
+  background: #ffffff;
+
+  color: #126fd0;
+
+  border-color: #a9cce9;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+.df-chat-body {
+  flex: 1 1 auto;
+
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background:
+          radial-gradient(
+                  circle at 5% 8%,
+                  rgba(67, 153, 255, 0.07),
+                  transparent 28%
+          ),
+          linear-gradient(
+                  180deg,
+                  #f8fcff 0%,
+                  #eef7ff 100%
+          );
+}
+
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.df-chat-messages {
+  flex: 1 1 auto;
+
+  min-height: 0;
+
+  overflow-y: auto;
+
+  padding:
+          19px
+          17px
+          10px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 13px;
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+          #c6dced
+          transparent;
+}
+
+.df-chat-messages::-webkit-scrollbar {
+  width: 5px;
+}
+
+.df-chat-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.df-chat-messages::-webkit-scrollbar-thumb {
+  background: #c6dced;
+
+  border-radius: 999px;
+}
+
+.df-chat-message-row {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-end;
+
+  gap: 8px;
+}
+
+.df-chat-message-row.user {
+  justify-content: flex-end;
+}
+
+.df-message-avatar {
+  width: 28px;
+  height: 28px;
+
+  flex: 0 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+          1px solid #d3e5f5;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+          0 4px 10px
+          rgba(30, 90, 160, 0.08);
+}
+
+.df-message-avatar img {
+  width: 23px;
+  height: 23px;
+
+  object-fit: contain;
+}
+
+.df-chat-msg {
+  max-width: 82%;
+
+  padding:
+          12px
+          14px;
+
+  border-radius: 18px;
+
+  font-size: 12.5px;
+
+  line-height: 1.6;
+}
+
+.df-chat-msg.assistant {
+  color: #263f5f !important;
+
+  border:
+          1px solid #d3e4f3;
+
+  border-bottom-left-radius: 5px;
+
+  background: #ffffff;
+
+  box-shadow:
+          0 5px 16px
+          rgba(38, 84, 132, 0.06);
+}
+
+.df-chat-msg.user {
+  color: #ffffff !important;
+
+  border: none;
+
+  border-bottom-right-radius: 5px;
+
+  background:
+          linear-gradient(
+                  135deg,
+                  #2475df,
+                  #258fe5
+          );
+
+  box-shadow:
+          0 7px 17px
+          rgba(37, 110, 218, 0.2);
+}
+
+.df-chat-msg-text {
+  color: inherit !important;
+
+  white-space: pre-wrap;
+}
+
+
+/* =========================================================
+   RECOMMENDATION
+   ========================================================= */
+
+.df-chat-recommendation {
+  margin-top: 10px;
+
+  padding-top: 10px;
+
+  border-top:
+          1px dashed #cddce9;
+}
+
+.df-recommendation-title {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-bottom: 4px;
+
+  color: #1474ce;
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+.df-chat-recommendation > strong {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #314d6e;
+
+  font-size: 10px;
+}
+
+.df-chat-book-btn {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding:
+          7px
+          10px;
+
+  border-radius: 9px;
+
+  background: #eaf5ff;
+
+  color: #0875d1;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+          background 0.2s ease,
+          transform 0.2s ease;
+}
+
+.df-chat-book-btn:hover {
+  background: #dceeff;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TYPING
+   ========================================================= */
+
+.df-typing-message {
+  min-width: 95px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+}
+
+.df-typing-message > span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #5d88b8;
+
+  animation:
+          df-typing
+          1.2s
+          infinite
+          ease-in-out;
+}
+
+.df-typing-message > span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.df-typing-message > span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.df-typing-message small {
+  margin-left: 5px;
+
+  color: #7e93ac;
+
+  font-size: 9px;
+}
+
+@keyframes df-typing {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+
+    opacity: 0.45;
+  }
+
+  30% {
+    transform: translateY(-3px);
+
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   QUICK QUESTIONS CONTAINER
+   ========================================================= */
+
+.df-chat-suggestions {
+  flex: 0 0 auto;
+
+  padding:
+          7px
+          17px
+          12px;
+
+  transition:
+          padding 0.25s ease;
+}
+
+.df-chat-suggestions.is-collapsed {
+  padding-top: 7px;
+  padding-bottom: 8px;
+}
+
+
+/* =========================================================
+   QUICK QUESTIONS TOGGLE
+   ========================================================= */
+
+.df-chat-suggestions-toggle {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 43px;
+
+  padding:
+          7px
+          10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border:
+          1px solid #d4e5f3;
+
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+          background 0.2s ease,
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+}
+
+.df-chat-suggestions-toggle:hover {
+  border-color: #b9d6ef;
+
+  background: #fbfdff;
+
+  box-shadow:
+          0 4px 12px
+          rgba(30, 91, 145, 0.06);
+}
+
+
+/* =========================================================
+   QUICK QUESTIONS HEADING
+   ========================================================= */
+
+.df-chat-suggestions-heading {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 0;
+}
+
+.df-chat-suggestions-heading > div {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #0968cf;
+}
+
+.df-chat-suggestions-heading strong {
+  color: #0968cf !important;
+
+  font-size: 12px;
+
+  font-weight: 850;
+}
+
+.df-chat-suggestions-heading > span {
+  margin-left: auto;
+
+  padding:
+          5px
+          9px;
+
+  border-radius: 999px;
+
+  background: #eaf5ff;
+
+  color: #4b7da8 !important;
+
+  font-size: 8.5px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   TOGGLE ICON
+   ========================================================= */
+
+.df-chat-toggle-icon {
+  width: 25px;
+  height: 25px;
+
+  margin-left: 8px;
+
+  flex: 0 0 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #edf7ff;
+
+  color: #1976d2;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   QUESTION LIST
+   ========================================================= */
+
+.df-chat-suggestion-list {
+  display: grid;
+
+  gap: 6px;
+
+  margin-top: 8px;
+
+  animation:
+          df-questions-open
+          0.22s
+          ease;
+}
+
+@keyframes df-questions-open {
+  from {
+    opacity: 0;
+
+    transform:
+            translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+            translateY(0);
+  }
+}
+
+.df-chat-suggestion-list button {
+  width: 100%;
+
+  min-height: 39px;
+
+  padding:
+          7px
+          10px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  border:
+          1px solid #d1e3f2;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #1265c8 !important;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+          transform 0.2s ease,
+          border-color 0.2s ease,
+          background 0.2s ease,
+          box-shadow 0.2s ease;
+}
+
+.df-chat-suggestion-list button:hover:not(:disabled) {
+  transform: translateX(2px);
+
+  border-color: #a9cff0;
+
+  background: #fafdff;
+
+  box-shadow:
+          0 5px 15px
+          rgba(38, 91, 145, 0.07);
+}
+
+.df-chat-suggestion-list button:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+.df-suggestion-icon {
+  width: 27px;
+  height: 27px;
+
+  flex: 0 0 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #eaf5ff;
+
+  color: #1476d8;
+}
+
+.df-suggestion-arrow {
+  margin-left: auto;
+
+  color: #2584dc;
+
+  flex: 0 0 auto;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.df-chat-input-area {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding:
+          10px
+          14px
+          9px;
+
+  border-top:
+          1px solid #d7e6f3;
+
+  background:
+          rgba(255, 255, 255, 0.92);
+}
+
+.df-chat-input-box {
+  position: relative;
+
+  flex: 1;
+
+  min-width: 0;
+
+  height: 48px;
+}
+
+.df-chat-input-box input {
+  width: 100%;
+  height: 100%;
+
+  padding:
+          0
+          16px
+          0
+          43px;
+
+  border:
+          1px solid #cbdfee;
+
+  border-radius: 999px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #263e5d !important;
+
+  font-size: 12px;
+
+  transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+}
+
+.df-chat-input-box input::placeholder {
+  color: #8ca2ba !important;
+}
+
+.df-chat-input-box input:focus {
+  border-color: #70afe0;
+
+  box-shadow:
+          0 0 0 4px
+          rgba(50, 143, 224, 0.09);
+}
+
+.df-chat-attach-icon {
+  position: absolute;
+
+  left: 15px;
+  top: 50%;
+
+  transform:
+          translateY(-50%);
+
+  color: #7894b1;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.df-chat-send {
+  width: 48px;
+  height: 48px;
+
+  flex: 0 0 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+          linear-gradient(
+                  145deg,
+                  #3b91f4,
+                  #2368dd
+          );
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  box-shadow:
+          0 8px 18px
+          rgba(34, 108, 220, 0.25);
+
+  transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          opacity 0.2s ease;
+}
+
+.df-chat-send:hover:not(:disabled) {
+  transform: scale(1.05);
+
+  box-shadow:
+          0 11px 23px
+          rgba(34, 108, 220, 0.34);
+}
+
+.df-chat-send:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.df-chat-send:disabled {
+  opacity: 0.42;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   SECURITY
+   ========================================================= */
+
+.df-chat-security {
+  flex: 0 0 auto;
+
+  min-height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding:
+          0
+          12px
+          9px;
+
+  background: #ffffff;
+
+  color: #7894b1 !important;
+
+  font-size: 9px;
+
+  font-weight: 650;
+}
+
+.df-chat-security svg {
+  color: #18ad73;
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+[data-theme="dark"] .df-chat-window,
+.dark .df-chat-window {
+  border-color:
+          rgba(96, 165, 250, 0.2);
+
+  background: #0f1b2d;
+
+  color: #e5eef9;
+
+  box-shadow:
+          0 30px 75px
+          rgba(0, 0, 0, 0.5),
+          0 8px 28px
+          rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .df-chat-header,
+.dark .df-chat-header {
+  background:
+          linear-gradient(
+                  135deg,
+                  #102b55 0%,
+                  #153e7a 52%,
+                  #125b8b 100%
+          ) !important;
+
+  color: #ffffff !important;
+
+  border-bottom-color:
+          rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .df-chat-title strong,
+.dark .df-chat-title strong {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .df-chat-title > span,
+.dark .df-chat-title > span {
+  color: #c8ddf1 !important;
+}
+
+[data-theme="dark"] .df-chat-title small,
+.dark .df-chat-title small {
+  color: #9af0c9 !important;
+}
+
+[data-theme="dark"] .df-chat-body,
+.dark .df-chat-body {
+  background:
+          linear-gradient(
+                  180deg,
+                  #101f34 0%,
+                  #0b1728 100%
+          );
+}
+
+[data-theme="dark"] .df-chat-messages,
+.dark .df-chat-messages {
+  scrollbar-color:
+          rgba(96, 165, 250, 0.3)
+          transparent;
+}
+
+[data-theme="dark"] .df-chat-msg.assistant,
+.dark .df-chat-msg.assistant {
+  border-color:
+          rgba(120, 160, 200, 0.2);
+
+  background: #17283e;
+
+  color: #e6f0fb !important;
+}
+
+[data-theme="dark"] .df-chat-msg.user,
+.dark .df-chat-msg.user {
+  color: #ffffff !important;
+
+  background:
+          linear-gradient(
+                  135deg,
+                  #2466d5,
+                  #287edc
+          );
+}
+
+[data-theme="dark"] .df-chat-suggestions-toggle,
+.dark .df-chat-suggestions-toggle {
+  border-color:
+          rgba(113, 157, 200, 0.22);
+
+  background: #14253a;
+}
+
+[data-theme="dark"] .df-chat-suggestions-toggle:hover,
+.dark .df-chat-suggestions-toggle:hover {
+  border-color:
+          rgba(83, 157, 225, 0.4);
+
+  background: #192d46;
+}
+
+[data-theme="dark"]
+.df-chat-suggestions-heading > div,
+[data-theme="dark"]
+.df-chat-suggestions-heading strong,
+.dark
+.df-chat-suggestions-heading > div,
+.dark
+.df-chat-suggestions-heading strong {
+  color: #8ec5ff !important;
+}
+
+[data-theme="dark"]
+.df-chat-suggestions-heading > span,
+.dark
+.df-chat-suggestions-heading > span {
+  background:
+          rgba(74, 153, 230, 0.13);
+
+  color: #91b9df !important;
+}
+
+[data-theme="dark"] .df-chat-toggle-icon,
+.dark .df-chat-toggle-icon {
+  background:
+          rgba(54, 139, 220, 0.15);
+
+  color: #76baff;
+}
+
+[data-theme="dark"]
+.df-chat-suggestion-list button,
+.dark
+.df-chat-suggestion-list button {
+  border-color:
+          rgba(113, 157, 200, 0.2);
+
+  background: #14253a;
+
+  color: #8ec5ff !important;
+}
+
+[data-theme="dark"]
+.df-chat-suggestion-list button:hover:not(:disabled),
+.dark
+.df-chat-suggestion-list button:hover:not(:disabled) {
+  border-color:
+          rgba(83, 157, 225, 0.4);
+
+  background: #192d46;
+}
+
+[data-theme="dark"] .df-suggestion-icon,
+.dark .df-suggestion-icon {
+  background:
+          rgba(54, 139, 220, 0.15);
+
+  color: #76baff;
+}
+
+[data-theme="dark"] .df-suggestion-arrow,
+.dark .df-suggestion-arrow {
+  color: #6bb4ff;
+}
+
+[data-theme="dark"] .df-chat-recommendation,
+.dark .df-chat-recommendation {
+  border-top-color:
+          rgba(148, 174, 201, 0.2);
+}
+
+[data-theme="dark"]
+.df-recommendation-title,
+.dark
+.df-recommendation-title {
+  color: #75baff;
+}
+
+[data-theme="dark"]
+.df-chat-recommendation > strong,
+.dark
+.df-chat-recommendation > strong {
+  color: #c7d9eb;
+}
+
+[data-theme="dark"] .df-chat-input-area,
+.dark .df-chat-input-area {
+  border-top-color:
+          rgba(105, 145, 180, 0.18);
+
+  background:
+          rgba(12, 27, 45, 0.95);
+}
+
+[data-theme="dark"] .df-chat-input-box input,
+.dark .df-chat-input-box input {
+  border-color:
+          rgba(110, 157, 200, 0.24);
+
+  background: #16283d;
+
+  color: #edf6ff !important;
+}
+
+[data-theme="dark"]
+.df-chat-input-box input::placeholder,
+.dark
+.df-chat-input-box input::placeholder {
+  color: #7891ab !important;
+}
+
+[data-theme="dark"] .df-chat-attach-icon,
+.dark .df-chat-attach-icon {
+  color: #7796b6;
+}
+
+[data-theme="dark"] .df-chat-security,
+.dark .df-chat-security {
+  background: #0c1b2d;
+
+  color: #7897b8 !important;
+}
+
+[data-theme="dark"] .df-chat-security svg,
+.dark .df-chat-security svg {
+  color: #35d493;
+}
+
+[data-theme="dark"] .df-chat-header-actions button,
+.dark .df-chat-header-actions button {
+  background:
+          rgba(255, 255, 255, 0.12);
+
+  border-color:
+          rgba(255, 255, 255, 0.2);
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .df-chat-window {
+    right: 18px;
+    bottom: 91px;
+
+    width: min(
+            430px,
+            calc(100vw - 36px)
+    );
+
+    height: min(
+            650px,
+            calc(100vh - 110px)
+    );
+  }
+
+  .df-chat-fab {
+    right: 19px;
+    bottom: 19px;
+
+    width: 61px;
+    height: 61px;
+  }
+
+  .df-fab-chat-icon {
+    width: 43px;
+    height: 43px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .df-chat-window {
+    top: 12px;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+
+    width: auto;
+    height: auto;
+
+    min-height: 0;
+
+    border-radius: 24px;
+  }
+
+  .df-chat-header {
+    min-height: 82px;
+
+    padding:
+            13px
+            14px;
+  }
+
+  .df-chat-avatar {
+    width: 43px;
+    height: 43px;
+
+    flex-basis: 43px;
+  }
+
+  .df-chat-header-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .df-chat-title strong {
+    font-size: 14px;
+  }
+
+  .df-chat-title > span {
+    font-size: 10px;
+  }
+
+  .df-chat-header-actions button {
+    width: 33px;
+    height: 33px;
+  }
+
+  .df-chat-messages {
+    padding:
+            15px
+            13px
+            8px;
+  }
+
+  .df-chat-msg {
+    max-width: 87%;
+
+    font-size: 12px;
+  }
+
+  .df-chat-suggestions {
+    padding:
+            5px
+            13px
+            9px;
+  }
+
+  .df-chat-suggestions-heading > span {
+    display: none;
+  }
+
+  .df-chat-suggestion-list {
+    gap: 5px;
+  }
+
+  .df-chat-suggestion-list button {
+    min-height: 37px;
+
+    font-size: 10.5px;
+  }
+
+  .df-chat-input-area {
+    padding:
+            9px
+            11px
+            8px;
+  }
+
+  .df-chat-input-box {
+    height: 46px;
+  }
+
+  .df-chat-send {
+    width: 46px;
+    height: 46px;
+
+    flex-basis: 46px;
+  }
+
+  .df-chat-security {
+    padding-bottom: 8px;
+
+    font-size: 8px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 360px) {
+  .df-chat-window {
+    top: 7px;
+    right: 7px;
+    bottom: 7px;
+    left: 7px;
+  }
+
+  .df-chat-title > span {
+    display: none;
+  }
+
+  .df-chat-suggestion-list button {
+    min-height: 35px;
+
+    padding:
+            6px
+            8px;
+
+    font-size: 9.5px;
+  }
+
+  .df-suggestion-icon {
+    width: 24px;
+    height: 24px;
+
+    flex-basis: 24px;
+  }
+}
