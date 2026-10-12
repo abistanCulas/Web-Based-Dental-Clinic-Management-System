@@ -1,0 +1,773 @@
+/* ==========================================================================
+   DentaFlow Master Liquid Glass & 3D Styling — Clinical Dashboards (Doctor & Receptionist)
+   Theme: DentaFlow Master Healthcare Blue/White Glass System
+   Scope: Applied when .df-doctor-dashboard or .df-receptionist-dashboard is active
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Dashboard Background & Shell (Liquid Glass Mesh Canvas)
+   -------------------------------------------------------------------------- */
+.df-doctor-dashboard,
+.df-receptionist-dashboard {
+  --df-glass-panel: rgba(248, 250, 252, 0.78);
+  --df-role-accent: #2563eb !important;
+  background: 
+    radial-gradient(at 0% 0%, rgba(219, 234, 254, 0.58) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(224, 242, 254, 0.48) 0px, transparent 45%),
+    radial-gradient(at 50% 100%, rgba(238, 242, 255, 0.62) 0px, transparent 60%),
+    #f8fafc !important;
+  min-height: 100vh;
+  position: relative;
+}
+
+[data-theme="dark"] .df-doctor-dashboard,
+[data-theme="dark"] .df-receptionist-dashboard {
+  --df-glass-panel: rgba(15, 23, 42, 0.78);
+  --df-role-accent: #3b82f6 !important;
+  background: 
+    radial-gradient(at 5% 5%, rgba(30, 58, 138, 0.3) 0px, transparent 50%),
+    radial-gradient(at 95% 10%, rgba(14, 165, 233, 0.18) 0px, transparent 45%),
+    radial-gradient(at 50% 90%, rgba(49, 46, 129, 0.22) 0px, transparent 50%),
+    #090d16 !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. Translucent Frosted Glass Sidebar & Role Badge
+   -------------------------------------------------------------------------- */
+.df-doctor-dashboard .df-sidebar,
+.df-receptionist-dashboard .df-sidebar {
+  background: rgba(255, 255, 255, 0.78) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-right: 1px solid rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 4px 0 30px -4px rgba(37, 99, 235, 0.06) !important;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-sidebar,
+[data-theme="dark"] .df-receptionist-dashboard .df-sidebar {
+  background: rgba(11, 19, 37, 0.84) !important;
+  border-right: 1px solid rgba(45, 63, 100, 0.6) !important;
+  box-shadow: 4px 0 32px -4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Role Badges — Unified DentaFlow Royal Blue Glass */
+.df-doctor-dashboard .df-sidebar-role-badge,
+.df-receptionist-dashboard .df-sidebar-role-badge {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12) 0%, rgba(59, 130, 246, 0.08) 100%) !important;
+  border: 1px solid rgba(37, 99, 235, 0.28) !important;
+  color: #1d4ed8 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 2px 10px -2px rgba(37, 99, 235, 0.2) !important;
+  letter-spacing: 0.04em !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-sidebar-role-badge,
+[data-theme="dark"] .df-receptionist-dashboard .df-sidebar-role-badge {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.22) 0%, rgba(59, 130, 246, 0.14) 100%) !important;
+  border: 1px solid rgba(37, 99, 235, 0.45) !important;
+  color: #93c5fd !important;
+  box-shadow: 0 2px 12px -2px rgba(37, 99, 235, 0.35) !important;
+}
+
+/* Sidebar Nav Items — 3D Elevation & Blue Glow */
+.df-doctor-dashboard .df-sidebar-link,
+.df-receptionist-dashboard .df-sidebar-link {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border-radius: 12px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.df-doctor-dashboard .df-sidebar-link:hover,
+.df-receptionist-dashboard .df-sidebar-link:hover {
+  background: rgba(59, 130, 246, 0.08) !important;
+  transform: translateX(4px);
+  color: var(--df-primary-600) !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-sidebar-link:hover,
+[data-theme="dark"] .df-receptionist-dashboard .df-sidebar-link:hover {
+  background: rgba(59, 130, 246, 0.14) !important;
+  color: #93c5fd !important;
+}
+
+.df-doctor-dashboard .df-sidebar-link.active,
+.df-receptionist-dashboard .df-sidebar-link.active {
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px -2px rgba(37, 99, 235, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
+   3. Liquid Glass Sticky Header & Breadcrumbs
+   -------------------------------------------------------------------------- */
+.df-doctor-dashboard .df-dashboard-header,
+.df-receptionist-dashboard .df-dashboard-header {
+  background: rgba(255, 255, 255, 0.78) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 0 4px 20px -4px rgba(37, 99, 235, 0.05), inset 0 -1px 0 rgba(255, 255, 255, 0.5) !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-dashboard-header,
+[data-theme="dark"] .df-receptionist-dashboard .df-dashboard-header {
+  background: rgba(11, 19, 37, 0.84) !important;
+  border-bottom: 1px solid rgba(45, 63, 100, 0.6) !important;
+  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Breadcrumbs */
+.df-doctor-dashboard .df-breadcrumbs,
+.df-receptionist-dashboard .df-breadcrumbs {
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.df-doctor-dashboard .df-breadcrumb-link,
+.df-receptionist-dashboard .df-breadcrumb-link {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.df-doctor-dashboard .df-breadcrumb-link:hover,
+.df-receptionist-dashboard .df-breadcrumb-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.df-doctor-dashboard .df-breadcrumb-current,
+.df-receptionist-dashboard .df-breadcrumb-current {
+  color: #64748b;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-breadcrumb-link,
+[data-theme="dark"] .df-receptionist-dashboard .df-breadcrumb-link {
+  color: #60a5fa;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-breadcrumb-current,
+[data-theme="dark"] .df-receptionist-dashboard .df-breadcrumb-current {
+  color: #94a3b8;
+}
+
+/* --------------------------------------------------------------------------
+   4. Page Container & Smooth Entrance Animations
+   -------------------------------------------------------------------------- */
+.df-doctor-dashboard .df-role-page,
+.df-receptionist-dashboard .df-role-page {
+  animation: dfClinicalFadeUp 0.26s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes dfClinicalFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. Welcome Hero & Resource Headers
+   -------------------------------------------------------------------------- */
+.df-doctor-dashboard .df-resource-header,
+.df-receptionist-dashboard .df-resource-header,
+.df-doctor-dashboard .df-dashboard-welcome,
+.df-receptionist-dashboard .df-dashboard-welcome {
+  background: rgba(255, 255, 255, 0.78) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(226, 232, 240, 0.85) !important;
+  border-radius: 20px !important;
+  padding: 24px 28px !important;
+  box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.08), 0 2px 8px -2px rgba(15, 23, 42, 0.04) !important;
+  margin-bottom: 24px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.df-doctor-dashboard .df-resource-header::before,
+.df-receptionist-dashboard .df-resource-header::before,
+.df-doctor-dashboard .df-dashboard-welcome::before,
+.df-receptionist-dashboard .df-dashboard-welcome::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2563eb 0%, #38bdf8 50%, #60a5fa 100%);
+}
+
+.df-doctor-dashboard .df-resource-header h1,
+.df-receptionist-dashboard .df-resource-header h1,
+.df-doctor-dashboard .df-dashboard-welcome h1,
+.df-receptionist-dashboard .df-dashboard-welcome h1 {
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem) !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  letter-spacing: -0.02em !important;
+  margin: 4px 0 6px 0 !important;
+}
+
+.df-doctor-dashboard .df-resource-header p,
+.df-receptionist-dashboard .df-resource-header p,
+.df-doctor-dashboard .df-dashboard-welcome p,
+.df-receptionist-dashboard .df-dashboard-welcome p {
+  color: #475569 !important;
+  font-size: 14px !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+.df-doctor-dashboard .df-section-label,
+.df-receptionist-dashboard .df-section-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #2563eb !important;
+  margin-bottom: 2px;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-resource-header,
+[data-theme="dark"] .df-receptionist-dashboard .df-resource-header,
+[data-theme="dark"] .df-doctor-dashboard .df-dashboard-welcome,
+[data-theme="dark"] .df-receptionist-dashboard .df-dashboard-welcome {
+  background: rgba(16, 23, 38, 0.85) !important;
+  border-color: rgba(45, 63, 100, 0.75) !important;
+  box-shadow: 0 12px 36px -10px rgba(0, 0, 0, 0.55) !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-resource-header h1,
+[data-theme="dark"] .df-receptionist-dashboard .df-resource-header h1,
+[data-theme="dark"] .df-doctor-dashboard .df-dashboard-welcome h1,
+[data-theme="dark"] .df-receptionist-dashboard .df-dashboard-welcome h1 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-resource-header p,
+[data-theme="dark"] .df-receptionist-dashboard .df-resource-header p,
+[data-theme="dark"] .df-doctor-dashboard .df-dashboard-welcome p,
+[data-theme="dark"] .df-receptionist-dashboard .df-dashboard-welcome p {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-section-label,
+[data-theme="dark"] .df-receptionist-dashboard .df-section-label {
+  color: #93c5fd !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. Summary / KPI Cards (Liquid Glass & 3D Depth)
+   -------------------------------------------------------------------------- */
+.df-doctor-dashboard .df-stat-card,
+.df-receptionist-dashboard .df-stat-card {
+  background: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border: 1px solid rgba(226, 232, 240, 0.85) !important;
+  border-radius: 20px !important;
+  padding: 22px 24px !important;
+  box-shadow: 0 8px 24px -6px rgba(37, 99, 235, 0.08), 0 2px 6px -2px rgba(15, 23, 42, 0.04) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.df-doctor-dashboard .df-stat-card:hover,
+.df-receptionist-dashboard .df-stat-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 16px 36px -8px rgba(37, 99, 235, 0.16), 0 4px 12px -2px rgba(15, 23, 42, 0.06) !important;
+  border-color: rgba(37, 99, 235, 0.35) !important;
+}
+
+.df-doctor-dashboard .df-stat-label,
+.df-receptionist-dashboard .df-stat-label {
+  color: #475569 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+.df-doctor-dashboard .df-stat-value,
+.df-receptionist-dashboard .df-stat-value {
+  color: #0f172a !important;
+  font-size: clamp(1.75rem, 2.5vw, 2.15rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.df-doctor-dashboard .df-stat-icon-wrapper,
+.df-receptionist-dashboard .df-stat-icon-wrapper {
+  background: rgba(37, 99, 235, 0.1) !important;
+  color: #2563eb !important;
+  border-radius: 14px !important;
+  width: 44px !important;
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 20px !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-stat-card,
+[data-theme="dark"] .df-receptionist-dashboard .df-stat-card {
+  background: rgba(16, 23, 38, 0.85) !important;
+  border-color: rgba(45, 63, 100, 0.75) !important;
+  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-stat-card:hover,
+[data-theme="dark"] .df-receptionist-dashboard .df-stat-card:hover {
+  box-shadow: 0 18px 42px -10px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(59, 130, 246, 0.4) !important;
+  border-color: rgba(59, 130, 246, 0.45) !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-stat-label,
+[data-theme="dark"] .df-receptionist-dashboard .df-stat-label {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-stat-value,
+[data-theme="dark"] .df-receptionist-dashboard .df-stat-value {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-stat-icon-wrapper,
+[data-theme="dark"] .df-receptionist-dashboard .df-stat-icon-wrapper {
+  background: rgba(37, 99, 235, 0.22) !important;
+  color: #93c5fd !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. Content Panels & Cards (.df-card)
+   -------------------------------------------------------------------------- */
+.df-doctor-dashboard .df-card,
+.df-receptionist-dashboard .df-card {
+  background: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border: 1px solid rgba(226, 232, 240, 0.85) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 8px 26px -6px rgba(37, 99, 235, 0.06), 0 2px 6px -2px rgba(15, 23, 42, 0.04) !important;
+  transition: transform 0.22s ease, box-shadow 0.22s ease !important;
+  overflow: hidden;
+}
+
+.df-doctor-dashboard .df-card-body,
+.df-receptionist-dashboard .df-card-body {
+  padding: 22px 24px !important;
+}
+
+.df-doctor-dashboard .df-card-title-row h3,
+.df-receptionist-dashboard .df-card-title-row h3 {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  letter-spacing: -0.01em !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-card,
+[data-theme="dark"] .df-receptionist-dashboard .df-card {
+  background: rgba(16, 23, 38, 0.85) !important;
+  border-color: rgba(45, 63, 100, 0.75) !important;
+  box-shadow: 0 12px 34px -8px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-card-title-row h3,
+[data-theme="dark"] .df-receptionist-dashboard .df-card-title-row h3 {
+  color: #f8fafc !important;
+}
+
+/* --------------------------------------------------------------------------
+   8. Tables & Table Rows (Liquid Glass Table System)
+   -------------------------------------------------------------------------- */
+.df-doctor-dashboard .df-table-wrap,
+.df-receptionist-dashboard .df-table-wrap {
+  background: rgba(255, 255, 255, 0.5) !important;
+  border: 1px solid rgba(226, 232, 240, 0.85) !important;
+  border-radius: 16px !important;
+  overflow-x: auto;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+}
+
+.df-doctor-dashboard .df-table,
+.df-receptionist-dashboard .df-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.df-doctor-dashboard .df-table th,
+.df-receptionist-dashboard .df-table th {
+  background: rgba(241, 245, 249, 0.75) !important;
+  color: #1e293b !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  padding: 13px 18px !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9) !important;
+  text-align: left;
+}
+
+.df-doctor-dashboard .df-table td,
+.df-receptionist-dashboard .df-table td {
+  padding: 14px 18px !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.65) !important;
+  color: #334155 !important;
+  vertical-align: middle;
+  transition: background 0.15s ease;
+}
+
+.df-doctor-dashboard .df-table tr:hover td,
+.df-receptionist-dashboard .df-table tr:hover td {
+  background: rgba(239, 246, 255, 0.65) !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-table-wrap,
+[data-theme="dark"] .df-receptionist-dashboard .df-table-wrap {
+  background: rgba(15, 23, 42, 0.45) !important;
+  border-color: rgba(45, 63, 100, 0.65) !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-table th,
+[data-theme="dark"] .df-receptionist-dashboard .df-table th {
+  background: rgba(22, 34, 62, 0.7) !important;
+  color: #cbd5e1 !important;
+  border-bottom-color: rgba(45, 63, 100, 0.75) !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-table td,
+[data-theme="dark"] .df-receptionist-dashboard .df-table td {
+  border-bottom-color: rgba(45, 63, 100, 0.45) !important;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-table tr:hover td,
+[data-theme="dark"] .df-receptionist-dashboard .df-table tr:hover td {
+  background: rgba(30, 58, 138, 0.25) !important;
+}
+
+/* --------------------------------------------------------------------------
+   9. Receptionist Queue Kanban Board (.df-queue-grid)
+   -------------------------------------------------------------------------- */
+.df-receptionist-dashboard .df-queue-column {
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border: 1px solid rgba(226, 232, 240, 0.85) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 6px 20px -4px rgba(37, 99, 235, 0.05) !important;
+  padding: 18px !important;
+}
+
+.df-receptionist-dashboard .df-queue-column-header {
+  border-bottom: 2px solid rgba(37, 99, 235, 0.15) !important;
+  font-weight: 700 !important;
+  font-size: 13.5px !important;
+  color: #0f172a !important;
+}
+
+.df-receptionist-dashboard .df-queue-card {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
+  border-radius: 14px !important;
+  padding: 14px 16px !important;
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.04) !important;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease, border-color 0.22s ease !important;
+}
+
+.df-receptionist-dashboard .df-queue-card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 24px -4px rgba(37, 99, 235, 0.12) !important;
+  border-color: rgba(37, 99, 235, 0.35) !important;
+}
+
+.df-receptionist-dashboard .df-queue-token {
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  color: #1d4ed8 !important;
+  background: rgba(37, 99, 235, 0.1) !important;
+  padding: 3px 8px !important;
+  border-radius: 8px !important;
+}
+
+[data-theme="dark"] .df-receptionist-dashboard .df-queue-column {
+  background: rgba(16, 23, 38, 0.8) !important;
+  border-color: rgba(45, 63, 100, 0.7) !important;
+}
+
+[data-theme="dark"] .df-receptionist-dashboard .df-queue-column-header {
+  border-bottom-color: rgba(59, 130, 246, 0.25) !important;
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .df-receptionist-dashboard .df-queue-card {
+  background: rgba(22, 34, 62, 0.88) !important;
+  border-color: rgba(45, 63, 100, 0.75) !important;
+}
+
+[data-theme="dark"] .df-receptionist-dashboard .df-queue-card:hover {
+  border-color: rgba(59, 130, 246, 0.45) !important;
+  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .df-receptionist-dashboard .df-queue-token {
+  color: #93c5fd !important;
+  background: rgba(37, 99, 235, 0.25) !important;
+}
+
+/* --------------------------------------------------------------------------
+   10. Steppers (Doctor Multi-Stage Treatment Plans)
+   -------------------------------------------------------------------------- */
+.df-doctor-dashboard .df-stepper-step {
+  transition: transform 0.2s ease !important;
+}
+
+.df-doctor-dashboard .df-stepper-step.completed .df-stepper-icon {
+  background: #10b981 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.35) !important;
+}
+
+.df-doctor-dashboard .df-stepper-step.active .df-stepper-icon {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.4) !important;
+}
+
+/* --------------------------------------------------------------------------
+   11. Modals & Dialogs (Floating Liquid Glass)
+   -------------------------------------------------------------------------- */
+.df-doctor-dashboard .df-modal-card,
+.df-receptionist-dashboard .df-modal-card {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(24px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 24px 64px -12px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(37, 99, 235, 0.08) !important;
+}
+
+.df-doctor-dashboard .df-modal-header,
+.df-receptionist-dashboard .df-modal-header {
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
+  padding: 20px 24px !important;
+}
+
+.df-doctor-dashboard .df-modal-footer,
+.df-receptionist-dashboard .df-modal-footer {
+  border-top: 1px solid rgba(226, 232, 240, 0.8) !important;
+  padding: 16px 24px !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-modal-card,
+[data-theme="dark"] .df-receptionist-dashboard .df-modal-card {
+  background: rgba(16, 23, 38, 0.95) !important;
+  border-color: rgba(45, 63, 100, 0.8) !important;
+  box-shadow: 0 28px 72px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(59, 130, 246, 0.18) !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-modal-header,
+[data-theme="dark"] .df-receptionist-dashboard .df-modal-header,
+[data-theme="dark"] .df-doctor-dashboard .df-modal-footer,
+[data-theme="dark"] .df-receptionist-dashboard .df-modal-footer {
+  border-color: rgba(45, 63, 100, 0.7) !important;
+}
+
+/* --------------------------------------------------------------------------
+   12. Forms, Inputs & Action Buttons (Tactile Depth)
+   -------------------------------------------------------------------------- */
+.df-doctor-dashboard .df-input,
+.df-doctor-dashboard .df-select,
+.df-doctor-dashboard textarea.df-input,
+.df-receptionist-dashboard .df-input,
+.df-receptionist-dashboard .df-select,
+.df-receptionist-dashboard textarea.df-input {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(203, 213, 225, 0.85) !important;
+  border-radius: 12px !important;
+  padding: 10px 14px !important;
+  font-size: 13.5px !important;
+  color: #0f172a !important;
+  transition: all 0.2s ease !important;
+}
+
+.df-doctor-dashboard .df-input:focus,
+.df-doctor-dashboard .df-select:focus,
+.df-receptionist-dashboard .df-input:focus,
+.df-receptionist-dashboard .df-select:focus {
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.16) !important;
+  outline: none !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-input,
+[data-theme="dark"] .df-doctor-dashboard .df-select,
+[data-theme="dark"] .df-doctor-dashboard textarea.df-input,
+[data-theme="dark"] .df-receptionist-dashboard .df-input,
+[data-theme="dark"] .df-receptionist-dashboard .df-select,
+[data-theme="dark"] .df-receptionist-dashboard textarea.df-input {
+  background: rgba(22, 34, 62, 0.75) !important;
+  border-color: rgba(45, 63, 100, 0.8) !important;
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-input:focus,
+[data-theme="dark"] .df-doctor-dashboard .df-select:focus,
+[data-theme="dark"] .df-receptionist-dashboard .df-input:focus,
+[data-theme="dark"] .df-receptionist-dashboard .df-select:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25) !important;
+}
+
+/* Tactile Buttons */
+.df-doctor-dashboard .df-btn,
+.df-receptionist-dashboard .df-btn {
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  padding: 10px 18px !important;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s ease !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.df-doctor-dashboard .df-btn:hover,
+.df-receptionist-dashboard .df-btn:hover {
+  transform: translateY(-2px);
+}
+
+.df-doctor-dashboard .df-btn:active,
+.df-receptionist-dashboard .df-btn:active {
+  transform: translateY(1.5px) scale(0.985) !important;
+}
+
+.df-doctor-dashboard .df-btn-primary,
+.df-receptionist-dashboard .df-btn-primary {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.38) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.df-doctor-dashboard .df-btn-primary:hover,
+.df-receptionist-dashboard .df-btn-primary:hover {
+  box-shadow: 0 8px 20px -2px rgba(37, 99, 235, 0.48) !important;
+}
+
+.df-doctor-dashboard .df-btn-secondary,
+.df-receptionist-dashboard .df-btn-secondary {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(203, 213, 225, 0.9) !important;
+  color: #1e293b !important;
+}
+
+.df-doctor-dashboard .df-btn-secondary:hover,
+.df-receptionist-dashboard .df-btn-secondary:hover {
+  background: rgba(241, 245, 249, 0.95) !important;
+  border-color: #2563eb !important;
+  color: #2563eb !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-btn-secondary,
+[data-theme="dark"] .df-receptionist-dashboard .df-btn-secondary {
+  background: rgba(22, 34, 62, 0.8) !important;
+  border-color: rgba(45, 63, 100, 0.8) !important;
+  color: #e2e8f0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   13. Tab Pills & Filters
+   -------------------------------------------------------------------------- */
+.df-doctor-dashboard .df-tab-pills,
+.df-receptionist-dashboard .df-tab-pills {
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  border-radius: 14px !important;
+  padding: 4px !important;
+  gap: 4px !important;
+  margin-bottom: 20px !important;
+}
+
+.df-doctor-dashboard .df-tab-pill,
+.df-receptionist-dashboard .df-tab-pill {
+  border-radius: 10px !important;
+  padding: 7px 16px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #475569 !important;
+  transition: all 0.18s ease !important;
+}
+
+.df-doctor-dashboard .df-tab-pill.active,
+.df-receptionist-dashboard .df-tab-pill.active {
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.35) !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-tab-pills,
+[data-theme="dark"] .df-receptionist-dashboard .df-tab-pills {
+  background: rgba(16, 23, 38, 0.6) !important;
+  border-color: rgba(45, 63, 100, 0.7) !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-tab-pill,
+[data-theme="dark"] .df-receptionist-dashboard .df-tab-pill {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .df-doctor-dashboard .df-tab-pill.active,
+[data-theme="dark"] .df-receptionist-dashboard .df-tab-pill.active {
+  color: #ffffff !important;
+}
+
+/* --------------------------------------------------------------------------
+   14. Responsive Breakpoints & Accessibility
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .df-doctor-dashboard .df-resource-header,
+  .df-receptionist-dashboard .df-resource-header,
+  .df-doctor-dashboard .df-dashboard-welcome,
+  .df-receptionist-dashboard .df-dashboard-welcome {
+    padding: 18px 20px !important;
+  }
+
+  .df-doctor-dashboard .df-stat-card,
+  .df-receptionist-dashboard .df-stat-card {
+    padding: 16px 18px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .df-doctor-dashboard .df-role-page,
+  .df-receptionist-dashboard .df-role-page {
+    animation: none !important;
+  }
+
+  .df-doctor-dashboard .df-stat-card:hover,
+  .df-receptionist-dashboard .df-stat-card:hover,
+  .df-doctor-dashboard .df-sidebar-link:hover,
+  .df-receptionist-dashboard .df-sidebar-link:hover,
+  .df-receptionist-dashboard .df-queue-card:hover,
+  .df-doctor-dashboard .df-btn:hover,
+  .df-receptionist-dashboard .df-btn:hover {
+    transform: none !important;
+  }
+}

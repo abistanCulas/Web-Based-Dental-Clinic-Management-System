@@ -1,0 +1,955 @@
+/* ==========================================================================
+   DentaFlow Master Liquid Glass & 3D Styling — Pharmacy Hub Module
+   Theme: DentaFlow Master Healthcare Blue/White Glass System
+   Scope: Exclusively applied when .df-pharmacist-dashboard is active
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Dashboard Background & Shell (Liquid Glass Mesh Canvas)
+   -------------------------------------------------------------------------- */
+.df-pharmacist-dashboard {
+  --df-glass-panel: rgba(248, 250, 252, 0.78);
+  --df-role-accent: #2563eb !important;
+  background: 
+    radial-gradient(at 0% 0%, rgba(219, 234, 254, 0.58) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(224, 242, 254, 0.48) 0px, transparent 45%),
+    radial-gradient(at 50% 100%, rgba(238, 242, 255, 0.62) 0px, transparent 60%),
+    #f8fafc !important;
+  min-height: 100vh;
+  position: relative;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard {
+  --df-glass-panel: rgba(15, 23, 42, 0.78);
+  --df-role-accent: #3b82f6 !important;
+  background: 
+    radial-gradient(at 5% 5%, rgba(30, 58, 138, 0.3) 0px, transparent 50%),
+    radial-gradient(at 95% 10%, rgba(14, 165, 233, 0.18) 0px, transparent 45%),
+    radial-gradient(at 50% 90%, rgba(49, 46, 129, 0.22) 0px, transparent 50%),
+    #090d16 !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. Translucent Frosted Glass Sidebar & Role Badge
+   -------------------------------------------------------------------------- */
+.df-pharmacist-dashboard .df-sidebar {
+  background: rgba(255, 255, 255, 0.78) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-right: 1px solid rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 4px 0 30px -4px rgba(37, 99, 235, 0.06) !important;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease !important;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-sidebar {
+  background: rgba(11, 19, 37, 0.84) !important;
+  border-right: 1px solid rgba(45, 63, 100, 0.6) !important;
+  box-shadow: 4px 0 32px -4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Role Badge — Pharmacy Hub DentaFlow Blue */
+.df-pharmacist-dashboard .df-sidebar-role-badge {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12) 0%, rgba(59, 130, 246, 0.08) 100%) !important;
+  border: 1px solid rgba(37, 99, 235, 0.28) !important;
+  color: #1d4ed8 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 2px 10px -2px rgba(37, 99, 235, 0.2) !important;
+  letter-spacing: 0.04em !important;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-sidebar-role-badge {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.22) 0%, rgba(59, 130, 246, 0.12) 100%) !important;
+  border: 1px solid rgba(59, 130, 246, 0.45) !important;
+  color: #93c5fd !important;
+  box-shadow: 0 2px 12px -2px rgba(37, 99, 235, 0.35) !important;
+}
+
+/* Sidebar Nav Items — 3D Elevation & Blue Transitions */
+.df-pharmacist-dashboard .df-sidebar-link {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border-radius: 12px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.df-pharmacist-dashboard .df-sidebar-link:hover {
+  background: rgba(37, 99, 235, 0.08) !important;
+  transform: translateX(4px) !important;
+  color: #2563eb !important;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-sidebar-link:hover {
+  background: rgba(37, 99, 235, 0.16) !important;
+  color: #93c5fd !important;
+}
+
+.df-pharmacist-dashboard .df-sidebar-link.active {
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px -2px rgba(37, 99, 235, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+  transform: translateX(3px) !important;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-sidebar-link.active {
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%) !important;
+  box-shadow: 0 4px 18px -2px rgba(37, 99, 235, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. Liquid Glass Sticky Header
+   -------------------------------------------------------------------------- */
+.df-pharmacist-dashboard .df-dashboard-header {
+  background: rgba(255, 255, 255, 0.78) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 0 4px 20px -4px rgba(37, 99, 235, 0.05), inset 0 -1px 0 rgba(255, 255, 255, 0.5) !important;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-dashboard-header {
+  background: rgba(11, 19, 37, 0.84) !important;
+  border-bottom: 1px solid rgba(45, 63, 100, 0.6) !important;
+  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. Page Container & Smooth Entrance Animations
+   -------------------------------------------------------------------------- */
+.df-pharmacist-page,
+.df-pharmacist-dashboard .df-role-page {
+  animation: dfPharmacyFadeUp 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes dfPharmacyFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Page Header (Resource Hero Section) */
+.df-pharmacist-dashboard .df-resource-header,
+.df-pharmacist-page .df-resource-header {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(18px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+  border: 1px solid rgba(219, 234, 254, 0.85) !important;
+  border-radius: 18px !important;
+  box-shadow: 
+    0 10px 30px -10px rgba(37, 99, 235, 0.08),
+    0 2px 6px -2px rgba(0, 0, 0, 0.02),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.95) !important;
+  padding: 24px 28px !important;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 24px !important;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-resource-header,
+[data-theme="dark"] .df-pharmacist-page .df-resource-header {
+  background: rgba(15, 23, 42, 0.82) !important;
+  border: 1px solid rgba(30, 58, 138, 0.4) !important;
+  box-shadow: 
+    0 12px 32px -10px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+.df-pharmacist-dashboard .df-resource-header::before,
+.df-pharmacist-page .df-resource-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%) !important;
+}
+
+.df-pharmacist-dashboard .df-section-label,
+.df-pharmacist-page .df-section-label {
+  background: rgba(37, 99, 235, 0.08) !important;
+  border: 1px solid rgba(37, 99, 235, 0.22) !important;
+  color: #1d4ed8 !important;
+  font-weight: 700 !important;
+  padding: 4px 12px !important;
+  border-radius: 9999px !important;
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-section-label,
+[data-theme="dark"] .df-pharmacist-page .df-section-label {
+  background: rgba(37, 99, 235, 0.2) !important;
+  border-color: rgba(59, 130, 246, 0.35) !important;
+  color: #93c5fd !important;
+}
+
+.df-pharmacist-dashboard .df-resource-header h1,
+.df-pharmacist-page .df-resource-header h1 {
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  color: var(--df-text-heading, #0f172a) !important;
+  margin: 0 0 6px 0 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.df-pharmacist-dashboard .df-resource-header p,
+.df-pharmacist-page .df-resource-header p {
+  color: var(--df-text-secondary, #475569) !important;
+  margin: 0 !important;
+  font-size: 14px !important;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-resource-header h1,
+[data-theme="dark"] .df-pharmacist-page .df-resource-header h1 {
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-resource-header p,
+[data-theme="dark"] .df-pharmacist-page .df-resource-header p {
+  color: #94a3b8 !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. Stat KPI Cards — Floating 3D Depth & Translucency
+   -------------------------------------------------------------------------- */
+.df-pharmacist-dashboard .df-stat-grid,
+.df-pharmacist-page .df-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.df-pharmacist-dashboard .df-stat-card,
+.df-pharmacist-page .df-stat-card {
+  background: rgba(255, 255, 255, 0.78) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border: 1px solid rgba(219, 234, 254, 0.85) !important;
+  border-radius: 16px !important;
+  padding: 20px 22px !important;
+  box-shadow: 
+    0 8px 24px -6px rgba(37, 99, 235, 0.07),
+    0 2px 6px -2px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.95) !important;
+  transition: 
+    transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.22s ease !important;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+  animation: dfPharmacyCardStagger 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.df-pharmacist-dashboard .df-stat-card:nth-child(1) { animation-delay: 0.03s; }
+.df-pharmacist-dashboard .df-stat-card:nth-child(2) { animation-delay: 0.06s; }
+.df-pharmacist-dashboard .df-stat-card:nth-child(3) { animation-delay: 0.09s; }
+.df-pharmacist-dashboard .df-stat-card:nth-child(4) { animation-delay: 0.12s; }
+
+@keyframes dfPharmacyCardStagger {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-stat-card,
+[data-theme="dark"] .df-pharmacist-page .df-stat-card {
+  background: rgba(15, 23, 42, 0.8) !important;
+  border: 1px solid rgba(30, 58, 138, 0.35) !important;
+  box-shadow: 
+    0 10px 28px -6px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+/* 3D Hover Lift for KPI Cards */
+.df-pharmacist-dashboard .df-stat-card:hover,
+.df-pharmacist-page .df-stat-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 
+    0 16px 36px -8px rgba(37, 99, 235, 0.16),
+    0 4px 12px -2px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 0 rgba(255, 255, 255, 1) !important;
+  border-color: rgba(59, 130, 246, 0.45) !important;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-stat-card:hover,
+[data-theme="dark"] .df-pharmacist-page .df-stat-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 
+    0 18px 40px -8px rgba(0, 0, 0, 0.75),
+    0 0 20px -4px rgba(37, 99, 235, 0.35),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(59, 130, 246, 0.5) !important;
+}
+
+.df-pharmacist-dashboard .df-stat-icon,
+.df-pharmacist-page .df-stat-icon {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 20px !important;
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.06) !important;
+  flex-shrink: 0 !important;
+}
+
+.df-pharmacist-dashboard .df-stat-value,
+.df-pharmacist-page .df-stat-value {
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.025em !important;
+  color: var(--df-text-heading, #0f172a) !important;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-stat-value,
+[data-theme="dark"] .df-pharmacist-page .df-stat-value {
+  color: #f8fafc !important;
+}
+
+.df-pharmacist-dashboard .df-stat-label,
+.df-pharmacist-page .df-stat-label {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  color: var(--df-text-secondary, #64748b) !important;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-stat-label,
+[data-theme="dark"] .df-pharmacist-page .df-stat-label {
+  color: #94a3b8 !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. Glass Cards & Containers
+   -------------------------------------------------------------------------- */
+.df-pharmacist-dashboard .df-card,
+.df-pharmacist-page .df-card,
+.df-pharmacist-glass-card,
+.df-low-stock-card {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(18px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+  border: 1px solid rgba(219, 234, 254, 0.9) !important;
+  border-radius: 18px !important;
+  box-shadow: 
+    0 12px 34px -10px rgba(37, 99, 235, 0.08),
+    0 2px 8px -2px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.95) !important;
+  transition: 
+    transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.22s ease !important;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-card,
+[data-theme="dark"] .df-pharmacist-page .df-card,
+[data-theme="dark"] .df-pharmacist-glass-card,
+[data-theme="dark"] .df-low-stock-card {
+  background: rgba(15, 23, 42, 0.82) !important;
+  border: 1px solid rgba(30, 58, 138, 0.4) !important;
+  box-shadow: 
+    0 12px 36px -10px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+.df-pharmacist-dashboard .df-card-header,
+.df-pharmacist-page .df-card-header,
+.df-low-stock-card-header {
+  background: rgba(240, 247, 255, 0.7) !important;
+  border-bottom: 1px solid rgba(219, 234, 254, 0.85) !important;
+  padding: 16px 22px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-card-header,
+[data-theme="dark"] .df-pharmacist-page .df-card-header,
+[data-theme="dark"] .df-low-stock-card-header {
+  background: rgba(22, 35, 60, 0.6) !important;
+  border-bottom: 1px solid rgba(30, 58, 138, 0.45) !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. Prescription & Dispensing Cards
+   -------------------------------------------------------------------------- */
+.df-rx-glass-card {
+  background: rgba(255, 255, 255, 0.78) !important;
+  backdrop-filter: blur(14px) saturate(180%) !important;
+  border: 1px solid rgba(219, 234, 254, 0.85) !important;
+  border-radius: 16px !important;
+  padding: 20px 24px !important;
+  box-shadow: 0 4px 16px -3px rgba(37, 99, 235, 0.06) !important;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease !important;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.df-rx-glass-card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 28px -6px rgba(37, 99, 235, 0.14) !important;
+}
+
+[data-theme="dark"] .df-rx-glass-card {
+  background: rgba(15, 23, 42, 0.82) !important;
+  border: 1px solid rgba(30, 58, 138, 0.45) !important;
+  box-shadow: 0 4px 18px -3px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .df-rx-glass-card:hover {
+  box-shadow: 0 12px 30px -6px rgba(0, 0, 0, 0.7), 0 0 16px -2px rgba(37, 99, 235, 0.3) !important;
+}
+
+/* --------------------------------------------------------------------------
+   8. Tables — Glass Table Wrappers & Smooth Row Hover
+   -------------------------------------------------------------------------- */
+.df-pharmacist-dashboard .df-table-wrap,
+.df-pharmacist-page .df-table-wrap {
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(14px) saturate(180%) !important;
+  border-radius: 0 0 18px 18px !important;
+  border: none !important;
+  overflow-x: auto;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-table-wrap,
+[data-theme="dark"] .df-pharmacist-page .df-table-wrap {
+  background: rgba(15, 23, 42, 0.78) !important;
+}
+
+.df-pharmacist-dashboard .df-table,
+.df-pharmacist-page .df-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.df-pharmacist-dashboard .df-table thead th,
+.df-pharmacist-page .df-table thead th {
+  background: rgba(240, 247, 255, 0.75) !important;
+  backdrop-filter: blur(8px) !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: var(--df-text-secondary, #475569) !important;
+  padding: 14px 18px !important;
+  border-bottom: 1px solid rgba(219, 234, 254, 0.85) !important;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-table thead th,
+[data-theme="dark"] .df-pharmacist-page .df-table thead th {
+  background: rgba(20, 32, 54, 0.85) !important;
+  border-bottom: 1px solid rgba(30, 58, 138, 0.4) !important;
+  color: #94a3b8 !important;
+}
+
+.df-pharmacist-dashboard .df-table tbody tr,
+.df-pharmacist-page .df-table tbody tr {
+  transition: background-color 0.18s ease, transform 0.18s ease !important;
+}
+
+.df-pharmacist-dashboard .df-table tbody tr:hover,
+.df-pharmacist-page .df-table tbody tr:hover {
+  background-color: rgba(239, 246, 255, 0.7) !important;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-table tbody tr:hover,
+[data-theme="dark"] .df-pharmacist-page .df-table tbody tr:hover {
+  background-color: rgba(30, 58, 138, 0.18) !important;
+}
+
+.df-pharmacist-dashboard .df-table tbody td,
+.df-pharmacist-page .df-table tbody td {
+  padding: 14px 18px !important;
+  border-bottom: 1px solid rgba(241, 245, 249, 0.8) !important;
+  color: var(--df-text, #0f172a) !important;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-table tbody td,
+[data-theme="dark"] .df-pharmacist-page .df-table tbody td {
+  border-bottom: 1px solid rgba(30, 48, 70, 0.6) !important;
+  color: #f8fafc !important;
+}
+
+/* --------------------------------------------------------------------------
+   9. Buttons & Inputs — Tactile 3D Depth
+   -------------------------------------------------------------------------- */
+.df-pharmacist-dashboard .df-btn,
+.df-pharmacist-page .df-btn,
+.df-pharmacist-dashboard .df-modal .df-btn {
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  transition: 
+    transform 0.16s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.16s ease,
+    background 0.16s ease !important;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Tactile Click / Press Effect */
+.df-pharmacist-dashboard .df-btn:active,
+.df-pharmacist-page .df-btn:active,
+.df-pharmacist-dashboard .df-modal .df-btn:active {
+  transform: translateY(1.5px) scale(0.985) !important;
+}
+
+/* Primary Button — DentaFlow Blue */
+.df-pharmacist-dashboard .df-btn-primary,
+.df-pharmacist-page .df-btn-primary,
+.df-pharmacist-dashboard .df-modal .df-btn-primary,
+.df-btn-fast-restock {
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%) !important;
+  border: 1px solid rgba(37, 99, 235, 0.9) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+
+.df-pharmacist-dashboard .df-btn-primary:hover,
+.df-pharmacist-page .df-btn-primary:hover,
+.df-pharmacist-dashboard .df-modal .df-btn-primary:hover,
+.df-btn-fast-restock:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px -2px rgba(37, 99, 235, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+}
+
+/* Secondary Button — Frosted Glass */
+.df-pharmacist-dashboard .df-btn-secondary,
+.df-pharmacist-page .df-btn-secondary,
+.df-pharmacist-dashboard .df-modal .df-btn-secondary {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(203, 213, 225, 0.9) !important;
+  color: var(--df-text, #1e293b) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-btn-secondary,
+[data-theme="dark"] .df-pharmacist-page .df-btn-secondary,
+[data-theme="dark"] .df-pharmacist-dashboard .df-modal .df-btn-secondary {
+  background: rgba(24, 40, 60, 0.75) !important;
+  border: 1px solid rgba(30, 58, 75, 0.8) !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+.df-pharmacist-dashboard .df-btn-secondary:hover,
+.df-pharmacist-page .df-btn-secondary:hover,
+.df-pharmacist-dashboard .df-modal .df-btn-secondary:hover {
+  transform: translateY(-2px) !important;
+  background: rgba(241, 245, 249, 0.95) !important;
+  border-color: rgba(59, 130, 246, 0.5) !important;
+}
+
+/* Semantic Status Buttons */
+.df-pharmacist-dashboard .df-btn-success,
+.df-pharmacist-page .df-btn-success {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
+  border: 1px solid rgba(16, 185, 129, 0.9) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px -2px rgba(16, 185, 129, 0.38) !important;
+}
+
+.df-pharmacist-dashboard .df-btn-danger,
+.df-pharmacist-page .df-btn-danger {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%) !important;
+  border: 1px solid rgba(239, 68, 68, 0.9) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px -2px rgba(239, 68, 68, 0.38) !important;
+}
+
+/* Glass Form Inputs */
+.df-pharmacist-dashboard .df-input,
+.df-pharmacist-dashboard .df-select,
+.df-pharmacist-dashboard .df-textarea,
+.df-pharmacist-page .df-input,
+.df-pharmacist-page .df-select,
+.df-pharmacist-page .df-textarea,
+.df-pharmacist-dashboard .df-modal .df-input,
+.df-pharmacist-dashboard .df-modal .df-select,
+.df-pharmacist-dashboard .df-modal .df-textarea {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(203, 213, 225, 0.9) !important;
+  border-radius: 10px !important;
+  color: var(--df-text, #0f172a) !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease !important;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-input,
+[data-theme="dark"] .df-pharmacist-dashboard .df-select,
+[data-theme="dark"] .df-pharmacist-dashboard .df-textarea,
+[data-theme="dark"] .df-pharmacist-page .df-input,
+[data-theme="dark"] .df-pharmacist-page .df-select,
+[data-theme="dark"] .df-pharmacist-page .df-textarea,
+[data-theme="dark"] .df-pharmacist-dashboard .df-modal .df-input,
+[data-theme="dark"] .df-pharmacist-dashboard .df-modal .df-select,
+[data-theme="dark"] .df-pharmacist-dashboard .df-modal .df-textarea {
+  background: rgba(20, 34, 52, 0.8) !important;
+  border: 1px solid rgba(30, 58, 75, 0.8) !important;
+  color: #f8fafc !important;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+}
+
+.df-pharmacist-dashboard .df-input:focus,
+.df-pharmacist-dashboard .df-select:focus,
+.df-pharmacist-dashboard .df-textarea:focus,
+.df-pharmacist-page .df-input:focus,
+.df-pharmacist-page .df-select:focus,
+.df-pharmacist-page .df-textarea:focus,
+.df-pharmacist-dashboard .df-modal .df-input:focus,
+.df-pharmacist-dashboard .df-modal .df-select:focus,
+.df-pharmacist-dashboard .df-modal .df-textarea:focus {
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.22) !important;
+  outline: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   10. Modals — Floating Glass Dialogs
+   -------------------------------------------------------------------------- */
+.df-pharmacist-dashboard .df-modal-overlay {
+  background: rgba(15, 23, 42, 0.58) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  animation: dfPharmacyModalFade 0.2s ease-out forwards;
+}
+
+@keyframes dfPharmacyModalFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.df-pharmacist-dashboard .df-modal {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(24px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+  border: 1px solid rgba(219, 234, 254, 0.8) !important;
+  border-radius: 20px !important;
+  box-shadow: 
+    0 25px 60px -15px rgba(15, 23, 42, 0.35),
+    0 10px 24px -5px rgba(37, 99, 235, 0.12),
+    inset 0 1px 0 0 rgba(255, 255, 255, 1) !important;
+  animation: dfPharmacyModalScale 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-modal {
+  background: rgba(16, 28, 44, 0.95) !important;
+  border: 1px solid rgba(30, 58, 138, 0.45) !important;
+  box-shadow: 
+    0 28px 65px -15px rgba(0, 0, 0, 0.8),
+    0 0 30px -4px rgba(37, 99, 235, 0.2),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+@keyframes dfPharmacyModalScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.97) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.df-pharmacist-dashboard .df-modal-header {
+  border-bottom: 1px solid rgba(226, 232, 240, 0.75);
+  padding: 18px 24px;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-modal-header {
+  border-bottom: 1px solid rgba(30, 58, 75, 0.6);
+}
+
+.df-pharmacist-dashboard .df-modal-footer {
+  border-top: 1px solid rgba(226, 232, 240, 0.75);
+  padding: 16px 24px;
+  background: rgba(248, 250, 252, 0.6);
+  border-radius: 0 0 20px 20px;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-modal-footer {
+  border-top: 1px solid rgba(30, 58, 75, 0.6);
+  background: rgba(20, 34, 52, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   11. Pharmacy Stamped Dispensing Receipt
+   -------------------------------------------------------------------------- */
+.df-pharm-receipt-glass {
+  background: var(--df-glass-card, rgba(255, 255, 255, 0.95)) !important;
+  backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(219, 234, 254, 0.8) !important;
+  border-radius: 14px !important;
+  padding: 24px !important;
+  box-shadow: 0 10px 30px -5px rgba(37, 99, 235, 0.08) !important;
+  color: var(--df-text) !important;
+}
+
+[data-theme="dark"] .df-pharm-receipt-glass {
+  background: rgba(16, 28, 44, 0.95) !important;
+  border: 1px solid rgba(30, 58, 75, 0.8) !important;
+  color: #f8fafc !important;
+}
+
+/* --------------------------------------------------------------------------
+   12. Tab Pills & Search Bar
+   -------------------------------------------------------------------------- */
+.df-pharmacist-dashboard .df-tab-pills {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(219, 234, 254, 0.8);
+  border-radius: 12px;
+  padding: 4px;
+  gap: 4px;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-tab-pills {
+  background: rgba(15, 23, 42, 0.7);
+  border-color: rgba(30, 58, 138, 0.4);
+}
+
+.df-pharmacist-dashboard .df-tab-pill {
+  border-radius: 8px !important;
+  transition: all 0.18s ease !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+}
+
+.df-pharmacist-dashboard .df-tab-pill.active {
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 10px -2px rgba(37, 99, 235, 0.4) !important;
+}
+
+/* --------------------------------------------------------------------------
+   13. Polished Glass Empty State
+   -------------------------------------------------------------------------- */
+.df-pharmacist-dashboard .df-empty,
+.df-low-stock-empty {
+  background: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(14px) saturate(180%) !important;
+  border-radius: 16px !important;
+  padding: 48px 24px !important;
+  margin: 16px !important;
+  border: 1px dashed rgba(191, 219, 254, 0.85) !important;
+  text-align: center !important;
+  animation: dfPharmacyEmptyFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes dfPharmacyEmptyFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-empty,
+[data-theme="dark"] .df-low-stock-empty {
+  background: rgba(16, 26, 46, 0.6) !important;
+  border: 1px dashed rgba(30, 58, 138, 0.5) !important;
+}
+
+.df-pharmacist-dashboard .df-empty .df-empty-icon,
+.df-low-stock-empty .df-empty-icon {
+  width: 54px !important;
+  height: 54px !important;
+  background: rgba(37, 99, 235, 0.08) !important;
+  border: 1px solid rgba(37, 99, 235, 0.22) !important;
+  color: #2563eb !important;
+  border-radius: 14px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 14px !important;
+  box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.15) !important;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-empty .df-empty-icon,
+[data-theme="dark"] .df-low-stock-empty .df-empty-icon {
+  background: rgba(37, 99, 235, 0.18) !important;
+  border-color: rgba(59, 130, 246, 0.35) !important;
+  color: #60a5fa !important;
+}
+
+.df-pharmacist-dashboard .df-empty h3,
+.df-low-stock-empty h3 {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: var(--df-text-heading, #0f172a) !important;
+  margin: 0 0 6px 0 !important;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-empty h3,
+[data-theme="dark"] .df-low-stock-empty h3 {
+  color: #f1f5f9 !important;
+}
+
+.df-pharmacist-dashboard .df-empty p,
+.df-low-stock-empty p {
+  font-size: 13.5px !important;
+  color: var(--df-text-secondary, #64748b) !important;
+  margin: 0 !important;
+  max-width: 440px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-empty p,
+[data-theme="dark"] .df-low-stock-empty p {
+  color: #94a3b8 !important;
+}
+
+/* --------------------------------------------------------------------------
+   14. Status Badges & Pills
+   -------------------------------------------------------------------------- */
+.df-pharmacist-dashboard .df-badge-primary {
+  background: rgba(37, 99, 235, 0.1) !important;
+  border: 1px solid rgba(37, 99, 235, 0.25) !important;
+  color: #1d4ed8 !important;
+}
+
+[data-theme="dark"] .df-pharmacist-dashboard .df-badge-primary {
+  background: rgba(37, 99, 235, 0.22) !important;
+  border-color: rgba(59, 130, 246, 0.35) !important;
+  color: #93c5fd !important;
+}
+
+.df-pharmacist-dashboard .df-badge-success {
+  background: rgba(16, 185, 129, 0.1) !important;
+  border: 1px solid rgba(16, 185, 129, 0.25) !important;
+  color: #059669 !important;
+}
+
+.df-pharmacist-dashboard .df-badge-warning {
+  background: rgba(245, 158, 11, 0.1) !important;
+  border: 1px solid rgba(245, 158, 11, 0.25) !important;
+  color: #d97706 !important;
+}
+
+.df-pharmacist-dashboard .df-badge-danger {
+  background: rgba(239, 68, 68, 0.1) !important;
+  border: 1px solid rgba(239, 68, 68, 0.25) !important;
+  color: #dc2626 !important;
+}
+
+/* Header Beacon Indicator */
+.df-header-indicator {
+  width: 9px;
+  height: 9px;
+  border-radius: 9999px;
+  background: #2563eb;
+  box-shadow: 0 0 10px 2px rgba(37, 99, 235, 0.5);
+  display: inline-block;
+  animation: dfIndicatorPulse 2s infinite ease-in-out;
+}
+
+@keyframes dfIndicatorPulse {
+  0%, 100% { opacity: 0.6; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+.df-low-stock-count-badge {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #1d4ed8 !important;
+  background: rgba(37, 99, 235, 0.1) !important;
+  border: 1px solid rgba(37, 99, 235, 0.22) !important;
+  padding: 3px 10px !important;
+  border-radius: 9999px !important;
+}
+
+[data-theme="dark"] .df-low-stock-count-badge {
+  color: #93c5fd !important;
+  background: rgba(37, 99, 235, 0.22) !important;
+  border-color: rgba(59, 130, 246, 0.35) !important;
+}
+
+/* --------------------------------------------------------------------------
+   15. Responsive Adjustments for Mobile & Tablet
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .df-pharmacist-dashboard .df-stat-grid,
+  .df-pharmacist-page .df-stat-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .df-pharmacist-dashboard .df-resource-header,
+  .df-pharmacist-page .df-resource-header {
+    padding: 18px 20px !important;
+  }
+
+  .df-pharmacist-dashboard .df-resource-header h1,
+  .df-pharmacist-page .df-resource-header h1 {
+    font-size: 1.45rem !important;
+  }
+
+  .df-low-stock-card-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .df-pharmacist-dashboard .df-stat-grid,
+  .df-pharmacist-page .df-stat-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   16. Accessibility — Reduced Motion Support
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .df-pharmacist-dashboard,
+  .df-pharmacist-page,
+  .df-pharmacist-dashboard .df-stat-card,
+  .df-pharmacist-page .df-stat-card,
+  .df-pharmacist-dashboard .df-card,
+  .df-pharmacist-page .df-card,
+  .df-pharmacist-glass-card,
+  .df-pharmacist-dashboard .df-sidebar-link,
+  .df-pharmacist-dashboard .df-modal,
+  .df-pharmacist-dashboard .df-btn,
+  .df-pharmacist-page .df-btn,
+  .df-rx-glass-card,
+  .df-low-stock-glass-page,
+  .df-low-stock-hero,
+  .df-low-stock-empty,
+  .df-header-indicator {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transform: none !important;
+  }
+}

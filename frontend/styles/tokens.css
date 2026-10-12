@@ -1,0 +1,214 @@
+:root,
+[data-theme="light"] {
+  /* Brand Healthcare Blues (Specification: Primary #3B82F6, Secondary #60A5FA) */
+  --df-primary-50: #eff6ff;
+  --df-primary-100: #dbeafe;
+  --df-primary-200: #bfdbfe;
+  --df-primary-300: #93c5fd;
+  --df-primary-400: #60a5fa;
+  --df-primary-500: #3b82f6;
+  --df-primary-600: #2563eb;
+  --df-primary-700: #1d4ed8;
+  --df-primary-800: #1e40af;
+  --df-primary-900: #172554;
+
+  /* Fresh Dental Teal/Cyan Accents (Specification: Accent #22D3EE) */
+  --df-accent: #22d3ee;
+  --df-teal-50: #f0fdfa;
+  --df-teal-100: #ccfbf1;
+  --df-teal-500: #0ea5e9;
+  --df-teal-600: #0284c7;
+
+  /* Liquid Glass Surface Tokens (Specification: Card #FFFFFFCC, Background #F0F7FF) */
+  --df-glass-bg: rgba(255, 255, 255, 0.78);
+  --df-glass-card: rgba(255, 255, 255, 0.80);
+  --df-glass-card-hover: rgba(255, 255, 255, 0.92);
+  --df-glass-modal: rgba(255, 255, 255, 0.95);
+  --df-glass-border: rgba(226, 232, 240, 0.82);
+  --df-glass-border-light: rgba(255, 255, 255, 0.92);
+  --df-glass-blur: blur(20px) saturate(180%);
+  --df-glass-blur-sm: blur(12px) saturate(150%);
+
+  /* Modern Frosted Liquid-Glass Sidebar Tokens */
+  --df-sidebar-bg: rgba(255, 255, 255, 0.82);
+  --df-sidebar-bg-hover: rgba(59, 130, 246, 0.06);
+  --df-sidebar-bg-card: rgba(255, 255, 255, 0.75);
+  --df-sidebar-border: rgba(226, 232, 240, 0.8);
+  --df-sidebar-text: #475569;
+  --df-sidebar-text-hover: #0f172a;
+  --df-sidebar-text-heading: #0f172a;
+  --df-sidebar-text-muted: #94a3b8;
+  --df-sidebar-link-active: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+  --df-sidebar-link-active-text: #ffffff;
+  --df-sidebar-badge-bg: rgba(59, 130, 246, 0.12);
+  --df-sidebar-badge-text: #3b82f6;
+
+  /* Neutral Slate Palette (Specification: Text Primary #0F172A, Text Secondary #64748B) */
+  --df-gray-50: #f8fafc;
+  --df-gray-100: #f1f5f9;
+  --df-gray-200: #e2e8f0;
+  --df-gray-300: #cbd5e1;
+  --df-gray-400: #94a3b8;
+  --df-gray-500: #64748b;
+  --df-gray-600: #475569;
+  --df-gray-700: #334155;
+  --df-gray-800: #1e293b;
+  --df-gray-900: #0f172a;
+
+  /* Semantic Feedback Colors (Specification: Success #22C55E, Warning #F59E0B, Danger #EF4444, Info #38B2F6, Purple #8B5CF6) */
+  --df-success: #22c55e;
+  --df-success-bg: rgba(34, 197, 94, 0.1);
+  --df-warning: #f59e0b;
+  --df-warning-bg: rgba(245, 158, 11, 0.1);
+  --df-error: #ef4444;
+  --df-error-bg: rgba(239, 68, 68, 0.1);
+  --df-danger: #ef4444;
+  --df-info: #38b2f6;
+  --df-info-bg: rgba(56, 178, 246, 0.1);
+  --df-purple: #8b5cf6;
+  --df-purple-bg: rgba(139, 92, 246, 0.1);
+
+  /* Canvas & Elevated Cards (Specification: Background #F0F7FF, Card #FFFFFFCC) */
+  --df-bg: #f0f7ff;
+  --df-bg-elevated: rgba(255, 255, 255, 0.80);
+  --df-bg-subtle: rgba(240, 247, 255, 0.8);
+  --df-text: #0f172a;
+  --df-text-heading: #0f172a;
+  --df-text-secondary: #64748b;
+  --df-bg-gradient: radial-gradient(at 10% 20%, rgba(191, 219, 254, 0.45) 0px, transparent 50%), radial-gradient(at 90% 10%, rgba(224, 242, 254, 0.5) 0px, transparent 40%), #f8fafc;
+  --df-hero-gradient: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #0284c7 100%);
+  --df-primary-gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  --df-primary-gradient-hover: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  --df-primary-glow: 0 8px 20px -4px rgba(37, 99, 235, 0.42);
+
+  /* Typography Colors */
+  --df-text: #334155;
+  --df-text-secondary: #64748b;
+  --df-text-muted: #94a3b8;
+  --df-text-heading: #0f172a;
+  --df-text-inverse: #ffffff;
+
+  /* Borders */
+  --df-border: rgba(226, 232, 240, 0.85);
+  --df-border-strong: #cbd5e1;
+
+  /* Liquid Glass Shadows */
+  --df-shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
+  --df-shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.06), 0 1px 2px -1px rgba(15, 23, 42, 0.04);
+  --df-shadow: 0 2px 4px -1px rgba(15, 23, 42, 0.06), 0 1px 2px -2px rgba(15, 23, 42, 0.04);
+  --df-shadow-md: 0 4px 8px -2px rgba(15, 23, 42, 0.06), 0 2px 4px -3px rgba(15, 23, 42, 0.04);
+  --df-shadow-lg: 0 8px 16px -4px rgba(15, 23, 42, 0.08), 0 4px 8px -5px rgba(15, 23, 42, 0.04);
+  --df-shadow-xl: 0 16px 32px -6px rgba(15, 23, 42, 0.1), 0 8px 16px -8px rgba(15, 23, 42, 0.06);
+  --df-shadow-2xl: 0 24px 48px -8px rgba(15, 23, 42, 0.12), 0 12px 24px -12px rgba(15, 23, 42, 0.08);
+  --df-shadow-card: 0 10px 30px -10px rgba(37, 99, 235, 0.07), 0 2px 8px -2px rgba(15, 23, 42, 0.04), 0 0 0 1px rgba(226, 232, 240, 0.75);
+  --df-shadow-hover: 0 18px 38px -12px rgba(37, 99, 235, 0.14), 0 4px 12px -2px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(37, 99, 235, 0.25);
+  --df-shadow-modal: 0 24px 64px -16px rgba(15, 23, 42, 0.2), 0 8px 24px -8px rgba(37, 99, 235, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.85);
+  --df-shadow-glow: 0 0 40px -12px rgba(37, 99, 235, 0.35);
+  --df-shadow-inner: inset 0 2px 4px 0 rgba(15, 23, 42, 0.04);
+
+  /* Border Radii — consistent 2-step scale */
+  --df-radius-xs: 4px;
+  --df-radius-sm: 8px;
+  --df-radius: 12px;
+  --df-radius-md: 16px;
+  --df-radius-lg: 20px;
+  --df-radius-xl: 24px;
+  --df-radius-2xl: 32px;
+  --df-radius-full: 9999px;
+
+  /* Spacing Scale */
+  --df-space-xs: 4px;
+  --df-space-sm: 8px;
+  --df-space-md: 16px;
+  --df-space-lg: 24px;
+  --df-space-xl: 32px;
+  --df-space-2xl: 48px;
+  --df-space-3xl: 64px;
+  --df-space-4xl: 80px;
+  --df-space-5xl: 100px;
+
+  /* Font Stacks */
+  --df-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --df-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --df-font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --df-font-script: 'Caveat', 'Dancing Script', 'Brush Script MT', cursive;
+  --df-container-max: 1240px;
+  --df-sidebar-width: 268px;
+  --df-navbar-height: 70px;
+
+  --df-transition: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] {
+  /* Dark Canvas & Elevated Cards */
+  --df-bg: #090d16;
+  --df-bg-elevated: rgba(16, 23, 38, 0.85);
+  --df-bg-subtle: rgba(22, 32, 53, 0.7);
+  --df-bg-gradient: radial-gradient(at 10% 20%, rgba(30, 58, 138, 0.35) 0px, transparent 50%), radial-gradient(at 90% 10%, rgba(14, 165, 233, 0.25) 0px, transparent 40%), #090d16;
+  --df-hero-gradient: linear-gradient(135deg, #0d224d 0%, #1e40af 50%, #2563eb 100%);
+  --df-primary-gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  --df-primary-gradient-hover: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  --df-primary-glow: 0 8px 24px -4px rgba(37, 99, 235, 0.55);
+
+  /* Glass Tokens in Dark Mode */
+  --df-glass-bg: rgba(16, 23, 38, 0.82);
+  --df-glass-card: rgba(16, 23, 38, 0.86);
+  --df-glass-card-hover: rgba(22, 32, 53, 0.94);
+  --df-glass-modal: rgba(16, 23, 38, 0.96);
+  --df-glass-border: rgba(45, 63, 100, 0.75);
+  --df-glass-border-light: rgba(255, 255, 255, 0.1);
+
+  /* Sidebar in Dark Mode */
+  --df-sidebar-bg: rgba(11, 19, 37, 0.88);
+  --df-sidebar-bg-card: rgba(22, 34, 62, 0.7);
+  --df-sidebar-border: rgba(45, 63, 100, 0.7);
+  --df-sidebar-text: #94a3b8;
+  --df-sidebar-text-hover: #f8fafc;
+  --df-sidebar-text-heading: #ffffff;
+  --df-sidebar-text-muted: #64748b;
+  --df-sidebar-link-active: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  --df-sidebar-link-active-text: #ffffff;
+  --df-sidebar-badge-bg: rgba(37, 99, 235, 0.25);
+  --df-sidebar-badge-text: #93c5fd;
+
+  /* Typography in Dark Mode */
+  --df-text: #e2e8f0;
+  --df-text-secondary: #94a3b8;
+  --df-text-muted: #64748b;
+  --df-text-heading: #ffffff;
+  --df-text-inverse: #090d16;
+
+  /* Borders in Dark Mode */
+  --df-border: rgba(45, 63, 100, 0.75);
+  --df-border-strong: #2c3e63;
+
+  /* Shadows in Dark Mode */
+  --df-shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.35);
+  --df-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
+  --df-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.5), 0 1px 2px -2px rgba(0, 0, 0, 0.4);
+  --df-shadow-md: 0 4px 8px -2px rgba(0, 0, 0, 0.5), 0 2px 4px -3px rgba(0, 0, 0, 0.45);
+  --df-shadow-lg: 0 8px 16px -4px rgba(0, 0, 0, 0.65), 0 4px 8px -5px rgba(0, 0, 0, 0.55);
+  --df-shadow-xl: 0 16px 32px -6px rgba(0, 0, 0, 0.7), 0 8px 16px -8px rgba(0, 0, 0, 0.6);
+  --df-shadow-2xl: 0 24px 48px -8px rgba(0, 0, 0, 0.75), 0 12px 24px -12px rgba(0, 0, 0, 0.65);
+  --df-shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.6), 0 2px 8px -2px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(45, 63, 100, 0.8);
+  --df-shadow-hover: 0 18px 40px -10px rgba(0, 0, 0, 0.75), 0 4px 12px -2px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(59, 130, 246, 0.4);
+  --df-shadow-modal: 0 24px 64px -16px rgba(0, 0, 0, 0.85), 0 8px 24px -8px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --df-shadow-glow: 0 0 40px -12px rgba(59, 130, 246, 0.4);
+  --df-shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+
+  /* Primary Tints for Dark Mode */
+  --df-primary-50: #0e2246;
+  --df-primary-100: #153268;
+
+  /* Grays in Dark Mode */
+  --df-gray-50: #0f1624;
+  --df-gray-100: #141e33;
+  --df-gray-200: #1a2640;
+  --df-gray-300: #26385a;
+  --df-gray-400: #475569;
+  --df-gray-500: #64748b;
+  --df-gray-600: #94a3b8;
+  --df-gray-700: #cbd5e1;
+  --df-gray-800: #e2e8f0;
+  --df-gray-900: #f8fafc;
+}

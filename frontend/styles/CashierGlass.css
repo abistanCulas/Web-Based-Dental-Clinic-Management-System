@@ -1,0 +1,1047 @@
+/* ==========================================================================
+   DentaFlow Premium Liquid Glass & 3D Styling — Cashier Dashboard Only
+   Scope: Exclusively applied when .df-cashier-dashboard is active
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Dashboard Background & Shell (Liquid Glass Mesh Canvas)
+   -------------------------------------------------------------------------- */
+.df-cashier-dashboard {
+  --df-glass-panel: rgba(248, 250, 252, 0.75);
+  --df-role-accent: #2563eb !important;
+  background: 
+    radial-gradient(at 0% 0%, rgba(219, 234, 254, 0.55) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(224, 242, 254, 0.45) 0px, transparent 45%),
+    radial-gradient(at 50% 100%, rgba(238, 242, 255, 0.6) 0px, transparent 60%),
+    #f8fafc;
+  min-height: 100vh;
+  position: relative;
+}
+
+[data-theme="dark"] .df-cashier-dashboard {
+  --df-glass-panel: rgba(22, 32, 53, 0.75);
+  --df-role-accent: #3b82f6 !important;
+  background: 
+    radial-gradient(at 5% 5%, rgba(30, 58, 138, 0.28) 0px, transparent 50%),
+    radial-gradient(at 95% 10%, rgba(14, 165, 233, 0.18) 0px, transparent 45%),
+    radial-gradient(at 50% 90%, rgba(49, 46, 129, 0.22) 0px, transparent 50%),
+    #090d16;
+}
+
+/* --------------------------------------------------------------------------
+   2. Translucent Frosted Glass Sidebar
+   -------------------------------------------------------------------------- */
+.df-cashier-dashboard .df-sidebar {
+  background: rgba(255, 255, 255, 0.76) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-right: 1px solid rgba(226, 232, 240, 0.75) !important;
+  box-shadow: 4px 0 30px -4px rgba(37, 99, 235, 0.06) !important;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease !important;
+}
+
+[data-theme="dark"] .df-cashier-dashboard .df-sidebar {
+  background: rgba(11, 19, 37, 0.82) !important;
+  border-right: 1px solid rgba(45, 63, 100, 0.6) !important;
+  box-shadow: 4px 0 32px -4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Role Badge — Cashier Unified DentaFlow Royal Blue Glass */
+.df-cashier-dashboard .df-sidebar-role-badge {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12) 0%, rgba(59, 130, 246, 0.08) 100%) !important;
+  border: 1px solid rgba(37, 99, 235, 0.28) !important;
+  color: #1d4ed8 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 2px 10px -2px rgba(37, 99, 235, 0.2) !important;
+  letter-spacing: 0.04em !important;
+}
+
+[data-theme="dark"] .df-cashier-dashboard .df-sidebar-role-badge {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.22) 0%, rgba(59, 130, 246, 0.14) 100%) !important;
+  border: 1px solid rgba(37, 99, 235, 0.45) !important;
+  color: #93c5fd !important;
+  box-shadow: 0 2px 12px -2px rgba(37, 99, 235, 0.35) !important;
+}
+
+/* Sidebar Nav Items — 3D Elevation & Smooth Transitions */
+.df-cashier-dashboard .df-sidebar-link {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border-radius: 12px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.df-cashier-dashboard .df-sidebar-link:hover {
+  background: rgba(59, 130, 246, 0.08) !important;
+  transform: translateX(4px);
+  color: var(--df-primary-600) !important;
+}
+
+[data-theme="dark"] .df-cashier-dashboard .df-sidebar-link:hover {
+  background: rgba(59, 130, 246, 0.14) !important;
+  color: #93c5fd !important;
+}
+
+.df-cashier-dashboard .df-sidebar-link.active {
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px -2px rgba(37, 99, 235, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
+   3. Liquid Glass Sticky Header
+   -------------------------------------------------------------------------- */
+.df-cashier-dashboard .df-dashboard-header {
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.75) !important;
+  box-shadow: 0 4px 20px -4px rgba(37, 99, 235, 0.05), inset 0 -1px 0 rgba(255, 255, 255, 0.5) !important;
+}
+
+[data-theme="dark"] .df-cashier-dashboard .df-dashboard-header {
+  background: rgba(11, 19, 37, 0.82) !important;
+  border-bottom: 1px solid rgba(45, 63, 100, 0.6) !important;
+  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. Page Container & Smooth Entrance Animations
+   -------------------------------------------------------------------------- */
+.df-cashier-page {
+  animation: dfCashierFadeUp 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes dfCashierFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Page Header (Resource Header) */
+.df-cashier-page .df-resource-header {
+  background: rgba(255, 255, 255, 0.78) !important;
+  backdrop-filter: blur(18px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  border-radius: 18px !important;
+  box-shadow: 
+    0 10px 30px -10px rgba(37, 99, 235, 0.08),
+    0 2px 6px -2px rgba(0, 0, 0, 0.02),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.85) !important;
+  padding: 24px 28px !important;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 24px !important;
+}
+
+[data-theme="dark"] .df-cashier-page .df-resource-header {
+  background: rgba(16, 23, 38, 0.82) !important;
+  border: 1px solid rgba(45, 63, 100, 0.7) !important;
+  box-shadow: 
+    0 12px 32px -10px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+.df-cashier-page .df-resource-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6 0%, #22d3ee 50%, #8b5cf6 100%);
+}
+
+.df-cashier-page .df-section-label {
+  background: rgba(37, 99, 235, 0.08) !important;
+  border: 1px solid rgba(37, 99, 235, 0.2) !important;
+  color: var(--df-primary-600) !important;
+  font-weight: 700 !important;
+  padding: 4px 12px !important;
+  border-radius: 9999px !important;
+}
+
+[data-theme="dark"] .df-cashier-page .df-section-label {
+  background: rgba(37, 99, 235, 0.18) !important;
+  border-color: rgba(59, 130, 246, 0.35) !important;
+  color: #93c5fd !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. Stat KPI Cards — Floating 3D Depth & Translucency
+   -------------------------------------------------------------------------- */
+.df-cashier-page .df-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.df-cashier-page .df-stat-card {
+  background: rgba(255, 255, 255, 0.76) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border: 1px solid rgba(226, 232, 240, 0.82) !important;
+  border-radius: 16px !important;
+  padding: 20px 22px !important;
+  box-shadow: 
+    0 8px 24px -6px rgba(37, 99, 235, 0.07),
+    0 2px 6px -2px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.9) !important;
+  transition: 
+    transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.22s ease !important;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .df-cashier-page .df-stat-card {
+  background: rgba(16, 23, 38, 0.8) !important;
+  border: 1px solid rgba(45, 63, 100, 0.65) !important;
+  box-shadow: 
+    0 10px 28px -6px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+/* 3D Hover Lift for KPI Cards */
+.df-cashier-page .df-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 16px 36px -8px rgba(37, 99, 235, 0.14),
+    0 4px 12px -2px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 0 rgba(255, 255, 255, 1) !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+}
+
+[data-theme="dark"] .df-cashier-page .df-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 18px 40px -8px rgba(0, 0, 0, 0.75),
+    0 0 20px -4px rgba(37, 99, 235, 0.3),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(59, 130, 246, 0.5) !important;
+}
+
+.df-cashier-page .df-stat-value {
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--df-text-heading) !important;
+}
+
+.df-cashier-page .df-stat-label {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  color: var(--df-text-secondary) !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. Glass Cards & Containers
+   -------------------------------------------------------------------------- */
+.df-cashier-page .df-card,
+.df-cashier-glass-card {
+  background: rgba(255, 255, 255, 0.78) !important;
+  backdrop-filter: blur(18px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  border-radius: 18px !important;
+  box-shadow: 
+    0 10px 30px -10px rgba(37, 99, 235, 0.06),
+    0 2px 8px -2px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.9) !important;
+  transition: 
+    transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.22s ease !important;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .df-cashier-page .df-card,
+[data-theme="dark"] .df-cashier-glass-card {
+  background: rgba(16, 23, 38, 0.82) !important;
+  border: 1px solid rgba(45, 63, 100, 0.7) !important;
+  box-shadow: 
+    0 12px 34px -10px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+.df-cashier-page .df-card-header {
+  background: rgba(248, 250, 252, 0.65);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.75);
+  padding: 18px 22px;
+}
+
+[data-theme="dark"] .df-cashier-page .df-card-header {
+  background: rgba(22, 32, 53, 0.55);
+  border-bottom: 1px solid rgba(45, 63, 100, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   7. Clinical Checkout Glass Desk (Payments View)
+   -------------------------------------------------------------------------- */
+.df-cashier-checkout-hero {
+  border: 2px solid rgba(59, 130, 246, 0.32) !important;
+  box-shadow: 
+    0 14px 40px -10px rgba(37, 99, 235, 0.12),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.95) !important;
+}
+
+[data-theme="dark"] .df-cashier-checkout-hero {
+  border: 2px solid rgba(59, 130, 246, 0.45) !important;
+  box-shadow: 
+    0 16px 44px -10px rgba(0, 0, 0, 0.7),
+    0 0 24px -4px rgba(37, 99, 235, 0.25),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Patient Banner with Soft Gradient */
+.df-cashier-patient-banner {
+  background: linear-gradient(135deg, rgba(239, 246, 255, 0.85) 0%, rgba(224, 242, 254, 0.7) 100%) !important;
+  border: 1px solid rgba(191, 219, 254, 0.8) !important;
+  border-radius: 14px !important;
+  padding: 16px 20px !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 4px 14px -3px rgba(37, 99, 235, 0.08) !important;
+}
+
+[data-theme="dark"] .df-cashier-patient-banner {
+  background: linear-gradient(135deg, rgba(14, 34, 70, 0.85) 0%, rgba(12, 45, 78, 0.7) 100%) !important;
+  border: 1px solid rgba(37, 99, 235, 0.35) !important;
+  box-shadow: 0 4px 16px -3px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 3 Clinical Breakdown Cards (Treatment, Rx, Pharmacy) */
+.df-cashier-breakdown-card {
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(226, 232, 240, 0.85) !important;
+  border-radius: 14px !important;
+  padding: 18px !important;
+  box-shadow: 0 4px 14px -3px rgba(0, 0, 0, 0.04) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.df-cashier-breakdown-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(37, 99, 235, 0.1) !important;
+}
+
+[data-theme="dark"] .df-cashier-breakdown-card {
+  background: rgba(22, 32, 53, 0.75) !important;
+  border: 1px solid rgba(45, 63, 100, 0.7) !important;
+  box-shadow: 0 4px 16px -3px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Authoritative Billing Summary Container */
+.df-cashier-billing-summary {
+  background: rgba(248, 250, 252, 0.8) !important;
+  backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(203, 213, 225, 0.75) !important;
+  border-radius: 16px !important;
+  padding: 22px !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 6px 18px -4px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="dark"] .df-cashier-billing-summary {
+  background: rgba(15, 23, 42, 0.85) !important;
+  border: 1px solid rgba(45, 63, 100, 0.8) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 8px 24px -4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* --------------------------------------------------------------------------
+   8. Tables — Common Clean Compact Glass Tables (Invoices & History)
+   -------------------------------------------------------------------------- */
+.df-cashier-page .df-table-wrap {
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(14px) !important;
+  border-radius: 0 0 18px 18px !important;
+  border: none !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+[data-theme="dark"] .df-cashier-page .df-table-wrap {
+  background: rgba(16, 23, 38, 0.78) !important;
+}
+
+.df-cashier-page .df-table {
+  width: 100%;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  table-layout: fixed !important;
+}
+
+.df-cashier-page .df-invoices-table {
+  min-width: 1410px !important;
+}
+
+.df-cashier-page .df-history-table {
+  min-width: 1260px !important;
+}
+
+.df-cashier-page .df-table thead th {
+  background: rgba(241, 245, 249, 0.75) !important;
+  backdrop-filter: blur(8px) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  color: var(--df-text-secondary) !important;
+  padding: 9px 12px !important;
+  vertical-align: middle !important;
+  white-space: nowrap !important;
+  box-sizing: border-box !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85) !important;
+}
+
+[data-theme="dark"] .df-cashier-page .df-table thead th {
+  background: rgba(22, 32, 53, 0.8) !important;
+  border-bottom: 1px solid rgba(45, 63, 100, 0.8) !important;
+  color: #94a3b8 !important;
+}
+
+.df-cashier-page .df-table thead th .df-table-sort {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.df-cashier-page .df-table tbody tr {
+  transition: background 0.15s ease !important;
+  height: auto !important;
+}
+
+.df-cashier-page .df-table tbody tr:hover {
+  background: rgba(59, 130, 246, 0.05) !important;
+}
+
+[data-theme="dark"] .df-cashier-page .df-table tbody tr:hover {
+  background: rgba(59, 130, 246, 0.12) !important;
+}
+
+/* SHARED COMPACT TABLE CELL STYLING */
+.df-cashier-page .df-table tbody td {
+  padding: 7px 12px !important;
+  vertical-align: middle !important;
+  line-height: 1.35 !important;
+  font-size: 13px !important;
+  box-sizing: border-box !important;
+  border-bottom: 1px solid rgba(241, 245, 249, 0.85) !important;
+  color: var(--df-text) !important;
+}
+
+[data-theme="dark"] .df-cashier-page .df-table tbody td {
+  border-bottom: 1px solid rgba(30, 41, 59, 0.65) !important;
+}
+
+/* COMMON ACTION CONTAINER AND BUTTON RESETS (ROOT CAUSE FIX) */
+.df-cashier-page .df-table-actions,
+.df-cashier-page .df-table .df-table-actions {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 5px !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  line-height: 1 !important;
+}
+
+.df-cashier-page .df-table-actions > div,
+.df-invoice-actions-group,
+.df-history-actions-group {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 5px !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+}
+
+/* ALL BUTTONS INSIDE CASHIER TABLES: COMPACT HEIGHT AND ZERO MIN-HEIGHT OVERRIDE */
+.df-cashier-page .df-table tbody .df-btn,
+.df-cashier-page .df-table-actions .df-btn,
+.df-invoice-actions-group .df-btn,
+.df-history-actions-group .df-btn,
+.df-invoice-action-btn,
+.df-history-action-btn {
+  min-height: 0 !important;
+  min-width: 0 !important;
+  height: 28px !important;
+  padding: 0 9px !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  gap: 4px !important;
+  border-radius: 7px !important;
+  box-sizing: border-box !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* --------------------------------------------------------------------------
+   8a. Patient Invoices Specific Column Typography
+   -------------------------------------------------------------------------- */
+.df-cashier-page .df-invoices-table .df-col-invoice-id {
+  white-space: nowrap !important;
+}
+
+.df-invoice-id-badge {
+  font-family: var(--df-font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--df-primary-600);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+[data-theme="dark"] .df-invoice-id-badge {
+  color: #60a5fa;
+}
+
+.df-cashier-page .df-invoices-table .df-col-patient {
+  white-space: nowrap !important;
+}
+
+.df-invoice-patient-cell {
+  font-weight: 600;
+  color: var(--df-text-heading);
+  line-height: 1.35;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+}
+
+.df-cashier-page .df-invoices-table .df-col-service {
+  white-space: nowrap !important;
+}
+
+.df-invoice-service-cell {
+  line-height: 1.35;
+  font-weight: 500;
+  color: var(--df-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 240px;
+  font-size: 13px;
+}
+
+.df-cashier-page .df-invoices-table .df-col-date {
+  white-space: nowrap !important;
+}
+
+.df-invoice-date {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  color: var(--df-text-secondary);
+  font-size: 13px;
+}
+
+.df-cashier-page .df-invoices-table th.df-col-total,
+.df-cashier-page .df-invoices-table td.df-col-total,
+.df-cashier-page .df-invoices-table th.df-col-paid,
+.df-cashier-page .df-invoices-table td.df-col-paid,
+.df-cashier-page .df-invoices-table th.df-col-balance,
+.df-cashier-page .df-invoices-table td.df-col-balance {
+  text-align: right !important;
+  white-space: nowrap !important;
+}
+
+.df-cashier-page .df-invoices-table .df-money-cell {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+  display: inline-block;
+  text-align: right;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.df-cashier-page .df-invoices-table .df-money-total {
+  color: var(--df-text-heading);
+}
+
+.df-cashier-page .df-invoices-table .df-money-paid {
+  color: var(--df-text-secondary);
+}
+
+.df-cashier-page .df-invoices-table .df-balance-due {
+  color: #dc2626 !important;
+  font-weight: 700 !important;
+}
+
+.df-cashier-page .df-invoices-table .df-balance-settled {
+  color: #16a34a !important;
+  font-weight: 700 !important;
+}
+
+.df-cashier-page .df-invoices-table th.df-col-status,
+.df-cashier-page .df-invoices-table td.df-col-status {
+  text-align: center !important;
+  vertical-align: middle !important;
+  white-space: nowrap !important;
+}
+
+.df-cashier-page .df-invoices-table td.df-col-status .df-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+  vertical-align: middle !important;
+}
+
+/* Search and Filter Controls Area */
+.df-cashier-page .df-invoices-card-header {
+  padding: 16px 20px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+}
+
+.df-cashier-page .df-invoices-filter-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+}
+
+.df-cashier-page .df-invoices-search-input {
+  width: 230px !important;
+  height: 38px !important;
+  padding: 0 14px !important;
+  font-size: 13px !important;
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.df-cashier-page .df-invoices-filter-select {
+  height: 38px !important;
+  padding: 0 14px !important;
+  font-size: 13px !important;
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  min-width: 150px !important;
+}
+
+/* --------------------------------------------------------------------------
+   8b. Payment History Specific Column Typography
+   -------------------------------------------------------------------------- */
+.df-cashier-page .df-history-table .df-col-history-id {
+  white-space: nowrap !important;
+}
+
+.df-history-id-badge {
+  font-family: var(--df-font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--df-primary-600);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+[data-theme="dark"] .df-history-id-badge {
+  color: #60a5fa;
+}
+
+.df-cashier-page .df-history-table .df-col-patient {
+  white-space: nowrap !important;
+}
+
+.df-history-patient-cell {
+  font-weight: 600;
+  color: var(--df-text-heading);
+  line-height: 1.35;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+}
+
+[data-theme="dark"] .df-history-patient-cell {
+  color: #f1f5f9;
+}
+
+.df-cashier-page .df-history-table .df-col-invoice {
+  white-space: nowrap !important;
+}
+
+.df-history-invoice-cell {
+  font-family: var(--df-font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--df-text-secondary);
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .df-history-invoice-cell {
+  color: #94a3b8;
+}
+
+.df-cashier-page .df-history-table th.df-col-amount,
+.df-cashier-page .df-history-table td.df-col-amount {
+  text-align: right !important;
+  white-space: nowrap !important;
+}
+
+.df-history-amount-cell {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+  display: inline-block;
+  text-align: right;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--df-text-heading);
+}
+
+[data-theme="dark"] .df-history-amount-cell {
+  color: #f8fafc;
+}
+
+.df-cashier-page .df-history-table .df-col-method {
+  white-space: nowrap !important;
+}
+
+.df-history-method-cell {
+  white-space: nowrap;
+  font-size: 13px;
+  color: var(--df-text);
+  font-weight: 500;
+}
+
+[data-theme="dark"] .df-history-method-cell {
+  color: #cbd5e1;
+}
+
+.df-cashier-page .df-history-table .df-col-txn {
+  white-space: nowrap !important;
+}
+
+.df-history-txn-cell {
+  font-family: var(--df-font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace);
+  font-size: 12px;
+  color: var(--df-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 175px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+[data-theme="dark"] .df-history-txn-cell {
+  color: #94a3b8;
+}
+
+.df-cashier-page .df-history-table .df-col-date {
+  white-space: nowrap !important;
+}
+
+.df-history-date-cell {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  color: var(--df-text-secondary);
+  font-size: 13px;
+}
+
+[data-theme="dark"] .df-history-date-cell {
+  color: #94a3b8;
+}
+
+.df-cashier-page .df-history-table th.df-col-status,
+.df-cashier-page .df-history-table td.df-col-status {
+  text-align: center !important;
+  vertical-align: middle !important;
+  white-space: nowrap !important;
+}
+
+.df-cashier-page .df-history-table td.df-col-status .df-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+  vertical-align: middle !important;
+}
+
+/* --------------------------------------------------------------------------
+   9. Buttons & Inputs — Tactile 3D Depth
+   -------------------------------------------------------------------------- */
+.df-cashier-page .df-btn,
+.df-cashier-dashboard .df-modal .df-btn {
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  transition: 
+    transform 0.16s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.16s ease,
+    background 0.16s ease !important;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Tactile Click / Press Effect */
+.df-cashier-page .df-btn:active,
+.df-cashier-dashboard .df-modal .df-btn:active {
+  transform: translateY(1.5px) scale(0.985) !important;
+}
+
+.df-cashier-page .df-btn-primary,
+.df-cashier-dashboard .df-modal .df-btn-primary {
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%) !important;
+  border: 1px solid rgba(37, 99, 235, 0.9) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+
+.df-cashier-page .df-btn-primary:hover,
+.df-cashier-dashboard .df-modal .df-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px -2px rgba(37, 99, 235, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+}
+
+.df-cashier-page .df-btn-success,
+.df-cashier-dashboard .df-modal .df-btn-success {
+  background: linear-gradient(135deg, #15803d 0%, #22c55e 100%) !important;
+  border: 1px solid rgba(22, 163, 74, 0.9) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px -2px rgba(22, 163, 74, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+
+.df-cashier-page .df-btn-success:hover,
+.df-cashier-dashboard .df-modal .df-btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px -2px rgba(22, 163, 74, 0.48) !important;
+}
+
+.df-cashier-page .df-btn-secondary,
+.df-cashier-dashboard .df-modal .df-btn-secondary {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(203, 213, 225, 0.9) !important;
+  color: var(--df-text) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+}
+
+[data-theme="dark"] .df-cashier-page .df-btn-secondary,
+[data-theme="dark"] .df-cashier-dashboard .df-modal .df-btn-secondary {
+  background: rgba(30, 41, 59, 0.75) !important;
+  border: 1px solid rgba(45, 63, 100, 0.8) !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+.df-cashier-page .df-btn-secondary:hover,
+.df-cashier-dashboard .df-modal .df-btn-secondary:hover {
+  transform: translateY(-2px);
+  background: rgba(241, 245, 249, 0.95) !important;
+}
+
+[data-theme="dark"] .df-cashier-page .df-btn-secondary:hover,
+[data-theme="dark"] .df-cashier-dashboard .df-modal .df-btn-secondary:hover {
+  background: rgba(37, 52, 75, 0.9) !important;
+}
+
+/* Glass Form Inputs */
+.df-cashier-page .df-input,
+.df-cashier-page .df-select,
+.df-cashier-dashboard .df-modal .df-input,
+.df-cashier-dashboard .df-modal .df-select {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(203, 213, 225, 0.9) !important;
+  border-radius: 10px !important;
+  color: var(--df-text) !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease !important;
+}
+
+[data-theme="dark"] .df-cashier-page .df-input,
+[data-theme="dark"] .df-cashier-page .df-select,
+[data-theme="dark"] .df-cashier-dashboard .df-modal .df-input,
+[data-theme="dark"] .df-cashier-dashboard .df-modal .df-select {
+  background: rgba(22, 32, 53, 0.8) !important;
+  border: 1px solid rgba(45, 63, 100, 0.8) !important;
+  color: #f8fafc !important;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+}
+
+.df-cashier-page .df-input:focus,
+.df-cashier-page .df-select:focus,
+.df-cashier-dashboard .df-modal .df-input:focus,
+.df-cashier-dashboard .df-modal .df-select:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22) !important;
+  outline: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   10. Modals — Floating Glass Dialogs
+   -------------------------------------------------------------------------- */
+.df-cashier-dashboard .df-modal-overlay {
+  background: rgba(15, 23, 42, 0.58) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  animation: dfCashierModalFade 0.2s ease-out forwards;
+}
+
+@keyframes dfCashierModalFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.df-cashier-dashboard .df-modal {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(24px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  border-radius: 20px !important;
+  box-shadow: 
+    0 25px 60px -15px rgba(15, 23, 42, 0.35),
+    0 10px 24px -5px rgba(37, 99, 235, 0.12),
+    inset 0 1px 0 0 rgba(255, 255, 255, 1) !important;
+  animation: dfCashierModalScale 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+[data-theme="dark"] .df-cashier-dashboard .df-modal {
+  background: rgba(16, 23, 38, 0.95) !important;
+  border: 1px solid rgba(59, 130, 246, 0.32) !important;
+  box-shadow: 
+    0 28px 65px -15px rgba(0, 0, 0, 0.8),
+    0 0 30px -4px rgba(37, 99, 235, 0.2),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+@keyframes dfCashierModalScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.97) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.df-cashier-dashboard .df-modal-header {
+  border-bottom: 1px solid rgba(226, 232, 240, 0.75);
+  padding: 18px 24px;
+}
+
+[data-theme="dark"] .df-cashier-dashboard .df-modal-header {
+  border-bottom: 1px solid rgba(45, 63, 100, 0.6);
+}
+
+.df-cashier-dashboard .df-modal-footer {
+  border-top: 1px solid rgba(226, 232, 240, 0.75);
+  padding: 16px 24px;
+  background: rgba(248, 250, 252, 0.6);
+  border-radius: 0 0 20px 20px;
+}
+
+[data-theme="dark"] .df-cashier-dashboard .df-modal-footer {
+  border-top: 1px solid rgba(45, 63, 100, 0.6);
+  background: rgba(22, 32, 53, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   11. Stamped Receipt Modal Glass Styling
+   -------------------------------------------------------------------------- */
+.df-receipt-glass {
+  background: var(--df-glass-card, rgba(255, 255, 255, 0.95)) !important;
+  backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  border-radius: 14px !important;
+  padding: 24px !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08) !important;
+  color: var(--df-text) !important;
+}
+
+[data-theme="dark"] .df-receipt-glass {
+  background: rgba(16, 23, 38, 0.95) !important;
+  border: 1px solid rgba(45, 63, 100, 0.8) !important;
+  color: #f8fafc !important;
+}
+
+.df-receipt-banner {
+  background: rgba(241, 245, 249, 0.7) !important;
+  border: 1px solid rgba(226, 232, 240, 0.7) !important;
+  border-radius: 10px !important;
+  padding: 14px !important;
+}
+
+[data-theme="dark"] .df-receipt-banner {
+  background: rgba(22, 32, 53, 0.7) !important;
+  border-color: rgba(45, 63, 100, 0.6) !important;
+}
+
+/* --------------------------------------------------------------------------
+   12. Responsive Adjustments for Mobile & Tablet
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .df-cashier-page .df-stat-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .df-cashier-page .df-resource-header {
+    padding: 18px 20px !important;
+  }
+
+  .df-cashier-page .df-resource-header h1 {
+    font-size: 1.45rem !important;
+  }
+
+  .df-cashier-billing-summary {
+    padding: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .df-cashier-page .df-stat-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   13. Accessibility — Reduced Motion Support
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .df-cashier-page,
+  .df-cashier-page .df-stat-card,
+  .df-cashier-page .df-card,
+  .df-cashier-glass-card,
+  .df-cashier-dashboard .df-sidebar-link,
+  .df-cashier-dashboard .df-modal,
+  .df-cashier-page .df-btn {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transform: none !important;
+  }
+}
