@@ -1,0 +1,1615 @@
+/* ==========================================================================
+   DentaFlow Unified Dashboard Page Styling
+   ========================================================================== */
+
+.df-role-page {
+  --df-role-accent: var(--df-primary-500);
+  animation: df-fade-in 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.df-role-slate { --df-role-accent: #2563eb; }
+.df-role-blue { --df-role-accent: #2563eb; }
+.df-role-teal { --df-role-accent: #2563eb; }
+.df-role-violet { --df-role-accent: #2563eb; }
+.df-role-amber { --df-role-accent: #2563eb; }
+.df-role-rose { --df-role-accent: #2563eb; }
+
+[data-theme="dark"] .df-role-slate,
+[data-theme="dark"] .df-role-blue,
+[data-theme="dark"] .df-role-teal,
+[data-theme="dark"] .df-role-violet,
+[data-theme="dark"] .df-role-amber,
+[data-theme="dark"] .df-role-rose {
+  --df-role-accent: #3b82f6;
+}
+
+/* --------------------------------------------------------------------------
+   Welcome Hero Banner & Resource Headers
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Welcome Hero Banner & Resource Headers
+   -------------------------------------------------------------------------- */
+.df-dashboard-welcome,
+.df-resource-header {
+  background: var(--df-glass-card);
+  backdrop-filter: var(--df-glass-blur);
+  -webkit-backdrop-filter: var(--df-glass-blur);
+  border: 1px solid var(--df-glass-border);
+  border-radius: var(--df-radius-xl);
+  padding: 26px 30px;
+  box-shadow: var(--df-shadow-card);
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: var(--df-space-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.df-dashboard-welcome::after,
+.df-resource-header::after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.df-dashboard-welcome h1,
+.df-resource-header h1 {
+  font-size: clamp(1.65rem, 2.8vw, 2.25rem);
+  font-weight: 800;
+  color: var(--df-text-heading);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.df-dashboard-welcome p,
+.df-resource-header p {
+  color: var(--df-text-secondary);
+  margin-top: 6px;
+  font-size: 14.5px;
+}
+
+.df-role-page .df-section-label {
+  color: var(--df-primary-600);
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  padding: 4px 12px;
+  border-radius: var(--df-radius-full);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.df-welcome-date {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--df-glass-border);
+  border-left: 4px solid var(--df-primary-500);
+  padding: 14px 20px;
+  border-radius: var(--df-radius);
+  box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.08);
+  min-width: 190px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.df-welcome-date strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--df-text-heading);
+}
+
+.df-welcome-date span {
+  display: block;
+  font-size: 12px;
+  color: var(--df-text-secondary);
+  margin-top: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Dashboard Overview Grid & Quick Action Cards
+   -------------------------------------------------------------------------- */
+.df-overview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(300px, 1fr);
+  gap: var(--df-space-lg);
+  margin-bottom: var(--df-space-lg);
+}
+
+.df-overview-bottom {
+  grid-template-columns: minmax(0, 1.8fr) minmax(300px, 1fr);
+}
+
+.df-card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: var(--df-space-lg);
+}
+
+.df-card-title-row h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.df-text-link {
+  color: var(--df-role-accent);
+  font-weight: 600;
+  font-size: 13px;
+  transition: opacity var(--df-transition);
+}
+
+.df-text-link:hover {
+  opacity: 0.85;
+}
+
+.df-chart-card {
+  min-height: 270px;
+}
+
+.df-mini-chart {
+  display: flex;
+  height: 184px;
+  gap: 16px;
+  align-items: flex-end;
+  padding-top: 18px;
+}
+
+.df-bar-column {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  min-width: 28px;
+}
+
+.df-bar-track {
+  height: 130px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  background: var(--df-gray-100);
+  border-radius: 6px 6px 2px 2px;
+  overflow: hidden;
+}
+
+.df-bar {
+  width: 100%;
+  background: linear-gradient(180deg, #38bdf8 0%, #2563eb 100%);
+  border-radius: 6px 6px 0 0;
+  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px -1px rgba(37, 99, 235, 0.35);
+}
+
+.df-bar-value {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--df-text-secondary);
+}
+
+.df-bar-column small {
+  font-size: 11.5px;
+  color: var(--df-text-muted);
+  font-weight: 500;
+}
+
+/* Quick Actions */
+.df-quick-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.df-quick-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 18px;
+  border: 1px solid var(--df-glass-border);
+  border-radius: var(--df-radius);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--df-text-heading);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all var(--df-transition);
+}
+
+.df-quick-action:hover {
+  border-color: rgba(37, 99, 235, 0.35);
+  color: var(--df-primary-600);
+  background: #ffffff;
+  transform: translateX(3px);
+  box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.12);
+}
+
+/* Activity Feed */
+.df-activity-list {
+  display: grid;
+  gap: 16px;
+}
+
+.df-activity-item {
+  display: flex;
+  gap: 12px;
+  font-size: 13.5px;
+  align-items: flex-start;
+}
+
+.df-activity-item p {
+  color: var(--df-text-secondary);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.df-activity-item small {
+  color: var(--df-text-muted);
+  font-size: 11px;
+}
+
+.df-activity-dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: var(--df-role-accent);
+  margin-top: 5px;
+  flex: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.df-field-error {
+  display: block;
+  color: var(--df-error, #ef4444);
+  font-size: 12px;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.df-input-error,
+.df-input[aria-invalid="true"],
+.df-select[aria-invalid="true"] {
+  border-color: var(--df-error, #ef4444) !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   Settings Layout
+   -------------------------------------------------------------------------- */
+.df-settings-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: var(--df-space-lg);
+}
+
+.df-settings-tabs {
+  padding: var(--df-space-xs);
+  display: grid;
+  gap: 4px;
+}
+
+.df-settings-tab {
+  border: 0;
+  background: transparent;
+  text-align: left;
+  padding: 10px 14px;
+  border-radius: var(--df-radius-sm);
+  color: var(--df-text-secondary);
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: all var(--df-transition);
+}
+
+.df-settings-tab.active,
+.df-settings-tab:hover {
+  background: var(--df-primary-50);
+  color: var(--df-role-accent);
+}
+
+.df-settings-copy {
+  margin: 6px 0 var(--df-space-lg);
+  color: var(--df-text-secondary);
+  font-size: 13.5px;
+}
+
+.df-toggle-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: var(--df-space-lg);
+  font-size: 14px;
+}
+
+/* --------------------------------------------------------------------------
+   Toolbar Controls: Search & Filter
+   -------------------------------------------------------------------------- */
+.df-toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: var(--df-space-lg);
+  flex-wrap: wrap;
+}
+
+.df-dashboard-search {
+  display: block;
+  position: relative;
+  flex: 1;
+  min-width: 240px;
+}
+
+.df-search-prefix-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--df-text-muted);
+  pointer-events: none;
+  display: flex;
+}
+
+.df-dashboard-search .df-input {
+  padding-left: 40px;
+  padding-right: 36px;
+}
+
+.df-search-clear-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--df-text-muted);
+  cursor: pointer;
+  font-size: 13px;
+  padding: 4px;
+}
+
+.df-filter-control {
+  display: grid;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--df-text-secondary);
+  min-width: 165px;
+}
+
+.df-filter-control .df-select {
+  padding: 9.5px 14px;
+}
+
+.df-table-sort {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  text-transform: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.df-table-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.df-icon-button {
+  border: 1px solid var(--df-border);
+  border-radius: var(--df-radius-sm);
+  width: 32px;
+  height: 32px;
+  background: var(--df-bg-elevated);
+  color: var(--df-text-secondary);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--df-transition);
+}
+
+.df-icon-button:hover {
+  border-color: var(--df-primary-400);
+  color: var(--df-primary-600);
+  background: var(--df-primary-50);
+}
+
+.df-icon-button.danger:hover {
+  border-color: var(--df-error);
+  color: var(--df-error);
+  background: var(--df-error-bg);
+}
+
+/* --------------------------------------------------------------------------
+   Analytics & Progress Lists
+   -------------------------------------------------------------------------- */
+.df-analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--df-space-lg);
+  margin-bottom: var(--df-space-lg);
+}
+
+.df-progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.df-progress-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.df-progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--df-text-heading);
+}
+
+.df-progress-track {
+  height: 8px;
+  width: 100%;
+  background: var(--df-gray-100);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.df-progress-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: var(--df-role-accent);
+  transition: width 0.4s ease;
+}
+
+.df-form-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--df-space-md);
+}
+
+.df-form-3col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--df-space-md);
+}
+
+@media(max-width: 640px) {
+  .df-form-2col, .df-form-3col { grid-template-columns: 1fr; }
+}
+
+/* --------------------------------------------------------------------------
+   Breadcrumbs & Tab Pills
+   -------------------------------------------------------------------------- */
+.df-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--df-text-muted);
+  margin-bottom: 12px;
+}
+
+.df-breadcrumb-link {
+  color: var(--df-text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--df-transition);
+}
+
+.df-breadcrumb-link:hover {
+  color: var(--df-role-accent);
+}
+
+.df-breadcrumb-current {
+  color: var(--df-role-accent);
+  font-weight: 600;
+}
+
+.df-breadcrumb-sep {
+  color: var(--df-text-muted);
+  font-size: 12px;
+  user-select: none;
+}
+
+/* Tab Pills */
+.df-tab-pills {
+  display: flex;
+  gap: 8px;
+  padding: 5px;
+  background: rgba(241, 245, 249, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--df-glass-border);
+  border-radius: var(--df-radius-full);
+  margin-bottom: var(--df-space-lg);
+  overflow-x: auto;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.df-tab-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: var(--df-radius-full);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--df-text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--df-transition);
+  white-space: nowrap;
+}
+
+.df-tab-pill:hover {
+  color: var(--df-primary-600);
+  background: rgba(37, 99, 235, 0.06);
+}
+
+.df-tab-pill.active {
+  background: var(--df-primary-gradient);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.42);
+}
+
+.df-tab-pill-count {
+  background: rgba(148, 163, 184, 0.2);
+  color: currentColor;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  font-weight: 700;
+}
+
+.df-tab-pill.active .df-tab-pill-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   Clinical Stepper / Treatment Plans
+   -------------------------------------------------------------------------- */
+.df-stepper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.df-stepper-step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.df-stepper-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex: none;
+  z-index: 1;
+}
+
+.df-stepper-step.completed .df-stepper-icon {
+  background: var(--df-success);
+  color: #ffffff;
+}
+
+.df-stepper-step.active .df-stepper-icon {
+  background: var(--df-role-accent);
+  color: #ffffff;
+  box-shadow: 0 0 0 4px var(--df-primary-100);
+}
+
+.df-stepper-step.pending .df-stepper-icon {
+  background: var(--df-gray-200);
+  color: var(--df-text-muted);
+}
+
+.df-stepper-content {
+  flex: 1;
+  padding-bottom: 8px;
+}
+
+.df-stepper-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--df-text-heading);
+  display: flex;
+  justify-content: space-between;
+}
+
+.df-stepper-desc {
+  font-size: 13px;
+  color: var(--df-text-secondary);
+  margin-top: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   Receptionist Queue Kanban Board
+   -------------------------------------------------------------------------- */
+.df-queue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--df-space-md);
+  margin-top: 16px;
+}
+
+.df-queue-column {
+  background: var(--df-gray-50);
+  border: 1px solid var(--df-border);
+  border-radius: var(--df-radius-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.df-queue-column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--df-text-heading);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--df-border);
+}
+
+.df-queue-card {
+  background: var(--df-bg-elevated);
+  border: 1px solid var(--df-border);
+  border-radius: var(--df-radius);
+  padding: 14px;
+  box-shadow: var(--df-shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform var(--df-transition), box-shadow var(--df-transition);
+}
+
+.df-queue-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--df-shadow);
+  border-color: var(--df-border-strong);
+}
+
+.df-queue-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.df-queue-token {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--df-role-accent);
+}
+
+.df-queue-patient {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--df-text-heading);
+}
+
+.df-queue-meta {
+  font-size: 12px;
+  color: var(--df-text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   Prescription & Medication Cards
+   -------------------------------------------------------------------------- */
+.df-rx-card {
+  border: 1px solid var(--df-border);
+  border-radius: var(--df-radius-lg);
+  background: var(--df-bg-elevated);
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: var(--df-shadow-card);
+}
+
+.df-rx-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--df-border);
+  margin-bottom: 14px;
+}
+
+.df-rx-doctor {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--df-text-heading);
+}
+
+.df-med-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.df-med-badge {
+  background: var(--df-primary-50);
+  border: 1px solid var(--df-primary-200);
+  border-radius: var(--df-radius-sm);
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--df-primary-700);
+}
+
+/* --------------------------------------------------------------------------
+   Billing Receipts
+   -------------------------------------------------------------------------- */
+.df-receipt {
+  background: var(--df-bg-elevated);
+  border: 2px dashed var(--df-border-strong);
+  border-radius: var(--df-radius-xl);
+  padding: 28px;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: var(--df-shadow-lg);
+}
+
+.df-receipt-stamp {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  border: 3px solid var(--df-success);
+  color: var(--df-success);
+  font-weight: 800;
+  font-size: 16px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  transform: rotate(-7deg);
+  letter-spacing: 0.05em;
+}
+
+.df-receipt-items {
+  width: 100%;
+  margin: 16px 0;
+  border-collapse: collapse;
+}
+
+.df-receipt-items th,
+.df-receipt-items td {
+  padding: 9px 0;
+  font-size: 13px;
+  text-align: left;
+}
+
+.df-receipt-items th:last-child,
+.df-receipt-items td:last-child {
+  text-align: right;
+}
+
+.df-receipt-items tr {
+  border-bottom: 1px solid var(--df-border);
+}
+
+.df-receipt-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 800;
+  padding-top: 14px;
+  margin-top: 8px;
+  border-top: 2px solid var(--df-text-heading);
+}
+
+/* --------------------------------------------------------------------------
+   Chat & Consultation Messaging
+   -------------------------------------------------------------------------- */
+.df-chat-layout {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  gap: var(--df-space-md);
+  border: 1px solid var(--df-border);
+  border-radius: var(--df-radius-lg);
+  background: var(--df-bg-elevated);
+  overflow: hidden;
+  min-height: 500px;
+  box-shadow: var(--df-shadow-card);
+}
+
+.df-chat-threads {
+  border-right: 1px solid var(--df-border);
+  overflow-y: auto;
+  background: var(--df-gray-50);
+}
+
+.df-chat-thread-item {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--df-border);
+  cursor: pointer;
+  transition: background var(--df-transition);
+}
+
+.df-chat-thread-item:hover,
+.df-chat-thread-item.active {
+  background: var(--df-bg-elevated);
+  border-left: 3px solid var(--df-role-accent);
+}
+
+.df-chat-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.df-chat-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--df-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--df-bg-elevated);
+}
+
+.df-chat-messages-area {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 400px;
+}
+
+.df-chat-bubble {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.df-chat-bubble.incoming {
+  align-self: flex-start;
+  background: var(--df-gray-100);
+  color: var(--df-text);
+  border-bottom-left-radius: 2px;
+}
+
+.df-chat-bubble.outgoing {
+  align-self: flex-end;
+  background: var(--df-role-accent);
+  color: #ffffff;
+  border-bottom-right-radius: 2px;
+}
+
+.df-chat-compose {
+  padding: 14px;
+  border-top: 1px solid var(--df-border);
+  display: flex;
+  gap: 10px;
+  background: var(--df-bg-elevated);
+}
+
+/* --------------------------------------------------------------------------
+   Clinical Indicator Badges & Star Selector
+   -------------------------------------------------------------------------- */
+.df-clinical-alert {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: var(--df-radius-xs);
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.df-alert-red {
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+}
+
+.df-alert-amber {
+  background: #fef3c7;
+  color: #d97706;
+  border: 1px solid #fde68a;
+}
+
+.df-alert-blue {
+  background: #e0f2fe;
+  color: #0284c7;
+  border: 1px solid #bae6fd;
+}
+
+.df-star-selector {
+  display: flex;
+  gap: 6px;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--df-gray-300);
+}
+
+.df-star-selector .active {
+  color: #f59e0b;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .df-overview-grid,
+  .df-overview-bottom {
+    grid-template-columns: 1fr;
+  }
+  .df-dashboard-welcome,
+  .df-resource-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .df-welcome-date {
+    width: 100%;
+  }
+  .df-settings-layout {
+    grid-template-columns: 1fr;
+  }
+  .df-settings-tabs {
+    display: flex;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .df-chat-layout {
+    grid-template-columns: 1fr;
+  }
+  .df-chat-threads {
+    max-height: 180px;
+  }
+}
+
+@media (max-width: 640px) {
+  .df-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .df-dashboard-search,
+  .df-filter-control {
+    min-width: 0;
+    width: 100%;
+  }
+  .df-resource-header .df-btn {
+    width: 100%;
+  }
+  .df-stat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .df-mini-chart {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .df-stat-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Dark Mode Refinements for Dashboard Components
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] .df-tab-pill {
+  background: var(--df-bg-elevated);
+  border-color: var(--df-border);
+  color: var(--df-text-secondary);
+}
+
+[data-theme="dark"] .df-tab-pill:hover {
+  border-color: var(--df-role-accent);
+  color: var(--df-text-heading);
+}
+
+[data-theme="dark"] .df-tab-pill.active {
+  background: rgba(37, 99, 235, 0.2);
+  border-color: var(--df-role-accent);
+  color: #93c5fd;
+}
+
+[data-theme="dark"] .df-tab-pill-count {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--df-text);
+}
+
+[data-theme="dark"] .df-tab-pill.active .df-tab-pill-count {
+  background: var(--df-role-accent);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .df-quick-action {
+  background: var(--df-bg-elevated);
+  border-color: var(--df-border);
+  color: var(--df-text);
+}
+
+[data-theme="dark"] .df-quick-action:hover {
+  background: rgba(37, 99, 235, 0.12);
+  border-color: var(--df-role-accent);
+  color: #93c5fd;
+}
+
+[data-theme="dark"] .df-welcome-date {
+  background: var(--df-bg-elevated);
+  border-color: var(--df-border);
+}
+
+[data-theme="dark"] .df-bar-track {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .df-icon-button {
+  background: var(--df-bg-elevated);
+  border-color: var(--df-border);
+  color: var(--df-text-secondary);
+}
+
+[data-theme="dark"] .df-icon-button:hover {
+  border-color: var(--df-primary-400);
+  color: #93c5fd;
+  background: rgba(37, 99, 235, 0.15);
+}
+
+[data-theme="dark"] .df-alert-red {
+  background: rgba(239, 68, 68, 0.18);
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+[data-theme="dark"] .df-alert-amber {
+  background: rgba(245, 158, 11, 0.18);
+  color: #fde68a;
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+[data-theme="dark"] .df-alert-blue {
+  background: rgba(59, 130, 246, 0.18);
+  color: #93c5fd;
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+[data-theme="dark"] .df-chat-threads {
+  background: #0b1424;
+  border-color: var(--df-border);
+}
+
+[data-theme="dark"] .df-chat-bubble.incoming {
+  background: #162238;
+  color: var(--df-text);
+}
+
+[data-theme="dark"] .df-chat-header,
+[data-theme="dark"] .df-chat-compose {
+  background: #10192b;
+  border-color: var(--df-border);
+}
+
+[data-theme="dark"] .df-queue-column {
+  background: #0c1424;
+  border-color: var(--df-border);
+}
+
+/* --------------------------------------------------------------------------
+   Patient Specialized Dashboard (Mockup Specification)
+   -------------------------------------------------------------------------- */
+.df-patient-welcome-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.df-welcome-left-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.df-welcome-date-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: var(--df-radius-full);
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--df-primary-600);
+  margin-bottom: 8px;
+}
+
+.df-welcome-script-quote {
+  font-family: var(--df-font-script);
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--df-primary-600);
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.df-welcome-promo-pill {
+  padding: 16px 22px;
+  border-radius: var(--df-radius-lg);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(239, 246, 255, 0.8) 100%);
+  border: 1px solid rgba(191, 219, 254, 0.8);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.08);
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.df-promo-pill-sub {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--df-primary-500);
+  text-transform: uppercase;
+}
+
+.df-promo-pill-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--df-text-heading);
+  margin: 2px 0 4px 0;
+}
+
+.df-promo-pill-brand {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--df-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.df-promo-sparkle {
+  color: var(--df-accent);
+}
+
+/* 4-Column Lower Section */
+.df-patient-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: var(--df-space-xl);
+}
+
+/* Col 1: Upcoming Appointments */
+.df-upcoming-appts-card .df-appts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.df-appt-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(241, 245, 249, 0.5);
+  border: 1px solid rgba(226, 232, 240, 0.7);
+  transition: all var(--df-transition);
+}
+
+.df-appt-item:hover {
+  background: #ffffff;
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: var(--df-shadow-xs);
+  transform: translateY(-1px);
+}
+
+.df-appt-date-box {
+  width: 46px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+.df-date-day {
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.df-date-month {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.df-appt-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.df-appt-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--df-text-heading);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.df-appt-doc {
+  font-size: 11.5px;
+  color: var(--df-text-secondary);
+}
+
+.df-appt-time {
+  font-size: 11px;
+  color: var(--df-text-muted);
+}
+
+.df-status-capsule {
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.df-status-confirmed {
+  background: rgba(34, 197, 94, 0.12);
+  color: #16a34a;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+.df-status-scheduled {
+  background: rgba(59, 130, 246, 0.12);
+  color: #2563eb;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.df-status-pending {
+  background: rgba(245, 158, 11, 0.12);
+  color: #d97706;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+/* Col 2: Recent Activities Feed */
+.df-patient-activities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.df-patient-activity-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.df-activity-icon-sq {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.df-act-blue {
+  background: rgba(59, 130, 246, 0.12);
+  color: #2563eb;
+}
+
+.df-act-teal {
+  background: rgba(20, 184, 166, 0.12);
+  color: #0d9488;
+}
+
+.df-act-green {
+  background: rgba(34, 197, 94, 0.12);
+  color: #16a34a;
+}
+
+.df-act-purple {
+  background: rgba(139, 92, 246, 0.14);
+  color: #7c3aed;
+}
+
+.df-activity-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.df-activity-content strong {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--df-text);
+}
+
+.df-activity-content small {
+  font-size: 11.5px;
+  color: var(--df-text-muted);
+  margin-top: 2px;
+}
+
+/* Col 3: Quick Actions */
+.df-patient-actions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.df-patient-action-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--df-glass-border);
+  text-decoration: none;
+  transition: all var(--df-transition);
+}
+
+.df-patient-action-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--df-shadow-sm);
+  background: #ffffff;
+  border-color: rgba(59, 130, 246, 0.35);
+}
+
+.df-action-pill-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.df-action-pill-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.df-pill-blue {
+  background: rgba(59, 130, 246, 0.1);
+  color: #2563eb;
+}
+
+.df-pill-purple {
+  background: rgba(139, 92, 246, 0.12);
+  color: #7c3aed;
+}
+
+.df-pill-teal {
+  background: rgba(20, 184, 166, 0.1);
+  color: #0d9488;
+}
+
+.df-pill-green {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+}
+
+.df-action-pill-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--df-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.df-action-pill-arrow {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--df-text-muted);
+}
+
+/* Col 4: Vertical Promo Card */
+.df-patient-promo-vertical {
+  background: linear-gradient(155deg, rgba(239, 246, 255, 0.95) 0%, rgba(219, 234, 254, 0.85) 100%);
+  border: 1px solid rgba(191, 219, 254, 0.85);
+  box-shadow: 0 8px 24px -4px rgba(37, 99, 235, 0.1);
+}
+
+.df-promo-vertical-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  text-align: center;
+  padding: 16px 10px;
+}
+
+.df-promo-script-title {
+  font-family: var(--df-font-script);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--df-primary-700);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.df-promo-subtitle {
+  font-size: 12px;
+  color: var(--df-text-secondary);
+  line-height: 1.4;
+  margin: 8px 0;
+}
+
+.df-promo-illustration-wrapper {
+  margin: 8px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.df-promo-circle-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--df-primary-500);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+  transition: all var(--df-transition);
+}
+
+.df-promo-circle-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  background: var(--df-primary-600);
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.5);
+  color: #ffffff;
+}
+
+/* Dark Mode Overrides for Patient Dashboard */
+[data-theme="dark"] .df-welcome-date-chip {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.28);
+  color: #38bdf8;
+}
+
+[data-theme="dark"] .df-welcome-script-quote {
+  color: #38bdf8;
+}
+
+[data-theme="dark"] .df-welcome-promo-pill {
+  background: linear-gradient(135deg, rgba(15, 32, 60, 0.9) 0%, rgba(10, 25, 48, 0.85) 100%);
+  border-color: rgba(56, 189, 248, 0.25);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .df-promo-pill-sub {
+  color: #38bdf8;
+}
+
+[data-theme="dark"] .df-promo-pill-title {
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .df-promo-pill-brand {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .df-appt-item {
+  background: rgba(15, 32, 60, 0.6);
+  border-color: rgba(56, 189, 248, 0.18);
+}
+
+[data-theme="dark"] .df-appt-item:hover {
+  background: rgba(22, 45, 84, 0.8);
+  border-color: rgba(56, 189, 248, 0.38);
+}
+
+[data-theme="dark"] .df-patient-action-pill {
+  background: rgba(15, 32, 60, 0.65);
+  border-color: rgba(56, 189, 248, 0.18);
+}
+
+[data-theme="dark"] .df-patient-action-pill:hover {
+  background: rgba(22, 45, 84, 0.85);
+  border-color: rgba(56, 189, 248, 0.38);
+}
+
+[data-theme="dark"] .df-patient-promo-vertical {
+  background: linear-gradient(155deg, rgba(15, 32, 60, 0.9) 0%, rgba(10, 25, 48, 0.9) 100%);
+  border-color: rgba(56, 189, 248, 0.25);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .df-promo-script-title {
+  color: #38bdf8;
+}
+
+[data-theme="dark"] .df-promo-subtitle {
+  color: #94a3b8;
+}
+
+@media (max-width: 1200px) {
+  .df-patient-dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .df-patient-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  .df-patient-welcome-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .df-welcome-promo-pill {
+    text-align: left;
+    width: 100%;
+  }
+  .df-promo-pill-brand {
+    justify-content: flex-start;
+  }
+}
+
+

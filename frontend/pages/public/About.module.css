@@ -1,0 +1,842 @@
+.page {
+    min-height: 100vh;
+    padding: 24px 0 70px;
+    color: #102a56;
+    background:
+            radial-gradient(
+                    circle at 10% 10%,
+                    rgba(59, 130, 246, 0.08),
+                    transparent 30%
+            ),
+            radial-gradient(
+                    circle at 90% 30%,
+                    rgba(125, 211, 252, 0.12),
+                    transparent 28%
+            ),
+            linear-gradient(
+                    180deg,
+                    #f8fbff 0%,
+                    #eef6ff 100%
+            );
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+    width: min(1380px, calc(100% - 48px));
+    min-height: 370px;
+    margin: 0 auto 42px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 28px;
+    background: #eaf4ff;
+    box-shadow:
+            0 24px 60px rgba(37, 99, 235, 0.12),
+            0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.heroImage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background:
+            linear-gradient(
+                    90deg,
+                    #f8fbff 0%,
+                    #f8fbff 45%,
+                    rgba(248, 251, 255, 0.92) 58%,
+                    rgba(248, 251, 255, 0.25) 75%,
+                    transparent 100%
+            );
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 370px;
+}
+
+.heroText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 44px 42px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    margin-bottom: 16px;
+    padding: 8px 14px;
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    color: #1769d1;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    backdrop-filter: blur(14px);
+}
+
+.heroText h1 {
+    max-width: 700px;
+    margin: 0;
+    color: #102a56;
+    font-size: clamp(40px, 4.2vw, 62px);
+    font-weight: 850;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+}
+
+.heroText h1 span {
+    display: block;
+    color: #2563eb;
+}
+
+.heroText > p {
+    max-width: 650px;
+    margin: 20px 0 0;
+    color: #5d7293;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.heroHighlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 700px;
+    margin-top: 28px;
+}
+
+.highlight {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 66px;
+    padding: 10px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.64);
+    box-shadow: 0 8px 22px rgba(37, 99, 235, 0.06);
+    backdrop-filter: blur(16px);
+}
+
+.highlightIcon {
+    display: grid;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border-radius: 13px;
+    background: #e0efff;
+    color: #2563eb;
+}
+
+.highlight strong {
+    display: block;
+    color: #183b70;
+    font-size: 12px;
+}
+
+.highlight span {
+    display: block;
+    margin-top: 4px;
+    color: #7084a3;
+    font-size: 10px;
+}
+
+/* =========================
+   COMMON SECTION
+========================= */
+
+.storySection,
+.statsSection,
+.missionSection,
+.whySection,
+.ctaSection {
+    width: min(1380px, calc(100% - 48px));
+    margin: 0 auto 52px;
+}
+
+.sectionHeader {
+    margin-bottom: 24px;
+}
+
+.sectionEyebrow {
+    display: block;
+    margin-bottom: 8px;
+    color: #2770d8;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.sectionHeader h2 {
+    margin: 0;
+    color: #102a56;
+    font-size: clamp(30px, 3vw, 42px);
+    font-weight: 820;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+}
+
+.sectionHeader h2 span {
+    color: #2563eb;
+}
+
+.sectionHeader p {
+    max-width: 650px;
+    margin: 10px 0 0;
+    color: #6b7f9e;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* =========================
+   STORY
+========================= */
+
+.storyGrid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 22px;
+}
+
+.storyContent,
+.miniCard,
+.statCard,
+.valueCard,
+.whyCard,
+.ctaCard {
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    background:
+            linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.88),
+                    rgba(243, 249, 255, 0.72)
+            );
+    box-shadow:
+            0 14px 34px rgba(37, 99, 235, 0.07),
+            inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+}
+
+.storyContent {
+    padding: 28px;
+    border-radius: 24px;
+}
+
+.storyContent > p {
+    margin: 0 0 16px;
+    color: #607594;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.storyPoints {
+    display: grid;
+    gap: 11px;
+    margin-top: 24px;
+}
+
+.storyPoints div {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #486686;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.storyPoints svg {
+    flex: 0 0 auto;
+    color: #2563eb;
+}
+
+.missionMiniGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.miniCard {
+    padding: 24px;
+    border-radius: 22px;
+}
+
+.miniIcon {
+    display: grid;
+    width: 46px;
+    height: 46px;
+    margin-bottom: 18px;
+    place-items: center;
+    border-radius: 14px;
+    background: #e6f1ff;
+    color: #2563eb;
+}
+
+.miniCard h3 {
+    margin: 0;
+    color: #183b70;
+    font-size: 17px;
+}
+
+.miniCard p {
+    margin: 10px 0 0;
+    color: #667b99;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.statCard {
+    padding: 26px 18px;
+    border-radius: 22px;
+    text-align: center;
+    transition: 0.22s ease;
+}
+
+.statCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+}
+
+.statCard strong {
+    display: block;
+    color: #2563eb;
+    font-size: 34px;
+    font-weight: 850;
+    line-height: 1.1;
+}
+
+.statCard span {
+    display: block;
+    margin-top: 9px;
+    color: #6b7f9e;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* =========================
+   MISSION / VISION
+========================= */
+
+.missionGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.valueCard {
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+    padding: 25px;
+    border-radius: 22px;
+}
+
+.valueIcon {
+    display: grid;
+    flex: 0 0 50px;
+    width: 50px;
+    height: 50px;
+    place-items: center;
+    border-radius: 15px;
+    background: #e6f1ff;
+    color: #2563eb;
+}
+
+.valueCard h3 {
+    margin: 0;
+    color: #183b70;
+    font-size: 18px;
+}
+
+.valueCard p {
+    margin: 9px 0 0;
+    color: #667b99;
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+/* =========================
+   WHY CHOOSE US
+========================= */
+
+.whyGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.whyCard {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 22px;
+    border-radius: 22px;
+    transition:
+            transform 0.22s ease,
+            box-shadow 0.22s ease;
+}
+
+.whyCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+}
+
+.whyIcon {
+    display: grid;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border-radius: 13px;
+    background: #e6f1ff;
+    color: #2563eb;
+}
+
+.whyCard h3 {
+    margin: 0;
+    color: #183b70;
+    font-size: 15px;
+}
+
+.whyCard p {
+    margin: 6px 0 0;
+    color: #6b7f9e;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.ctaSection {
+    margin-bottom: 0;
+}
+
+.ctaCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 30px 34px;
+    border-radius: 24px;
+    background:
+            radial-gradient(
+                    circle at 90% 20%,
+                    rgba(96, 165, 250, 0.2),
+                    transparent 35%
+            ),
+            rgba(255, 255, 255, 0.72);
+}
+
+.ctaEyebrow {
+    display: block;
+    margin-bottom: 7px;
+    color: #2770d8;
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: 0.1em;
+}
+
+.ctaCard h2 {
+    margin: 0;
+    color: #102a56;
+    font-size: 28px;
+}
+
+.ctaCard h2 span {
+    color: #2563eb;
+}
+
+.ctaCard p {
+    max-width: 650px;
+    margin: 8px 0 0;
+    color: #6b7f9e;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.ctaButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex: 0 0 auto;
+    min-height: 48px;
+    padding: 0 20px;
+    border-radius: 13px;
+    background: #2563eb;
+    color: white;
+    font-size: 13px;
+    font-weight: 750;
+    text-decoration: none;
+    box-shadow: 0 9px 22px rgba(37, 99, 235, 0.2);
+    transition: 0.2s ease;
+}
+
+.ctaButton:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+    .storyGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .whyGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .heroHighlights {
+        max-width: 620px;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero {
+        min-height: 500px;
+    }
+
+    .heroContent {
+        min-height: 500px;
+        grid-template-columns: 1fr;
+    }
+
+    .heroOverlay {
+        background:
+                linear-gradient(
+                        180deg,
+                        #f8fbff 0%,
+                        #f8fbff 55%,
+                        rgba(248, 251, 255, 0.88) 70%,
+                        transparent 100%
+                );
+    }
+
+    .heroText {
+        padding: 42px 34px;
+    }
+
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .missionGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .ctaCard {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 640px) {
+    .page {
+        padding-top: 14px;
+    }
+
+    .hero,
+    .storySection,
+    .statsSection,
+    .missionSection,
+    .whySection,
+    .ctaSection {
+        width: calc(100% - 24px);
+    }
+
+    .hero {
+        min-height: 560px;
+        border-radius: 22px;
+    }
+
+    .heroContent {
+        min-height: 560px;
+    }
+
+    .heroText {
+        padding: 32px 22px;
+    }
+
+    .heroText h1 {
+        font-size: 42px;
+    }
+
+    .heroText > p {
+        font-size: 14px;
+    }
+
+    .heroHighlights {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .missionMiniGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .statsGrid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .statCard {
+        padding: 22px 12px;
+    }
+
+    .statCard strong {
+        font-size: 28px;
+    }
+
+    .whyGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .storyContent {
+        padding: 22px;
+    }
+
+    .valueCard {
+        padding: 20px;
+    }
+
+    .ctaCard {
+        padding: 24px 20px;
+    }
+
+    .ctaCard h2 {
+        font-size: 25px;
+    }
+
+    .ctaButton {
+        width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    .heroText h1 {
+        font-size: 36px;
+    }
+
+    .statsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .sectionHeader h2 {
+        font-size: 31px;
+    }
+}
+
+/* =========================
+   DARK MODE FOR ABOUT
+========================= */
+
+:global([data-theme="dark"]) .page {
+    background:
+            radial-gradient(
+                    circle at 10% 10%,
+                    rgba(37, 99, 235, 0.12),
+                    transparent 35%
+            ),
+            radial-gradient(
+                    circle at 90% 30%,
+                    rgba(14, 165, 233, 0.10),
+                    transparent 35%
+            ),
+            #070d18;
+    color: #f1f5f9;
+}
+
+:global([data-theme="dark"]) .hero {
+    background: #0b1528;
+    border-color: rgba(56, 189, 248, 0.20);
+    box-shadow:
+            0 24px 60px rgba(0, 0, 0, 0.5),
+            0 0 25px rgba(37, 99, 235, 0.1);
+}
+
+:global([data-theme="dark"]) .heroOverlay {
+    background:
+            linear-gradient(
+                    90deg,
+                    #070d18 0%,
+                    #070d18 45%,
+                    rgba(7, 13, 24, 0.92) 58%,
+                    rgba(7, 13, 24, 0.25) 75%,
+                    transparent 100%
+            );
+}
+
+@media (max-width: 900px) {
+    :global([data-theme="dark"]) .heroOverlay {
+        background:
+                linear-gradient(
+                        180deg,
+                        #070d18 0%,
+                        #070d18 55%,
+                        rgba(7, 13, 24, 0.90) 70%,
+                        transparent 100%
+                );
+    }
+}
+
+:global([data-theme="dark"]) .eyebrow {
+    background: rgba(30, 58, 138, 0.45);
+    color: #38bdf8;
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+:global([data-theme="dark"]) .heroText h1 {
+    color: #ffffff;
+}
+
+:global([data-theme="dark"]) .heroText h1 span {
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .heroText > p {
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .highlight {
+    background: rgba(13, 26, 48, 0.75);
+    border-color: rgba(56, 189, 248, 0.20);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+:global([data-theme="dark"]) .highlightIcon {
+    background: rgba(30, 58, 138, 0.45);
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .highlight strong {
+    color: #f1f5f9;
+}
+
+:global([data-theme="dark"]) .highlight span {
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .sectionEyebrow {
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .sectionHeader h2 {
+    color: #ffffff;
+}
+
+:global([data-theme="dark"]) .sectionHeader h2 span {
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .sectionHeader p {
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .storyCard,
+:global([data-theme="dark"]) .storyContent {
+    background: rgba(13, 27, 52, 0.75);
+    border-color: rgba(56, 189, 248, 0.20);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+:global([data-theme="dark"]) .storyContent h3 {
+    color: #f1f5f9;
+}
+
+:global([data-theme="dark"]) .storyContent p {
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .storyBullet {
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .storyBullet svg {
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .statCard {
+    background: rgba(14, 28, 54, 0.85);
+    border-color: rgba(56, 189, 248, 0.18);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+:global([data-theme="dark"]) .statCard strong {
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .statCard span {
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .valueCard,
+:global([data-theme="dark"]) .whyCard {
+    background: rgba(14, 28, 54, 0.85);
+    border-color: rgba(56, 189, 248, 0.18);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+:global([data-theme="dark"]) .valueCard h3,
+:global([data-theme="dark"]) .whyCard h3 {
+    color: #f1f5f9;
+}
+
+:global([data-theme="dark"]) .valueCard p,
+:global([data-theme="dark"]) .whyCard p {
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .valueIcon,
+:global([data-theme="dark"]) .whyIcon {
+    background: rgba(30, 58, 138, 0.45);
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .ctaCard {
+    background: #09152b;
+    border-color: rgba(56, 189, 248, 0.25);
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.5);
+}
+
+:global([data-theme="dark"]) .ctaCard h2 {
+    color: #ffffff;
+}
+
+:global([data-theme="dark"]) .ctaCard p {
+    color: #94a3b8;
+}

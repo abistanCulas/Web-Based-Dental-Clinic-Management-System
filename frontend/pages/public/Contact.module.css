@@ -1,0 +1,788 @@
+.page {
+    min-height: 100vh;
+    padding: 24px 0 70px;
+    color: #102a56;
+    background:
+            radial-gradient(
+                    circle at 10% 10%,
+                    rgba(59, 130, 246, 0.08),
+                    transparent 30%
+            ),
+            radial-gradient(
+                    circle at 90% 30%,
+                    rgba(125, 211, 252, 0.12),
+                    transparent 28%
+            ),
+            linear-gradient(
+                    180deg,
+                    #f8fbff 0%,
+                    #eef6ff 100%
+            );
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+    width: min(1380px, calc(100% - 48px));
+    min-height: 370px;
+    margin: 0 auto 34px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 28px;
+    background: #eaf4ff;
+    box-shadow:
+            0 24px 60px rgba(37, 99, 235, 0.12),
+            0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.heroImage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background:
+            linear-gradient(
+                    90deg,
+                    #f8fbff 0%,
+                    #f8fbff 45%,
+                    rgba(248, 251, 255, 0.92) 58%,
+                    rgba(248, 251, 255, 0.25) 75%,
+                    transparent 100%
+            );
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 370px;
+}
+
+.heroText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 44px 42px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    margin-bottom: 16px;
+    padding: 8px 14px;
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    color: #1769d1;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    backdrop-filter: blur(14px);
+}
+
+.heroText h1 {
+    margin: 0;
+    color: #102a56;
+    font-size: clamp(40px, 4.2vw, 62px);
+    font-weight: 850;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+}
+
+.heroText h1 span {
+    display: block;
+    color: #2563eb;
+}
+
+.heroText > p {
+    max-width: 650px;
+    margin: 20px 0 0;
+    color: #5d7293;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.heroHighlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 700px;
+    margin-top: 28px;
+}
+
+.highlight {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 66px;
+    padding: 10px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.64);
+    box-shadow: 0 8px 22px rgba(37, 99, 235, 0.06);
+    backdrop-filter: blur(16px);
+}
+
+.highlightIcon {
+    display: grid;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border-radius: 13px;
+    background: #e0efff;
+    color: #2563eb;
+}
+
+.highlight strong {
+    display: block;
+    color: #183b70;
+    font-size: 12px;
+}
+
+.highlight span {
+    display: block;
+    margin-top: 4px;
+    color: #7084a3;
+    font-size: 10px;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contactSection {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 24px;
+    width: min(1380px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.infoCard,
+.formCard {
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    background:
+            linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.88),
+                    rgba(243, 249, 255, 0.72)
+            );
+    box-shadow:
+            0 14px 34px rgba(37, 99, 235, 0.07),
+            inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+}
+
+.infoCard {
+    padding: 28px;
+}
+
+.formCard {
+    padding: 30px;
+}
+
+.cardHeading > span {
+    display: block;
+    margin-bottom: 8px;
+    color: #2770d8;
+    font-size: 11px;
+    font-weight: 850;
+    letter-spacing: 0.1em;
+}
+
+.cardHeading h2 {
+    margin: 0;
+    color: #102a56;
+    font-size: 29px;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+}
+
+.cardHeading h2 strong {
+    color: #2563eb;
+}
+
+.cardHeading p {
+    margin: 11px 0 0;
+    color: #6b7f9e;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* CONTACT INFO */
+
+.contactList {
+    display: grid;
+    gap: 17px;
+    margin-top: 30px;
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.contactIcon {
+    display: grid;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border: 1px solid #dce9f8;
+    border-radius: 15px;
+    background: #eaf3ff;
+    color: #2563eb;
+}
+
+.contactItem span {
+    display: block;
+    color: #91a0b6;
+    font-size: 10px;
+    font-weight: 750;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.contactItem strong {
+    display: block;
+    margin-top: 4px;
+    color: #183b70;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.infoNote {
+    display: flex;
+    gap: 11px;
+    margin-top: 28px;
+    padding: 15px;
+    border: 1px solid #dce9f8;
+    border-radius: 16px;
+    background: rgba(239, 246, 255, 0.72);
+    color: #2563eb;
+}
+
+.infoNote > svg {
+    flex: 0 0 auto;
+    margin-top: 2px;
+}
+
+.infoNote strong {
+    display: block;
+    color: #36547d;
+    font-size: 12px;
+}
+
+.infoNote p {
+    margin: 4px 0 0;
+    color: #71839f;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    margin-top: 27px;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 17px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 8px;
+    color: #36547d;
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.formGroup label span {
+    margin-left: 3px;
+    color: #ef4444;
+}
+
+.inputWrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputWrap > svg {
+    position: absolute;
+    left: 14px;
+    z-index: 1;
+    color: #8a9ab3;
+    pointer-events: none;
+}
+
+.inputWrap input,
+.inputWrap select,
+.inputWrap textarea {
+    width: 100%;
+    border: 1px solid #d8e5f4;
+    outline: none;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.86);
+    color: #183b70;
+    font-family: inherit;
+    font-size: 13px;
+    transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+.inputWrap input,
+.inputWrap select {
+    height: 48px;
+    padding: 0 14px 0 40px;
+}
+
+.inputWrap select {
+    appearance: none;
+    cursor: pointer;
+}
+
+.inputWrap textarea {
+    min-height: 125px;
+    padding: 14px 14px 14px 40px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.inputWrap input::placeholder,
+.inputWrap textarea::placeholder {
+    color: #a0adbf;
+}
+
+.inputWrap input:focus,
+.inputWrap select:focus,
+.inputWrap textarea:focus {
+    border-color: #7db1f4;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
+}
+
+.textareaWrap {
+    align-items: flex-start;
+}
+
+.textareaWrap > svg {
+    top: 15px;
+}
+
+/* BUTTON */
+
+.submitButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: 100%;
+    min-height: 49px;
+    margin-top: 3px;
+    border: 0;
+    border-radius: 13px;
+    background: #2563eb;
+    color: white;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 750;
+    cursor: pointer;
+    box-shadow: 0 9px 22px rgba(37, 99, 235, 0.18);
+    transition:
+            background 0.2s ease,
+            transform 0.2s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.submitButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =========================
+   SUCCESS
+========================= */
+
+.successState {
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.successIcon {
+    display: grid;
+    width: 68px;
+    height: 68px;
+    margin-bottom: 18px;
+    place-items: center;
+    border-radius: 21px;
+    background: #eaf7ef;
+    color: #16a34a;
+}
+
+.successEyebrow {
+    color: #16a34a;
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: 0.1em;
+}
+
+.successState h2 {
+    margin: 11px 0 8px;
+    color: #173867;
+    font-size: 27px;
+}
+
+.successState h2 span {
+    color: #2563eb;
+}
+
+.successState p {
+    max-width: 430px;
+    margin: 0;
+    color: #71839f;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.secondaryButton {
+    min-height: 45px;
+    margin-top: 23px;
+    padding: 0 18px;
+    border: 1px solid #dbe7f5;
+    border-radius: 12px;
+    background: white;
+    color: #526b8e;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 750;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.secondaryButton:hover {
+    border-color: #9fc2f3;
+    color: #2563eb;
+    transform: translateY(-1px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+    .contactSection {
+        grid-template-columns: 1fr;
+    }
+
+    .infoCard {
+        order: 2;
+    }
+
+    .formCard {
+        order: 1;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero {
+        min-height: 500px;
+    }
+
+    .heroContent {
+        min-height: 500px;
+        grid-template-columns: 1fr;
+    }
+
+    .heroOverlay {
+        background:
+                linear-gradient(
+                        180deg,
+                        #f8fbff 0%,
+                        #f8fbff 55%,
+                        rgba(248, 251, 255, 0.88) 70%,
+                        transparent 100%
+                );
+    }
+
+    .heroText {
+        padding: 42px 34px;
+    }
+}
+
+@media (max-width: 640px) {
+    .page {
+        padding-top: 14px;
+    }
+
+    .hero,
+    .contactSection {
+        width: calc(100% - 24px);
+    }
+
+    .hero {
+        min-height: 560px;
+        border-radius: 22px;
+    }
+
+    .heroContent {
+        min-height: 560px;
+    }
+
+    .heroText {
+        padding: 32px 22px;
+    }
+
+    .heroText h1 {
+        font-size: 42px;
+    }
+
+    .heroText > p {
+        font-size: 14px;
+    }
+
+    .heroHighlights {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .infoCard,
+    .formCard {
+        padding: 22px 18px;
+        border-radius: 21px;
+    }
+
+    .formRow {
+        grid-template-columns: 1fr;
+    }
+
+    .cardHeading h2 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 420px) {
+    .heroText h1 {
+        font-size: 36px;
+    }
+
+    .contactItem {
+        align-items: flex-start;
+    }
+
+    .contactItem strong {
+        font-size: 12px;
+    }
+}
+
+/* =========================
+   DARK MODE FOR CONTACT
+========================= */
+
+:global([data-theme="dark"]) .page {
+    background:
+            radial-gradient(
+                    circle at 10% 10%,
+                    rgba(37, 99, 235, 0.12),
+                    transparent 35%
+            ),
+            radial-gradient(
+                    circle at 90% 30%,
+                    rgba(14, 165, 233, 0.10),
+                    transparent 35%
+            ),
+            #070d18;
+    color: #f1f5f9;
+}
+
+:global([data-theme="dark"]) .hero {
+    background: #0b1528;
+    border-color: rgba(56, 189, 248, 0.20);
+    box-shadow:
+            0 24px 60px rgba(0, 0, 0, 0.5),
+            0 0 25px rgba(37, 99, 235, 0.1);
+}
+
+:global([data-theme="dark"]) .heroOverlay {
+    background:
+            linear-gradient(
+                    90deg,
+                    #070d18 0%,
+                    #070d18 45%,
+                    rgba(7, 13, 24, 0.92) 58%,
+                    rgba(7, 13, 24, 0.25) 75%,
+                    transparent 100%
+            );
+}
+
+@media (max-width: 900px) {
+    :global([data-theme="dark"]) .heroOverlay {
+        background:
+                linear-gradient(
+                        180deg,
+                        #070d18 0%,
+                        #070d18 55%,
+                        rgba(7, 13, 24, 0.90) 70%,
+                        transparent 100%
+                );
+    }
+}
+
+:global([data-theme="dark"]) .eyebrow {
+    background: rgba(30, 58, 138, 0.45);
+    color: #38bdf8;
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+:global([data-theme="dark"]) .heroText h1 {
+    color: #ffffff;
+}
+
+:global([data-theme="dark"]) .heroText h1 span {
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .heroText > p {
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .highlight {
+    background: rgba(13, 26, 48, 0.75);
+    border-color: rgba(56, 189, 248, 0.20);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+:global([data-theme="dark"]) .highlightIcon {
+    background: rgba(30, 58, 138, 0.45);
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .highlight strong {
+    color: #f1f5f9;
+}
+
+:global([data-theme="dark"]) .highlight span {
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .infoCard,
+:global([data-theme="dark"]) .formCard {
+    background: rgba(13, 27, 52, 0.75);
+    border-color: rgba(56, 189, 248, 0.20);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+:global([data-theme="dark"]) .cardHeading h2 {
+    color: #ffffff;
+}
+
+:global([data-theme="dark"]) .cardHeading p {
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .cardEyebrow {
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .contactItem {
+    background: rgba(14, 28, 54, 0.85);
+    border-color: rgba(56, 189, 248, 0.18);
+}
+
+:global([data-theme="dark"]) .contactIcon {
+    background: rgba(30, 58, 138, 0.45);
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .contactItem small {
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .contactItem strong {
+    color: #f1f5f9;
+}
+
+:global([data-theme="dark"]) .contactItem span {
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .hoursCard {
+    background: rgba(14, 28, 54, 0.85);
+    border-color: rgba(56, 189, 248, 0.18);
+}
+
+:global([data-theme="dark"]) .hoursHeader h3 {
+    color: #f1f5f9;
+}
+
+:global([data-theme="dark"]) .hoursIcon {
+    background: rgba(30, 58, 138, 0.45);
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .hoursRow span {
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .hoursRow strong {
+    color: #f1f5f9;
+}
+
+:global([data-theme="dark"]) .formGroup label {
+    color: #cbd5e1;
+}
+
+:global([data-theme="dark"]) .inputWrap input,
+:global([data-theme="dark"]) .inputWrap select,
+:global([data-theme="dark"]) .inputWrap textarea {
+    background: rgba(8, 17, 34, 0.85);
+    border-color: rgba(56, 189, 248, 0.25);
+    color: #f1f5f9;
+}
+
+:global([data-theme="dark"]) .inputWrap input::placeholder,
+:global([data-theme="dark"]) .inputWrap textarea::placeholder {
+    color: #64748b;
+}
+
+:global([data-theme="dark"]) .inputWrap svg {
+    color: #64748b;
+}
+
+:global([data-theme="dark"]) .successMessage {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: rgba(52, 211, 153, 0.3);
+    color: #34d399;
+}

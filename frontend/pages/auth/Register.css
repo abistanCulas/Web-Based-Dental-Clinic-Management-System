@@ -1,0 +1,1458 @@
+/* =========================================================
+   DENTAFLOW REGISTER PAGE
+   Page-specific styles
+   ========================================================= */
+
+.df-register-page {
+    min-height: calc(100vh - 76px);
+    padding: 14px 24px 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+            radial-gradient(
+                    circle at 8% 10%,
+                    rgba(48, 137, 255, 0.12),
+                    transparent 30%
+            ),
+            radial-gradient(
+                    circle at 92% 90%,
+                    rgba(0, 194, 255, 0.1),
+                    transparent 28%
+            ),
+            linear-gradient(
+                    135deg,
+                    #eef6ff 0%,
+                    #f8fbff 48%,
+                    #edf7ff 100%
+            );
+}
+
+
+/* =========================================================
+   SHELL
+   ========================================================= */
+
+.df-register-shell {
+    width: min(1300px, 100%);
+    min-height: 690px;
+
+    display: grid;
+    grid-template-columns: 1.02fr 0.98fr;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.92);
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    box-shadow:
+            0 30px 80px rgba(30, 92, 160, 0.16),
+            0 8px 30px rgba(30, 92, 160, 0.08);
+
+    backdrop-filter: blur(26px);
+    -webkit-backdrop-filter: blur(26px);
+}
+
+
+/* =========================================================
+   LEFT VISUAL
+   ========================================================= */
+
+.df-register-visual {
+    position: relative;
+
+    min-height: 690px;
+
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.df-register-visual-image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transform: scale(1.015);
+
+    filter:
+            saturate(0.98)
+            contrast(1.02);
+}
+
+.df-register-visual-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background:
+            linear-gradient(
+                    180deg,
+                    rgba(18, 69, 122, 0.2) 0%,
+                    rgba(18, 77, 138, 0.3) 40%,
+                    rgba(7, 39, 79, 0.86) 100%
+            );
+}
+
+.df-register-visual::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+            linear-gradient(
+                    115deg,
+                    rgba(255, 255, 255, 0.16),
+                    transparent 34%,
+                    transparent 72%,
+                    rgba(255, 255, 255, 0.05)
+            );
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+   ========================================================= */
+
+.df-register-visual-content {
+    position: relative;
+    z-index: 3;
+
+    min-height: 690px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 38px 40px 34px;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.df-register-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 34px;
+}
+
+.df-register-brand-logo {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    box-shadow:
+            0 8px 24px rgba(0, 30, 70, 0.18);
+}
+
+.df-register-brand-logo svg {
+    width: 100%;
+    height: 100%;
+}
+
+.df-register-brand > div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.df-register-brand strong {
+    color: #ffffff;
+
+    font-size: 22px;
+    line-height: 1;
+
+    letter-spacing: -0.6px;
+}
+
+.df-register-brand span {
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.df-register-eyebrow {
+    width: fit-content;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 22px;
+    padding: 9px 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: rgba(255, 255, 255, 0.95);
+
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: 1.1px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+
+/* =========================================================
+   WELCOME
+   ========================================================= */
+
+.df-register-welcome {
+    max-width: 530px;
+}
+
+.df-register-welcome h1 {
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    color: #071b3a;
+
+    font-size: clamp(43px, 4.5vw, 62px);
+    line-height: 0.96;
+
+    font-weight: 850;
+    letter-spacing: -2.8px;
+}
+
+.df-register-welcome h1 span {
+    color: #a9e8ff;
+}
+
+.df-register-welcome p {
+    max-width: 500px;
+
+    margin: 23px 0 0;
+
+    color: rgba(255, 255, 255, 0.92);
+
+    font-size: 15px;
+    line-height: 1.72;
+}
+
+
+/* =========================================================
+   BENEFITS
+   ========================================================= */
+
+.df-register-benefits {
+    display: grid;
+    gap: 10px;
+
+    width: min(100%, 410px);
+
+    margin-top: 28px;
+}
+
+.df-register-benefit {
+    min-height: 60px;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 10px 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.23);
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.14);
+
+    box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.12),
+            0 8px 22px rgba(0, 30, 70, 0.08);
+
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
+
+    transition:
+            transform 0.2s ease,
+            background 0.2s ease;
+}
+
+.df-register-benefit:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.df-register-benefit-icon {
+    width: 38px;
+    height: 38px;
+
+    flex: 0 0 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+
+    background: rgba(111, 197, 255, 0.2);
+
+    color: #ffffff;
+}
+
+.df-register-benefit > div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.df-register-benefit strong {
+    color: #ffffff;
+
+    font-size: 13px;
+}
+
+.df-register-benefit span {
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 11px;
+}
+
+.df-register-slogan {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: auto;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+   ========================================================= */
+
+.df-register-form-side {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 38px 48px;
+
+    background:
+            radial-gradient(
+                    circle at 92% 5%,
+                    rgba(50, 135, 255, 0.1),
+                    transparent 30%
+            ),
+            rgba(255, 255, 255, 0.88);
+}
+
+.df-register-card {
+    width: min(100%, 480px);
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.df-register-heading {
+    margin-bottom: 22px;
+}
+
+.df-register-form-eyebrow {
+    display: inline-flex;
+
+    margin-bottom: 12px;
+
+    color: #0875d1;
+
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: 1.05px;
+}
+
+.df-register-heading h2,
+.df-register-otp h2 {
+    margin: 0;
+
+    color: #102544;
+
+    font-size: clamp(32px, 3vw, 43px);
+    line-height: 1.08;
+
+    font-weight: 850;
+    letter-spacing: -1.8px;
+}
+
+.df-register-heading p,
+.df-register-otp > p {
+    max-width: 460px;
+
+    margin: 10px 0 0;
+
+    color: #7183a1;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.df-register-error {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+
+    margin-bottom: 15px;
+    padding: 11px 13px;
+
+    border: 1px solid #fecaca;
+    border-radius: 11px;
+
+    background: #fff5f5;
+
+    color: #b42318;
+
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+.df-register-error svg {
+    flex: 0 0 auto;
+    margin-top: 1px;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.df-register-form {
+    display: grid;
+    gap: 13px;
+}
+
+.df-register-field {
+    display: grid;
+    gap: 7px;
+}
+
+.df-register-field label {
+    color: #334765;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.df-register-input-wrap {
+    position: relative;
+}
+
+.df-register-input-wrap > svg:first-child {
+    position: absolute;
+
+    left: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #8ca2bf;
+
+    pointer-events: none;
+}
+
+.df-register-input-wrap input {
+    width: 100%;
+    height: 48px;
+
+    box-sizing: border-box;
+
+    padding: 0 45px;
+
+    border: 1px solid #d7e3f1;
+    border-radius: 13px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: #152a49;
+
+    font-size: 13px;
+
+    transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease,
+            background 0.2s ease;
+}
+
+.df-register-input-wrap input::placeholder {
+    color: #a7b5ca;
+}
+
+.df-register-input-wrap input:hover {
+    border-color: #bfd5ed;
+}
+
+.df-register-input-wrap input:focus {
+    border-color: #2587dc;
+
+    background: #ffffff;
+
+    box-shadow:
+            0 0 0 4px rgba(37, 135, 220, 0.1);
+}
+
+.df-register-input-wrap input:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+
+/* =========================================================
+   PASSWORD TOGGLE
+   ========================================================= */
+
+.df-register-password-toggle {
+    position: absolute;
+
+    right: 11px;
+    top: 50%;
+
+    width: 31px;
+    height: 31px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: translateY(-50%);
+
+    border: 0;
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #7f94b0;
+
+    cursor: pointer;
+}
+
+.df-register-password-toggle:hover {
+    color: #1678d1;
+    background: #eef6ff;
+}
+
+
+/* =========================================================
+   PASSWORD STRENGTH
+   ========================================================= */
+
+.df-password-strength {
+    min-height: 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 4px;
+}
+
+.df-password-track {
+    flex: 1;
+
+    height: 4px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background: #e5edf5;
+}
+
+.df-password-bar {
+    display: block;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    transition:
+            width 0.25s ease,
+            background 0.25s ease;
+}
+
+.df-password-bar.weak {
+    background: #ef4444;
+}
+
+.df-password-bar.medium {
+    background: #f59e0b;
+}
+
+.df-password-bar.strong {
+    background: #16a34a;
+}
+
+.df-password-strength small {
+    min-width: 88px;
+
+    color: #8a9bb1;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.df-register-primary-btn {
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    border: 0;
+    border-radius: 13px;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #1675d5 0%,
+                    #139de5 100%
+            );
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 850;
+
+    cursor: pointer;
+
+    box-shadow:
+            0 11px 23px rgba(22, 117, 213, 0.19);
+
+    transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease,
+            filter 0.2s ease;
+}
+
+.df-register-primary-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    box-shadow:
+            0 15px 28px rgba(22, 117, 213, 0.25);
+
+    filter: brightness(1.03);
+}
+
+.df-register-primary-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.df-register-primary-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.62;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.df-register-divider {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+
+    gap: 11px;
+
+    margin: 1px 0;
+}
+
+.df-register-divider span {
+    height: 1px;
+    background: #e3eaf3;
+}
+
+.df-register-divider strong {
+    color: #a1afc1;
+
+    font-size: 9px;
+    font-weight: 850;
+}
+
+
+/* =========================================================
+   GOOGLE
+   ========================================================= */
+
+.df-register-google-btn {
+    width: 100%;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    border: 1px solid #d9e4f0;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #334765;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+            border-color 0.2s ease,
+            background 0.2s ease,
+            transform 0.2s ease;
+}
+
+.df-register-google-btn:hover:not(:disabled) {
+    border-color: #bcd2e9;
+    background: #f9fcff;
+    transform: translateY(-1px);
+}
+
+.df-register-google-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.df-register-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    margin-top: 17px;
+
+    color: #8798ae;
+
+    font-size: 11px;
+}
+
+.df-register-footer a {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+
+    color: #0875d1;
+
+    font-weight: 850;
+
+    text-decoration: none;
+}
+
+.df-register-footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   SECURITY
+   ========================================================= */
+
+.df-register-security-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    margin-top: 14px;
+
+    color: #9aabc0;
+
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.df-register-security-note svg {
+    color: #32ad75;
+}
+
+
+/* =========================================================
+   OTP
+   ========================================================= */
+
+.df-register-otp {
+    text-align: center;
+}
+
+.df-register-otp-icon {
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 17px;
+
+    border: 1px solid #cde5fb;
+    border-radius: 18px;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #edf7ff,
+                    #f7fbff
+            );
+
+    color: #0875d1;
+
+    box-shadow:
+            0 10px 24px rgba(31, 119, 201, 0.1);
+}
+
+.df-register-otp
+.df-register-form-eyebrow {
+    margin-bottom: 9px;
+}
+
+.df-register-otp > p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.df-register-otp > p strong {
+    color: #0875d1;
+}
+
+
+/* =========================================================
+   OTP ERROR
+   ========================================================= */
+
+.df-register-otp .df-register-error {
+    text-align: left;
+    margin-top: 16px;
+}
+
+
+/* =========================================================
+   OTP TIMER
+   ========================================================= */
+
+.df-register-otp-timer {
+    margin: 21px 0 18px;
+
+    color: #7386a2;
+
+    font-size: 11px;
+    font-weight: 650;
+}
+
+.df-register-otp-timer strong {
+    color: #0875d1;
+
+    font-size: 12px;
+}
+
+.df-register-otp-timer .expired {
+    color: #dc2626;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   OTP INPUTS
+   ========================================================= */
+
+.df-register-otp-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+
+    margin-bottom: 21px;
+}
+
+.df-register-otp-inputs input {
+    width: 51px;
+    height: 58px;
+
+    border: 1px solid #d4e1ee;
+    border-radius: 13px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #102544;
+
+    text-align: center;
+
+    font-size: 22px;
+    font-weight: 850;
+
+    box-shadow:
+            0 3px 12px rgba(30, 92, 160, 0.04);
+
+    transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease,
+            transform 0.2s ease;
+}
+
+.df-register-otp-inputs input:focus {
+    border-color: #2587dc;
+
+    box-shadow:
+            0 0 0 4px rgba(37, 135, 220, 0.1);
+
+    transform: translateY(-1px);
+}
+
+.df-register-otp-inputs input:disabled {
+    background: #f5f8fb;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   OTP ACTIONS
+   ========================================================= */
+
+.df-register-otp-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 15px;
+}
+
+.df-register-otp-actions button {
+    padding: 5px 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #0875d1;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.df-register-otp-actions button:hover:not(:disabled) {
+    text-decoration: underline;
+}
+
+.df-register-otp-actions button:disabled {
+    color: #a6b4c5;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   SUCCESS PAGE
+   ========================================================= */
+
+.df-register-success-page {
+    min-height: calc(100vh - 76px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+            radial-gradient(
+                    circle at 15% 20%,
+                    rgba(48, 137, 255, 0.13),
+                    transparent 30%
+            ),
+            radial-gradient(
+                    circle at 85% 80%,
+                    rgba(0, 194, 255, 0.1),
+                    transparent 28%
+            ),
+            linear-gradient(
+                    135deg,
+                    #eef6ff,
+                    #f9fcff
+            );
+}
+
+.df-register-success-card {
+    width: min(500px, 100%);
+
+    padding: 48px 42px;
+
+    text-align: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 28px;
+
+    background: rgba(255, 255, 255, 0.82);
+
+    box-shadow:
+            0 28px 70px rgba(30, 92, 160, 0.14);
+
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+}
+
+.df-register-success-icon {
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 18px;
+
+    border-radius: 22px;
+
+    background: #eaf9f1;
+
+    color: #20a66a;
+}
+
+.df-register-success-label {
+    color: #0875d1;
+
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: 1px;
+}
+
+.df-register-success-card h1 {
+    margin: 10px 0 0;
+
+    color: #102544;
+
+    font-size: 32px;
+    line-height: 1.1;
+
+    font-weight: 850;
+    letter-spacing: -1.3px;
+}
+
+.df-register-success-card p {
+    margin: 14px auto 24px;
+
+    color: #7183a1;
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+    .df-register-shell {
+        grid-template-columns: 0.95fr 1.05fr;
+    }
+
+    .df-register-form-side {
+        padding: 34px;
+    }
+
+    .df-register-visual-content {
+        padding: 34px;
+    }
+
+    .df-register-welcome h1 {
+        font-size: 50px;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .df-register-page {
+        padding: 18px;
+    }
+
+    .df-register-shell {
+        grid-template-columns: 1fr;
+
+        max-width: 620px;
+
+        min-height: auto;
+    }
+
+    .df-register-visual {
+        min-height: 420px;
+    }
+
+    .df-register-visual-content {
+        min-height: 420px;
+    }
+
+    .df-register-benefits {
+        width: min(100%, 440px);
+    }
+
+    .df-register-slogan {
+        margin-top: 24px;
+    }
+
+    .df-register-form-side {
+        padding: 38px 34px 42px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .df-register-page {
+        min-height: 100vh;
+        padding: 10px;
+    }
+
+    .df-register-shell {
+        border-radius: 22px;
+    }
+
+    .df-register-visual {
+        min-height: 390px;
+    }
+
+    .df-register-visual-content {
+        min-height: 390px;
+        padding: 25px 22px;
+    }
+
+    .df-register-brand {
+        margin-bottom: 24px;
+    }
+
+    .df-register-brand-logo {
+        width: 42px;
+        height: 42px;
+    }
+
+    .df-register-brand strong {
+        font-size: 19px;
+    }
+
+    .df-register-eyebrow {
+        margin-bottom: 17px;
+    }
+
+    .df-register-welcome h1 {
+        font-size: 42px;
+        letter-spacing: -2px;
+    }
+
+    .df-register-welcome p {
+        margin-top: 17px;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .df-register-benefits {
+        display: none;
+    }
+
+    .df-register-form-side {
+        padding: 30px 22px 34px;
+    }
+
+    .df-register-heading h2,
+    .df-register-otp h2 {
+        font-size: 32px;
+    }
+
+    .df-register-otp-inputs {
+        gap: 6px;
+    }
+
+    .df-register-otp-inputs input {
+        width: 45px;
+        height: 54px;
+    }
+}
+
+
+@media (max-width: 390px) {
+    .df-register-page {
+        padding: 0;
+    }
+
+    .df-register-shell {
+        width: 100%;
+        border: 0;
+        border-radius: 0;
+    }
+
+    .df-register-visual {
+        min-height: 360px;
+    }
+
+    .df-register-visual-content {
+        min-height: 360px;
+        padding: 22px 18px;
+    }
+
+    .df-register-welcome h1 {
+        font-size: 38px;
+    }
+
+    .df-register-form-side {
+        padding: 26px 18px 30px;
+    }
+
+    .df-register-heading h2,
+    .df-register-otp h2 {
+        font-size: 29px;
+    }
+
+    .df-register-otp-inputs {
+        gap: 5px;
+    }
+
+    .df-register-otp-inputs input {
+        width: 41px;
+        height: 51px;
+
+        font-size: 19px;
+    }
+
+    .df-register-success-card {
+        padding: 38px 24px;
+    }
+}
+
+/* =========================================================
+   DARK MODE — Strict Liquid Glass Specification
+   ========================================================= */
+
+[data-theme="dark"] .df-register-page {
+    background:
+        radial-gradient(circle at 10% 15%, rgba(14, 165, 233, 0.12), transparent 40%),
+        radial-gradient(circle at 90% 85%, rgba(56, 189, 248, 0.08), transparent 35%),
+        linear-gradient(180deg, #070d18 0%, #0a1322 50%, #060a12 100%) !important;
+}
+
+[data-theme="dark"] .df-register-shell {
+    border-color: rgba(56, 189, 248, 0.20) !important;
+    background: rgba(10, 25, 48, 0.82) !important;
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.7),
+        0 0 30px rgba(14, 165, 233, 0.12) !important;
+}
+
+[data-theme="dark"] .df-register-form-side {
+    background:
+        radial-gradient(circle at 92% 5%, rgba(56, 189, 248, 0.08), transparent 35%),
+        rgba(8, 18, 36, 0.95) !important;
+}
+
+[data-theme="dark"] .df-register-form-eyebrow {
+    color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .df-register-heading h2,
+[data-theme="dark"] .df-register-otp h2 {
+    color: #f8fafc !important;
+}
+
+[data-theme="dark"] .df-register-heading p,
+[data-theme="dark"] .df-register-otp > p {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .df-register-otp > p strong {
+    color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .df-register-field label {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .df-register-input-wrap input {
+    background: rgba(10, 20, 40, 0.85) !important;
+    border-color: rgba(56, 189, 248, 0.22) !important;
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .df-register-input-wrap input:hover {
+    border-color: rgba(56, 189, 248, 0.45) !important;
+}
+
+[data-theme="dark"] .df-register-input-wrap input:focus {
+    border-color: #38bdf8 !important;
+    background: rgba(12, 25, 50, 0.95) !important;
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.18) !important;
+}
+
+[data-theme="dark"] .df-register-input-wrap input::placeholder {
+    color: #64748b !important;
+}
+
+[data-theme="dark"] .df-register-input-wrap > svg:first-child {
+    color: #64748b !important;
+}
+
+[data-theme="dark"] .df-register-password-toggle {
+    color: #64748b !important;
+}
+
+[data-theme="dark"] .df-register-password-toggle:hover {
+    color: #38bdf8 !important;
+    background: rgba(56, 189, 248, 0.12) !important;
+}
+
+[data-theme="dark"] .df-password-track {
+    background: rgba(56, 189, 248, 0.15) !important;
+}
+
+[data-theme="dark"] .df-password-strength small {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .df-register-divider span {
+    background: rgba(56, 189, 248, 0.16) !important;
+}
+
+[data-theme="dark"] .df-register-divider strong {
+    color: #64748b !important;
+}
+
+[data-theme="dark"] .df-register-google-btn {
+    background: rgba(15, 30, 58, 0.85) !important;
+    border-color: rgba(56, 189, 248, 0.22) !important;
+    color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .df-register-google-btn:hover:not(:disabled) {
+    background: rgba(22, 42, 80, 0.95) !important;
+    border-color: rgba(56, 189, 248, 0.4) !important;
+}
+
+[data-theme="dark"] .df-register-footer {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .df-register-footer a {
+    color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .df-register-security-note {
+    color: #64748b !important;
+}
+
+[data-theme="dark"] .df-register-otp-icon {
+    border-color: rgba(56, 189, 248, 0.25) !important;
+    background: rgba(14, 165, 233, 0.15) !important;
+    color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .df-register-otp-timer {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .df-register-otp-timer strong {
+    color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .df-register-otp-inputs input {
+    background: rgba(10, 20, 40, 0.85) !important;
+    border-color: rgba(56, 189, 248, 0.22) !important;
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .df-register-otp-inputs input:focus {
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.18) !important;
+}
+
+[data-theme="dark"] .df-register-otp-actions button {
+    color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .df-register-success-page {
+    background:
+        radial-gradient(circle at 15% 20%, rgba(14, 165, 233, 0.12), transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(56, 189, 248, 0.08), transparent 35%),
+        linear-gradient(180deg, #070d18 0%, #0a1322 50%, #060a12 100%) !important;
+}
+
+[data-theme="dark"] .df-register-success-card {
+    border-color: rgba(56, 189, 248, 0.20) !important;
+    background: rgba(10, 25, 48, 0.85) !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7) !important;
+}
+
+[data-theme="dark"] .df-register-success-card h1 {
+    color: #f8fafc !important;
+}
+
+[data-theme="dark"] .df-register-success-card p {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .df-register-success-label {
+    color: #38bdf8 !important;
+}

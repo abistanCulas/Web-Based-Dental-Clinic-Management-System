@@ -1,0 +1,1590 @@
+/* ==========================================================================
+   DentaFlow Public Landing Page - Strict Reference Visual Match
+   Source of Truth: media_1789975707190.jpg
+   Proportions: Compact, cohesive visual rhythm matching reference
+   ========================================================================== */
+
+.df-page-canvas {
+  width: 100%;
+  background:
+    radial-gradient(ellipse 65% 50% at 15% 10%, rgba(191, 219, 254, 0.45) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 85% 8%, rgba(224, 242, 254, 0.5) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(240, 249, 255, 0.65) 0%, transparent 70%),
+    #f8faff;
+  color: #1e293b;
+  position: relative;
+  overflow-x: hidden;
+}
+
+[data-theme="dark"] .df-page-canvas {
+  background:
+    radial-gradient(ellipse 65% 50% at 15% 10%, rgba(30, 58, 138, 0.28) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 85% 8%, rgba(14, 165, 233, 0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(15, 23, 42, 0.6) 0%, transparent 70%),
+    #090d16;
+  color: #e2e8f0;
+}
+
+.df-section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==========================================================================
+   1. HERO SECTION
+   ========================================================================== */
+
+.df-hero-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 8px 20px 20px;
+}
+
+.df-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.df-hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+/* Small Healthcare Badge */
+.df-hero-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #e0f2fe;
+  color: #0284c7;
+  border: 1px solid rgba(186, 230, 253, 0.85);
+  border-radius: 9999px;
+  padding: 5px 13px;
+  font-size: 11.5px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  letter-spacing: 0.01em;
+}
+
+[data-theme="dark"] .df-hero-pill-badge {
+  background: rgba(14, 165, 233, 0.15);
+  border-color: rgba(56, 189, 248, 0.3);
+  color: #38bdf8;
+}
+
+.df-pill-badge-icon {
+  display: flex;
+  align-items: center;
+  color: #0284c7;
+}
+
+/* Headline */
+.df-hero-title {
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 800;
+  color: #0f2042;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  margin-bottom: 12px;
+}
+
+[data-theme="dark"] .df-hero-title {
+  color: #ffffff;
+}
+
+.df-hero-title-blue {
+  display: block;
+  color: #2563eb;
+}
+
+/* Description */
+.df-hero-desc {
+  font-size: 14.5px;
+  color: #64748b;
+  line-height: 1.55;
+  max-width: 440px;
+  margin-bottom: 22px;
+}
+
+[data-theme="dark"] .df-hero-desc {
+  color: #94a3b8;
+}
+
+/* Hero Button Row */
+.df-hero-btn-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.df-btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 5px 16px -2px rgba(37, 99, 235, 0.4);
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.df-btn-hero-primary:hover {
+  background: linear-gradient(135deg, #0369a1 0%, #1d4ed8 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 7px 20px -2px rgba(37, 99, 235, 0.48);
+  color: #ffffff;
+}
+
+.df-btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #dce5f0;
+  color: #2563eb;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.df-btn-hero-secondary:hover {
+  background: #ffffff;
+  border-color: #93c5fd;
+  color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .df-btn-hero-secondary {
+  background: rgba(16, 26, 50, 0.85);
+  border-color: rgba(56, 189, 248, 0.25);
+  color: #93c5fd;
+}
+
+/* Bottom 3 Trust Pills */
+.df-hero-trust-pills-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.df-hero-trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  border-radius: 11px;
+  padding: 6px 11px;
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.04);
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .df-hero-trust-pill {
+  background: rgba(16, 26, 50, 0.85);
+  border-color: rgba(56, 189, 248, 0.2);
+}
+
+.df-trust-icon-box {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .df-trust-icon-box {
+  background: rgba(30, 58, 138, 0.4);
+}
+
+.df-trust-pill-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.df-trust-pill-text strong {
+  font-size: 11.5px;
+  color: #0f2042;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .df-trust-pill-text strong {
+  color: #f8fafc;
+}
+
+.df-trust-pill-text span {
+  font-size: 9.5px;
+  color: #64748b;
+}
+
+[data-theme="dark"] .df-trust-pill-text span {
+  color: #94a3b8;
+}
+
+/* Right Side: Hero Visual */
+.df-hero-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.df-hero-visual-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+}
+
+.df-hero-visual-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 12px 30px rgba(37, 99, 235, 0.08));
+}
+
+.df-hero-floating-card-link {
+  position: absolute;
+  right: 6.5%;
+  bottom: 24%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   GLASS PANELS (SERVICES, WHY CHOOSE, REVIEWS)
+   ========================================================================= */
+
+.df-glass-panel {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow:
+    0 8px 28px -4px rgba(37, 99, 235, 0.06),
+    0 2px 6px -2px rgba(15, 23, 42, 0.03);
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+
+[data-theme="dark"] .df-glass-panel {
+  background: rgba(12, 22, 42, 0.82);
+  border-color: rgba(56, 189, 248, 0.2);
+  box-shadow: 0 8px 28px -4px rgba(0, 0, 0, 0.45);
+}
+
+.df-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.df-panel-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f2042;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+[data-theme="dark"] .df-panel-title {
+  color: #ffffff;
+}
+
+.df-panel-subtitle {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 3px;
+}
+
+[data-theme="dark"] .df-panel-subtitle {
+  color: #94a3b8;
+}
+
+.df-panel-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #dce5f0;
+  color: #2563eb;
+  border-radius: 9px;
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.df-panel-action-btn:hover {
+  background: #ffffff;
+  border-color: #93c5fd;
+  color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .df-panel-action-btn {
+  background: rgba(16, 26, 50, 0.85);
+  border-color: rgba(56, 189, 248, 0.25);
+  color: #93c5fd;
+}
+
+/* ==========================================================================
+   2. SERVICES GRID (4 CARDS)
+   ========================================================================= */
+
+.df-services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.df-service-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.df-service-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.09);
+  border-color: rgba(147, 197, 253, 0.9);
+}
+
+[data-theme="dark"] .df-service-card {
+  background: rgba(16, 28, 54, 0.85);
+  border-color: rgba(56, 189, 248, 0.2);
+}
+
+.df-service-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  min-height: 52px;
+}
+
+.df-service-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: #e0f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .df-service-icon-box {
+  background: rgba(14, 165, 233, 0.2);
+}
+
+.df-service-card-img-wrap {
+  width: 64px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.df-service-card-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.df-service-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f2042;
+  margin-bottom: 5px;
+  letter-spacing: -0.01em;
+}
+
+[data-theme="dark"] .df-service-title {
+  color: #f8fafc;
+}
+
+.df-service-desc {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.45;
+  margin-bottom: 12px;
+  flex: 1;
+}
+
+[data-theme="dark"] .df-service-desc {
+  color: #94a3b8;
+}
+
+.df-service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #2563eb;
+  text-decoration: none;
+  margin-top: auto;
+  transition: all 0.2s ease;
+}
+
+.df-service-link:hover {
+  color: #1d4ed8;
+  transform: translateX(2px);
+}
+
+/* ==========================================================================
+   3. STATISTICS ROW (FLOATING GLASS BAR)
+   ========================================================================= */
+
+.df-stats-glass-bar {
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 14px 24px;
+  margin-bottom: 16px;
+  box-shadow:
+    0 6px 20px rgba(37, 99, 235, 0.05),
+    0 2px 5px rgba(15, 23, 42, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+[data-theme="dark"] .df-stats-glass-bar {
+  background: rgba(12, 22, 42, 0.85);
+  border-color: rgba(56, 189, 248, 0.2);
+}
+
+.df-stat-card-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  position: relative;
+  justify-content: center;
+}
+
+.df-stat-icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e0f2fe;
+  color: #0284c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .df-stat-icon-circle {
+  background: rgba(14, 165, 233, 0.2);
+  color: #38bdf8;
+}
+
+.df-stat-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.df-stat-number {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f2042;
+  letter-spacing: -0.02em;
+}
+
+[data-theme="dark"] .df-stat-number {
+  color: #ffffff;
+}
+
+.df-stat-label {
+  font-size: 11.5px;
+  color: #64748b;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+[data-theme="dark"] .df-stat-label {
+  color: #94a3b8;
+}
+
+.df-stat-divider {
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: rgba(226, 232, 240, 0.85);
+}
+
+[data-theme="dark"] .df-stat-divider {
+  background: rgba(56, 189, 248, 0.2);
+}
+
+/* ==========================================================================
+   4. WHY CHOOSE DENTAFLOW ("MORE THAN JUST DENTAL CARE")
+   ========================================================================= */
+
+.df-why-panel {
+  padding: 22px 26px;
+}
+
+.df-why-grid-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 1.25fr 1.35fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.df-why-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.df-why-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #e0f2fe;
+  color: #0284c7;
+  border-radius: 9999px;
+  padding: 4px 10px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+}
+
+[data-theme="dark"] .df-why-pill-badge {
+  background: rgba(14, 165, 233, 0.15);
+  color: #38bdf8;
+}
+
+.df-why-sparkle {
+  color: #0284c7;
+}
+
+.df-why-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f2042;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin-bottom: 10px;
+}
+
+[data-theme="dark"] .df-why-title {
+  color: #ffffff;
+}
+
+.df-why-desc {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+[data-theme="dark"] .df-why-desc {
+  color: #94a3b8;
+}
+
+.df-btn-why-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  transition: all 0.2s ease;
+}
+
+.df-btn-why-action:hover {
+  background: linear-gradient(135deg, #0369a1 0%, #1d4ed8 100%);
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+/* Center Column: 4 Feature Items */
+.df-why-features-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.df-why-feature-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.df-why-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e0f2fe;
+  color: #0284c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .df-why-icon-circle {
+  background: rgba(14, 165, 233, 0.2);
+  color: #38bdf8;
+}
+
+.df-why-feature-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.df-why-feature-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f2042;
+}
+
+[data-theme="dark"] .df-why-feature-title {
+  color: #f8fafc;
+}
+
+.df-why-feature-desc {
+  font-size: 11.5px;
+  color: #64748b;
+  margin-top: 1px;
+}
+
+[data-theme="dark"] .df-why-feature-desc {
+  color: #94a3b8;
+}
+
+/* Right Column: Story Card with Play Button */
+.df-why-visual-col {
+  display: flex;
+  justify-content: center;
+}
+
+.df-why-story-card-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 380px;
+}
+
+.df-why-story-card-wrap:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.16);
+}
+
+.df-why-story-card-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   5. WHAT OUR PATIENTS SAY (3 GLASS CARDS)
+   ========================================================================= */
+
+.df-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.df-review-glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+}
+
+.df-review-glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.08);
+  border-color: rgba(147, 197, 253, 0.9);
+}
+
+[data-theme="dark"] .df-review-glass-card {
+  background: rgba(16, 28, 54, 0.85);
+  border-color: rgba(56, 189, 248, 0.2);
+}
+
+.df-review-quote-header {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.df-review-quote-text {
+  font-size: 12.5px;
+  color: #334155;
+  line-height: 1.55;
+  margin-right: 24px;
+}
+
+[data-theme="dark"] .df-review-quote-text {
+  color: #cbd5e1;
+}
+
+.df-quote-mark-icon {
+  position: absolute;
+  top: -6px;
+  right: 0;
+  font-size: 30px;
+  color: #38bdf8;
+  font-weight: 800;
+  font-family: Georgia, serif;
+  line-height: 1;
+  opacity: 0.9;
+  user-select: none;
+}
+
+.df-review-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid rgba(241, 245, 249, 0.9);
+}
+
+[data-theme="dark"] .df-review-card-footer {
+  border-top-color: rgba(56, 189, 248, 0.15);
+}
+
+.df-review-author-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.df-review-avatar-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.df-review-author-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.df-review-author-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f2042;
+}
+
+[data-theme="dark"] .df-review-author-name {
+  color: #ffffff;
+}
+
+.df-review-author-service {
+  font-size: 10.5px;
+  color: #64748b;
+  margin-top: 1px;
+}
+
+[data-theme="dark"] .df-review-author-service {
+  color: #94a3b8;
+}
+
+.df-review-stars-row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* ==========================================================================
+   6. READY FOR A HEALTHIER SMILE? (CTA BANNER)
+   ========================================================================= */
+
+.df-cta-glass-banner {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  padding: 14px 28px;
+  margin-bottom: 16px;
+  box-shadow:
+    0 8px 26px rgba(37, 99, 235, 0.07),
+    0 2px 6px rgba(15, 23, 42, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+[data-theme="dark"] .df-cta-glass-banner {
+  background: rgba(12, 22, 42, 0.85);
+  border-color: rgba(56, 189, 248, 0.2);
+}
+
+.df-cta-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.df-cta-tooth-wrapper {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.df-cta-tooth-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(56, 189, 248, 0.45));
+}
+
+.df-cta-banner-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.df-cta-banner-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: #0f2042;
+  letter-spacing: -0.02em;
+  margin-bottom: 3px;
+}
+
+[data-theme="dark"] .df-cta-banner-title {
+  color: #ffffff;
+}
+
+.df-cta-banner-sub {
+  font-size: 12.5px;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+[data-theme="dark"] .df-cta-banner-sub {
+  color: #94a3b8;
+}
+
+.df-btn-cta-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 22px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.df-btn-cta-action:hover {
+  background: linear-gradient(135deg, #0369a1 0%, #1d4ed8 100%);
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+/* Modals */
+.df-enquiry-modal-backdrop,
+.df-video-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 22, 40, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: dfFadeIn 0.2s ease;
+}
+
+.df-enquiry-modal-card,
+.df-video-modal-card {
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(10, 22, 40, 0.3);
+  width: 100%;
+  max-width: 500px;
+  padding: 24px;
+}
+
+[data-theme="dark"] .df-enquiry-modal-card,
+[data-theme="dark"] .df-video-modal-card {
+  background: rgba(15, 23, 42, 0.96);
+  border-color: rgba(56, 189, 248, 0.25);
+  color: #ffffff;
+}
+
+.df-enquiry-modal-header,
+.df-video-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.df-enquiry-modal-header h3,
+.df-video-modal-header h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f2042;
+}
+
+[data-theme="dark"] .df-enquiry-modal-header h3,
+[data-theme="dark"] .df-video-modal-header h4 {
+  color: #ffffff;
+}
+
+.df-modal-close-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.df-modal-close-btn:hover {
+  color: #ef4444;
+}
+
+.df-enquiry-modal-desc {
+  font-size: 12.5px;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+.df-enquiry-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.df-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+}
+
+.df-form-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+}
+
+[data-theme="dark"] .df-form-label {
+  color: #cbd5e1;
+}
+
+.df-form-input,
+.df-form-textarea {
+  border: 1px solid #dce5f0;
+  border-radius: 9px;
+  padding: 9px 12px;
+  font-size: 13px;
+  background: #ffffff;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.df-form-input:focus,
+.df-form-textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+[data-theme="dark"] .df-form-input,
+[data-theme="dark"] .df-form-textarea {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(56, 189, 248, 0.25);
+  color: #ffffff;
+}
+
+.df-btn-block {
+  width: 100%;
+}
+
+/* Video Placeholder */
+.df-video-player-container {
+  padding: 20px 16px;
+  background: linear-gradient(135deg, #0f2042 0%, #1e3a8a 100%);
+  border-radius: 14px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.df-video-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.df-video-play-large {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.35);
+  border: 2px solid #38bdf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.df-video-placeholder h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.df-video-placeholder p {
+  font-size: 12.5px;
+  color: #93c5fd;
+  max-width: 360px;
+}
+
+@keyframes dfFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .df-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .df-hero-left {
+    align-items: center;
+    text-align: center;
+  }
+  .df-hero-btn-row {
+    justify-content: center;
+  }
+  .df-hero-trust-pills-row {
+    justify-content: center;
+  }
+  .df-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .df-why-grid-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .df-why-visual-col {
+    grid-column: span 2;
+  }
+  .df-reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .df-stats-glass-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .df-stat-divider {
+    display: none;
+  }
+  .df-why-grid-layout {
+    grid-template-columns: 1fr;
+  }
+  .df-why-visual-col {
+    grid-column: span 1;
+  }
+  .df-cta-glass-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .df-cta-banner-left {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 580px) {
+  .df-section-container,
+  .df-hero-section {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .df-services-grid {
+    grid-template-columns: 1fr;
+  }
+  .df-stats-glass-bar {
+    grid-template-columns: 1fr;
+  }
+  .df-glass-panel {
+    padding: 16px 14px;
+  }
+  .df-hero-title {
+    font-size: 32px;
+  }
+  .df-panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .df-hero-trust-pills-row {
+    flex-direction: column;
+    width: 100%;
+  }
+  .df-hero-trust-pill {
+    width: 100%;
+  }
+}
+
+/* ========================================================================== 
+   PUBLIC INNER PAGES — unified premium DentaFlow glass layout
+   Shared by Doctors, About, Contact, Service Detail, Book Appointment, etc.
+   ========================================================================== */
+.df-page-banner{max-width:1280px;margin:0 auto;padding:42px 24px 22px;text-align:left}
+.df-page-banner h1{font-size:clamp(36px,4.2vw,56px);font-weight:850;letter-spacing:-.045em;color:#10234b;line-height:1.04;margin:0 0 8px}
+.df-page-banner p{max-width:900px;color:#607694;font-size:15px;line-height:1.65;margin:0}
+.df-page-content{max-width:1280px;margin:0 auto;padding:0 24px 72px;color:#10234b}
+.df-page-content>*{min-width:0}
+.df-filters-row{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:12px;margin-bottom:22px}
+.df-search{position:relative}.df-search .df-search-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);font-size:14px;color:#6b809c;z-index:1}.df-search .df-input{padding-left:42px}
+.df-select{appearance:auto}
+.df-doctors-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.df-doctor-card{overflow:hidden;border-radius:24px;background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.94);box-shadow:0 14px 38px rgba(37,99,235,.09),0 2px 5px rgba(15,23,42,.04);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.df-doctor-card:hover{transform:translateY(-4px);border-color:rgba(147,197,253,.9);box-shadow:0 22px 48px rgba(37,99,235,.14)}
+.df-doctor-photo{height:220px;display:flex;align-items:flex-end;justify-content:flex-start;padding:18px;background-image:linear-gradient(180deg,rgba(37,99,235,.05),rgba(15,32,66,.12)),url('../../assets/reference/hero_tooth_visual.png');background-size:cover;background-position:center;color:transparent;font-size:0;position:relative}
+.df-doctor-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,0) 55%,rgba(15,32,66,.16));pointer-events:none}
+.df-doctor-body{padding:20px}.df-doctor-body h3{font-size:21px;color:#10234b;margin:0 0 4px}.df-doctor-specialty{font-size:14px;font-weight:750;color:#2563eb;margin-bottom:9px}.df-doctor-meta{font-size:13px;color:#657b99;line-height:1.7}.df-doctor-body .df-btn{min-height:42px}
+.df-about-preview{display:grid;grid-template-columns:1.02fr 1fr;gap:34px;align-items:center}.df-about-image{min-height:410px;border-radius:26px;background-image:linear-gradient(135deg,rgba(37,99,235,.06),rgba(255,255,255,.12)),url('../../assets/reference/hero_tooth_visual.png');background-size:cover;background-position:center;box-shadow:0 18px 46px rgba(37,99,235,.11);border:1px solid rgba(255,255,255,.95);font-size:0;color:transparent;overflow:hidden}.df-about-preview h2{font-size:32px;color:#10234b}.df-card{border-radius:20px;background:rgba(255,255,255,.76);border:1px solid rgba(255,255,255,.95);box-shadow:0 12px 32px rgba(37,99,235,.07);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}.df-card-body{padding:20px}.df-card h4{color:#10234b;font-size:16px}
+.df-stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.df-stats-grid>div{min-height:118px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border-radius:20px;background:rgba(255,255,255,.76);border:1px solid rgba(255,255,255,.95);box-shadow:0 12px 32px rgba(37,99,235,.07);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.df-stats-grid strong{font-size:30px;color:#2563eb;font-weight:850}.df-stats-grid span{margin-top:4px;color:#607694;font-size:13px}
+.df-section-header{margin:10px 0 18px}.df-section-header h2{font-size:28px;color:#10234b}.df-why-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.df-why-card{display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:18px;background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.95);box-shadow:0 10px 28px rgba(37,99,235,.06);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}.df-why-icon{width:38px;height:38px;display:grid;place-items:center;flex:none;border-radius:12px;background:#e8f3ff;color:#2563eb;font-weight:800}.df-why-card h3{font-size:16px;color:#10234b;margin:0}
+
+/* Public page forms */
+.df-page-content form{border-radius:24px}.df-page-content .df-label{color:#10234b}.df-page-content .df-input,.df-page-content .df-select,.df-page-content .df-textarea{background:rgba(255,255,255,.78);border-color:rgba(203,213,225,.75);border-radius:14px;min-height:46px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+
+/* Contact page helper classes and inline-layout normalization */
+.df-page-content textarea{min-height:120px}.df-page-content .df-card .df-card-body{background:transparent}
+
+[data-theme="dark"] .df-page-banner h1,[data-theme="dark"] .df-about-preview h2,[data-theme="dark"] .df-section-header h2,[data-theme="dark"] .df-doctor-body h3,[data-theme="dark"] .df-card h3,[data-theme="dark"] .df-card h4,[data-theme="dark"] .df-card strong{color:#f4f8ff}
+[data-theme="dark"] .df-page-banner p,[data-theme="dark"] .df-doctor-meta,[data-theme="dark"] .df-stats-grid span,[data-theme="dark"] .df-page-content{color:#cbd5e1}
+[data-theme="dark"] .df-doctor-card,[data-theme="dark"] .df-card,[data-theme="dark"] .df-stats-grid>div,[data-theme="dark"] .df-why-card{background:rgba(10,25,48,.82);border-color:rgba(56,189,248,.20);box-shadow:0 14px 34px rgba(0,0,0,.45)}
+[data-theme="dark"] .df-page-content .df-label{color:#e2e8f0}
+[data-theme="dark"] .df-page-content .df-input,[data-theme="dark"] .df-page-content .df-select,[data-theme="dark"] .df-page-content .df-textarea{background:rgba(8,17,34,.85);border-color:rgba(56,189,248,.25);color:#f1f5f9}
+[data-theme="dark"] .df-page-content .df-input::placeholder,[data-theme="dark"] .df-page-content .df-textarea::placeholder{color:#64748b}
+[data-theme="dark"] .df-page-content .df-search .df-search-icon{color:#64748b}
+[data-theme="dark"] .df-hero-badge{background:rgba(30,58,138,.45);color:#38bdf8;border:1px solid rgba(56,189,248,.3)}
+[data-theme="dark"] .df-badge-primary{background:rgba(30,58,138,.45);color:#38bdf8;border:1px solid rgba(56,189,248,.25)}
+
+
+@media(max-width:900px){.df-page-banner{padding:34px 18px 18px}.df-page-content{padding:0 18px 56px}.df-filters-row{grid-template-columns:1fr}.df-doctors-grid{grid-template-columns:1fr}.df-about-preview{grid-template-columns:1fr}.df-about-image{min-height:320px}.df-stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.df-why-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.df-page-banner{padding:26px 14px 16px}.df-page-content{padding:0 14px 44px}.df-page-banner h1{font-size:36px}.df-doctor-photo{height:190px}.df-stats-grid{grid-template-columns:1fr}.df-about-image{min-height:260px}}
+
+/* ==========================================================================
+   DentaFlow Reviews Page
+   Premium Glass / Liquid Glass Layout
+   ========================================================================== */
+
+.df-reviews-page-grid {
+  width: 100%;
+  max-width: 1180px;
+  margin: 32px auto 0;
+  padding: 0 4px 56px;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+
+  align-items: stretch;
+}
+
+.df-review-card {
+  position: relative;
+
+  min-width: 0;
+  min-height: 220px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 22px;
+
+  background:
+          linear-gradient(
+                  145deg,
+                  rgba(255, 255, 255, 0.88),
+                  rgba(255, 255, 255, 0.68)
+          );
+
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+
+  box-shadow:
+          0 14px 35px rgba(37, 99, 235, 0.08),
+          0 3px 8px rgba(15, 23, 42, 0.035);
+
+  transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          border-color 0.25s ease;
+}
+
+.df-review-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(147, 197, 253, 0.85);
+
+  box-shadow:
+          0 20px 45px rgba(37, 99, 235, 0.13),
+          0 5px 12px rgba(15, 23, 42, 0.05);
+}
+
+/* subtle glass highlight */
+
+.df-review-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 18px;
+  right: 18px;
+  height: 1px;
+
+  background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.95),
+          transparent
+  );
+
+  pointer-events: none;
+}
+
+/* Header */
+
+.df-review-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-width: 0;
+  margin-bottom: 14px;
+}
+
+.df-review-avatar-wrap {
+  position: relative;
+
+  width: 48px;
+  height: 48px;
+
+  flex: 0 0 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background:
+          linear-gradient(
+                  135deg,
+                  #dbeafe,
+                  #eff6ff
+          );
+
+  border: 2px solid rgba(255, 255, 255, 0.95);
+
+  box-shadow:
+          0 5px 14px rgba(37, 99, 235, 0.12);
+}
+
+.df-review-avatar {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.df-review-avatar-initials {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  color: #2563eb;
+}
+
+/* Name + date */
+
+.df-review-meta {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  line-height: 1.25;
+}
+
+.df-review-name {
+  display: block;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: #10234b;
+
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.df-review-date {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #7a8da8;
+
+  font-size: 11.5px;
+  font-weight: 500;
+}
+
+/* Stars */
+
+.df-review-stars {
+  display: flex;
+  align-items: center;
+
+  gap: 3px;
+
+  min-height: 18px;
+  margin-bottom: 12px;
+}
+
+.df-review-stars svg {
+  flex: 0 0 auto;
+}
+
+/* Review content */
+
+.df-review-text {
+  margin: 0;
+
+  color: #405572;
+
+  font-size: 13.5px;
+  line-height: 1.65;
+
+  flex: 1;
+}
+
+/* Service badge */
+
+.df-review-service {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+
+  margin-top: 16px;
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  background: rgba(219, 234, 254, 0.72);
+  border: 1px solid rgba(147, 197, 253, 0.55);
+
+  color: #2563eb;
+
+  font-size: 10.5px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+/* Reviews page heading */
+
+.df-reviews-page-grid
++ * {
+  min-width: 0;
+}
+
+/* Dark mode */
+
+[data-theme="dark"] .df-review-card {
+  background:
+          linear-gradient(
+                  145deg,
+                  rgba(15, 35, 65, 0.88),
+                  rgba(10, 25, 48, 0.76)
+          );
+
+  border-color: rgba(96, 165, 250, 0.18);
+
+  box-shadow:
+          0 14px 35px rgba(0, 0, 0, 0.28);
+}
+
+[data-theme="dark"] .df-review-card:hover {
+  border-color: rgba(96, 165, 250, 0.4);
+
+  box-shadow:
+          0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .df-review-name {
+  color: #f4f8ff;
+}
+
+[data-theme="dark"] .df-review-date {
+  color: #9eb2ce;
+}
+
+[data-theme="dark"] .df-review-text {
+  color: #c4d2e4;
+}
+
+[data-theme="dark"] .df-review-avatar-wrap {
+  background: rgba(37, 99, 235, 0.2);
+  border-color: rgba(96, 165, 250, 0.25);
+}
+
+[data-theme="dark"] .df-review-service {
+  background: rgba(37, 99, 235, 0.16);
+  border-color: rgba(96, 165, 250, 0.25);
+  color: #93c5fd;
+}
+
+/* ==========================================================================
+   Reviews Responsive
+   ========================================================================== */
+
+@media (max-width: 1050px) {
+  .df-review-card {
+    padding: 20px;
+  }
+
+  .df-reviews-page-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .df-reviews-page-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    margin-top: 24px;
+    padding-bottom: 40px;
+  }
+
+  .df-review-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .df-reviews-page-grid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .df-review-card {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .df-review-avatar-wrap {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+  }
+
+  .df-review-text {
+    font-size: 13px;
+  }
+}

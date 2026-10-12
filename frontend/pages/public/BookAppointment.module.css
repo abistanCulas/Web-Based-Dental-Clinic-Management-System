@@ -1,0 +1,1039 @@
+.page {
+    min-height: 100vh;
+    padding: 24px 0 70px;
+    background:
+            radial-gradient(circle at 10% 10%, rgba(59,130,246,.08), transparent 30%),
+            radial-gradient(circle at 90% 30%, rgba(125,211,252,.12), transparent 28%),
+            linear-gradient(180deg,#f8fbff 0%,#eef6ff 100%);
+    color: #102a56;
+}
+
+/* HERO */
+
+.hero {
+    position: relative;
+    width: min(1380px, calc(100% - 48px));
+    min-height: 370px;
+    margin: 0 auto 26px;
+    overflow: hidden;
+    border-radius: 28px;
+    border: 1px solid rgba(255,255,255,.9);
+    box-shadow: 0 24px 60px rgba(37,99,235,.12);
+}
+
+.heroImage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+            90deg,
+            #f8fbff 0%,
+            #f8fbff 45%,
+            rgba(248,251,255,.92) 58%,
+            rgba(248,251,255,.25) 75%,
+            transparent 100%
+    );
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    min-height: 370px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.heroText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 44px 42px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    margin-bottom: 16px;
+    padding: 8px 14px;
+    border: 1px solid rgba(37,99,235,.15);
+    border-radius: 999px;
+    background: rgba(255,255,255,.72);
+    color: #1769d1;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    backdrop-filter: blur(14px);
+}
+
+.heroText h1 {
+    margin: 0;
+    font-size: clamp(40px,4.2vw,62px);
+    line-height: .98;
+    letter-spacing: -.045em;
+    font-weight: 850;
+    color: #102a56;
+}
+
+.heroText h1 span {
+    display: block;
+    color: #2563eb;
+}
+
+.heroText > p {
+    max-width: 650px;
+    margin: 20px 0 0;
+    color: #5d7293;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.heroHighlights {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 12px;
+    max-width: 690px;
+    margin-top: 28px;
+}
+
+.highlight {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-height: 68px;
+    padding: 10px 13px;
+    border: 1px solid rgba(255,255,255,.9);
+    border-radius: 18px;
+    background: rgba(255,255,255,.64);
+    box-shadow: 0 8px 22px rgba(37,99,235,.06);
+    backdrop-filter: blur(16px);
+}
+
+.highlightIcon {
+    display: grid;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border-radius: 13px;
+    background: #e0efff;
+    color: #2563eb;
+}
+
+.highlight strong {
+    display: block;
+    color: #183b70;
+    font-size: 13px;
+}
+
+.highlight span {
+    display: block;
+    margin-top: 4px;
+    color: #7084a3;
+    font-size: 11px;
+}
+
+/* LOGIN NOTICE */
+
+.loginNotice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: min(1380px,calc(100% - 48px));
+    margin: 0 auto 20px;
+    padding: 12px 18px;
+    border: 1px solid #bfdbfe;
+    border-radius: 16px;
+    background: rgba(239,246,255,.8);
+    color: #36547d;
+    font-size: 13px;
+    backdrop-filter: blur(14px);
+}
+
+.loginNotice svg {
+    color: #2563eb;
+}
+
+.loginNotice a {
+    color: #2563eb;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+/* BOOKING */
+
+.bookingSection {
+    width: min(1380px,calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 26px;
+}
+
+.stepWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.stepItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 0;
+    background: transparent;
+    color: #8a9ab3;
+    cursor: default;
+}
+
+.stepNumber {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border: 1px solid #dbe7f5;
+    border-radius: 50%;
+    background: white;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.stepLabel {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.activeStep {
+    color: #2563eb;
+}
+
+.activeStep .stepNumber {
+    border-color: #2563eb;
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 6px 18px rgba(37,99,235,.2);
+}
+
+.completedStep {
+    color: #2563eb;
+    cursor: pointer;
+}
+
+.completedStep .stepNumber {
+    border-color: #2563eb;
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.stepLine {
+    width: 42px;
+    height: 1px;
+    margin: 0 9px;
+    background: #dbe7f5;
+}
+
+.completedLine {
+    background: #93c5fd;
+}
+
+/* CARD */
+
+.bookingCard {
+    width: min(850px,100%);
+    margin: 0 auto;
+    padding: 32px;
+    border: 1px solid rgba(255,255,255,.95);
+    border-radius: 26px;
+    background: rgba(255,255,255,.74);
+    box-shadow:
+            0 20px 55px rgba(37,99,235,.09),
+            inset 0 1px 0 rgba(255,255,255,.95);
+    backdrop-filter: blur(24px);
+}
+
+.formStep {
+    min-height: 330px;
+}
+
+.stepHeading {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.stepHeadingIcon {
+    display: grid;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border-radius: 15px;
+    background: #e8f2ff;
+    color: #2563eb;
+}
+
+.stepHeading span {
+    display: block;
+    margin-bottom: 5px;
+    color: #2770d8;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .1em;
+}
+
+.stepHeading h2 {
+    margin: 0;
+    color: #173867;
+    font-size: 24px;
+}
+
+.stepHeading p {
+    margin: 6px 0 0;
+    color: #71839f;
+    font-size: 13px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 9px;
+    color: #36547d;
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    border: 1px solid #d8e5f4;
+    border-radius: 14px;
+    outline: none;
+    background: rgba(255,255,255,.86);
+    color: #183b70;
+    font-size: 14px;
+    transition: .2s ease;
+}
+
+.input {
+    height: 52px;
+    padding: 0 15px;
+}
+
+.textarea {
+    min-height: 135px;
+    padding: 14px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.input:focus,
+.textarea:focus {
+    border-color: #7db1f4;
+    box-shadow: 0 0 0 4px rgba(37,99,235,.08);
+}
+
+.error {
+    display: block;
+    margin-top: 7px;
+    color: #dc2626;
+    font-size: 12px;
+}
+
+.characterCount {
+    margin-top: 6px;
+    text-align: right;
+    color: #91a0b6;
+    font-size: 11px;
+}
+
+/* TIME */
+
+.timeGrid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+
+.timeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 45px;
+    border: 1px solid #dbe7f5;
+    border-radius: 12px;
+    background: white;
+    color: #526b8e;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.timeButton:hover {
+    border-color: #93bdf2;
+    color: #2563eb;
+    transform: translateY(-1px);
+}
+
+.selectedTime {
+    border-color: #2563eb;
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 8px 20px rgba(37,99,235,.18);
+}
+
+/* SLOT LOADING / ERROR / EMPTY */
+
+.slotLoading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 24px;
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.slotLoading svg {
+    animation: slot-spin 1s linear infinite;
+}
+
+@keyframes slot-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.slotError {
+    padding: 14px 18px;
+    border-radius: 12px;
+    background: #fff1f2;
+    color: #b91c1c;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid #fecaca;
+}
+
+.slotEmpty {
+    padding: 28px 22px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px dashed #cbd5e1;
+    color: #64748b;
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+:global([data-theme="dark"]) .slotLoading {
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .slotError {
+    background: rgba(127, 29, 29, 0.3);
+    color: #fca5a5;
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+:global([data-theme="dark"]) .slotEmpty {
+    background: rgba(13, 26, 48, 0.5);
+    border-color: rgba(56, 189, 248, 0.15);
+    color: #64748b;
+}
+
+/* SUMMARY */
+
+.summaryCard {
+    display: grid;
+    gap: 0;
+    overflow: hidden;
+    border: 1px solid #dce8f6;
+    border-radius: 18px;
+    background: rgba(248,251,255,.8);
+}
+
+.summaryRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 17px;
+    border-bottom: 1px solid #e5edf7;
+}
+
+.summaryRow:last-child {
+    border-bottom: 0;
+}
+
+.summaryRow span {
+    color: #71839f;
+    font-size: 12px;
+}
+
+.summaryRow strong {
+    color: #183b70;
+    font-size: 13px;
+    text-align: right;
+}
+
+.submitError {
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #fff1f2;
+    color: #b91c1c;
+    font-size: 12px;
+}
+
+/* NAVIGATION */
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 22px;
+    border-top: 1px solid #e5edf7;
+}
+
+.primaryButton,
+.secondaryButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 46px;
+    padding: 0 18px;
+    border-radius: 13px;
+    font-size: 13px;
+    font-weight: 750;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.primaryButton {
+    border: 0;
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 8px 20px rgba(37,99,235,.18);
+}
+
+.primaryButton:hover:not(:disabled) {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.primaryButton:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+.secondaryButton {
+    border: 1px solid #dbe7f5;
+    background: white;
+    color: #526b8e;
+}
+
+.secondaryButton:hover:not(:disabled) {
+    border-color: #9fc2f3;
+    color: #2563eb;
+    transform: translateY(-1px);
+}
+
+.secondaryButton:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+/* CONFIRMED */
+
+.confirmedSection {
+    width: min(1380px,calc(100% - 48px));
+    margin: 50px auto;
+}
+
+.confirmedCard {
+    width: min(620px,100%);
+    margin: auto;
+    padding: 48px 38px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,.95);
+    border-radius: 28px;
+    background: rgba(255,255,255,.78);
+    box-shadow: 0 24px 60px rgba(37,99,235,.1);
+    backdrop-filter: blur(24px);
+}
+
+.successIcon {
+    display: grid;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 20px;
+    place-items: center;
+    border-radius: 22px;
+    background: #eaf7ef;
+    color: #16a34a;
+}
+
+.confirmedEyebrow {
+    color: #16a34a;
+    font-size: 11px;
+    font-weight: 850;
+    letter-spacing: .1em;
+}
+
+.confirmedCard h1 {
+    margin: 12px 0 8px;
+    color: #173867;
+    font-size: 30px;
+}
+
+.confirmedCard > p {
+    margin: 0;
+    color: #71839f;
+    font-size: 14px;
+}
+
+.confirmedDetails {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 28px 0;
+}
+
+.confirmedDetails div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 13px;
+    background: #f3f8fe;
+    color: #466488;
+    font-size: 12px;
+    text-align: left;
+}
+
+.confirmedDetails svg {
+    flex: 0 0 auto;
+    color: #2563eb;
+}
+
+.confirmedActions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+    .heroHighlights {
+        max-width: 620px;
+    }
+
+    .stepLabel {
+        display: none;
+    }
+
+    .stepLine {
+        width: 35px;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero {
+        min-height: 500px;
+    }
+
+    .heroContent {
+        min-height: 500px;
+        grid-template-columns: 1fr;
+    }
+
+    .heroOverlay {
+        background: linear-gradient(
+                180deg,
+                #f8fbff 0%,
+                #f8fbff 55%,
+                rgba(248,251,255,.88) 70%,
+                transparent 100%
+        );
+    }
+
+    .heroText {
+        padding: 42px 34px;
+    }
+
+    .timeGrid {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .page {
+        padding-top: 14px;
+    }
+
+    .hero,
+    .bookingSection,
+    .loginNotice,
+    .confirmedSection {
+        width: calc(100% - 24px);
+    }
+
+    .hero {
+        min-height: 560px;
+        border-radius: 22px;
+    }
+
+    .heroContent {
+        min-height: 560px;
+    }
+
+    .heroText {
+        padding: 32px 22px;
+    }
+
+    .heroText h1 {
+        font-size: 42px;
+    }
+
+    .heroText > p {
+        font-size: 14px;
+    }
+
+    .heroHighlights {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .bookingCard {
+        padding: 22px 18px;
+        border-radius: 21px;
+    }
+
+    .steps {
+        justify-content: space-between;
+    }
+
+    .stepLine {
+        width: 18px;
+        margin: 0 4px;
+    }
+
+    .stepNumber {
+        width: 30px;
+        height: 30px;
+    }
+
+    .timeGrid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .summaryRow {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .summaryRow strong {
+        text-align: left;
+    }
+
+    .confirmedDetails {
+        grid-template-columns: 1fr;
+    }
+
+    .navigation {
+        flex-direction: row;
+    }
+
+    .primaryButton,
+    .secondaryButton {
+        flex: 1;
+    }
+}
+
+@media (max-width: 420px) {
+    .heroText h1 {
+        font-size: 36px;
+    }
+
+    .stepLine {
+        width: 10px;
+    }
+
+    .timeGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* =========================
+   DARK MODE FOR BOOK APPOINTMENT
+========================= */
+
+:global([data-theme="dark"]) .page {
+    background:
+            radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.12), transparent 35%),
+            radial-gradient(circle at 90% 30%, rgba(14, 165, 233, 0.10), transparent 35%),
+            #070d18;
+    color: #f1f5f9;
+}
+
+:global([data-theme="dark"]) .hero {
+    background: #0b1528;
+    border-color: rgba(56, 189, 248, 0.20);
+    box-shadow:
+            0 24px 60px rgba(0, 0, 0, 0.5),
+            0 0 25px rgba(37, 99, 235, 0.1);
+}
+
+:global([data-theme="dark"]) .heroOverlay {
+    background:
+            linear-gradient(
+                    90deg,
+                    #070d18 0%,
+                    #070d18 45%,
+                    rgba(7, 13, 24, 0.92) 58%,
+                    rgba(7, 13, 24, 0.25) 75%,
+                    transparent 100%
+            );
+}
+
+@media (max-width: 900px) {
+    :global([data-theme="dark"]) .heroOverlay {
+        background:
+                linear-gradient(
+                        180deg,
+                        #070d18 0%,
+                        #070d18 55%,
+                        rgba(7, 13, 24, 0.90) 70%,
+                        transparent 100%
+                );
+    }
+}
+
+:global([data-theme="dark"]) .eyebrow {
+    background: rgba(30, 58, 138, 0.45);
+    color: #38bdf8;
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+:global([data-theme="dark"]) .heroText h1 {
+    color: #ffffff;
+}
+
+:global([data-theme="dark"]) .heroText h1 span {
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .heroText > p {
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .highlight {
+    background: rgba(13, 26, 48, 0.75);
+    border-color: rgba(56, 189, 248, 0.20);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+:global([data-theme="dark"]) .highlightIcon {
+    background: rgba(30, 58, 138, 0.45);
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .highlight strong {
+    color: #f1f5f9;
+}
+
+:global([data-theme="dark"]) .highlight span {
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .loginNotice {
+    background: rgba(30, 58, 138, 0.25);
+    border-color: rgba(56, 189, 248, 0.3);
+    color: #cbd5e1;
+}
+
+:global([data-theme="dark"]) .loginNotice a {
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .stepItem {
+    color: #64748b;
+}
+
+:global([data-theme="dark"]) .stepNumber {
+    background: rgba(13, 26, 48, 0.85);
+    border-color: rgba(56, 189, 248, 0.25);
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .activeStep {
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .activeStep .stepNumber {
+    background: #2563eb;
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+}
+
+:global([data-theme="dark"]) .completedStep {
+    color: #60a5fa;
+}
+
+:global([data-theme="dark"]) .completedStep .stepNumber {
+    background: rgba(30, 58, 138, 0.5);
+    border-color: rgba(56, 189, 248, 0.3);
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .stepLine {
+    background: rgba(56, 189, 248, 0.2);
+}
+
+:global([data-theme="dark"]) .completedLine {
+    background: #2563eb;
+}
+
+:global([data-theme="dark"]) .bookingCard {
+    background: rgba(13, 27, 52, 0.78);
+    border-color: rgba(56, 189, 248, 0.20);
+    box-shadow:
+            0 20px 55px rgba(0, 0, 0, 0.45),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+:global([data-theme="dark"]) .stepHeadingIcon {
+    background: rgba(30, 58, 138, 0.45);
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .stepHeading span {
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .stepHeading h2 {
+    color: #ffffff;
+}
+
+:global([data-theme="dark"]) .stepHeading p {
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .label {
+    color: #cbd5e1;
+}
+
+:global([data-theme="dark"]) .input,
+:global([data-theme="dark"]) .textarea {
+    background: rgba(8, 17, 34, 0.85);
+    border-color: rgba(56, 189, 248, 0.25);
+    color: #f1f5f9;
+}
+
+:global([data-theme="dark"]) .input:focus,
+:global([data-theme="dark"]) .textarea:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
+}
+
+:global([data-theme="dark"]) .input option {
+    background: #0b1528;
+    color: #f1f5f9;
+}
+
+:global([data-theme="dark"]) .timeButton {
+    background: rgba(13, 26, 48, 0.8);
+    border-color: rgba(56, 189, 248, 0.22);
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .timeButton:hover {
+    border-color: #38bdf8;
+    color: #38bdf8;
+    background: rgba(30, 58, 138, 0.35);
+}
+
+:global([data-theme="dark"]) .selectedTime {
+    background: #2563eb;
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+}
+
+:global([data-theme="dark"]) .summaryCard {
+    background: rgba(8, 17, 34, 0.7);
+    border-color: rgba(56, 189, 248, 0.2);
+}
+
+:global([data-theme="dark"]) .summaryRow {
+    border-bottom-color: rgba(56, 189, 248, 0.12);
+}
+
+:global([data-theme="dark"]) .summaryRow span {
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .summaryRow strong {
+    color: #f1f5f9;
+}
+
+:global([data-theme="dark"]) .navigation {
+    border-top-color: rgba(56, 189, 248, 0.15);
+}
+
+:global([data-theme="dark"]) .secondaryButton {
+    background: rgba(13, 26, 48, 0.8);
+    border-color: rgba(56, 189, 248, 0.25);
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .secondaryButton:hover:not(:disabled) {
+    background: rgba(30, 58, 138, 0.35);
+    border-color: #38bdf8;
+    color: #38bdf8;
+}
+
+:global([data-theme="dark"]) .confirmedCard {
+    background: rgba(13, 27, 52, 0.82);
+    border-color: rgba(56, 189, 248, 0.20);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+:global([data-theme="dark"]) .confirmedCard h1 {
+    color: #ffffff;
+}
+
+:global([data-theme="dark"]) .confirmedCard > p {
+    color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .confirmedDetails div {
+    background: rgba(8, 17, 34, 0.7);
+    color: #cbd5e1;
+    border: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+:global([data-theme="dark"]) .confirmedDetails svg {
+    color: #38bdf8;
+}
