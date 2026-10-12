@@ -50,3 +50,4 @@ The **Strategy Design Pattern** is implemented in the relevant business logic to
 ## Repository
 
 This repository contains the source code for the Web-Based Dental Clinic Management System.
+![My Banner](banner.png)
